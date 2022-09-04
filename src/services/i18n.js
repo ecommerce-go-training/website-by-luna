@@ -2,8 +2,8 @@ import i18n from 'i18next';
 import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
-import translationEN from 'translations/en/translation';
-import translationVI from 'translations/vi/translation';
+import translationEN from 'translations/en';
+import translationVI from 'translations/vi';
 
 // the translations
 const resources = {

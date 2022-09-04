@@ -2,5 +2,5 @@
   "compilerOptions": {
     "baseUrl": "src"
   },
-  "include": ["src", "src/core/App.js"]
+  "include": ["src", "src/core/App.js", "next.conf.js"]
 }

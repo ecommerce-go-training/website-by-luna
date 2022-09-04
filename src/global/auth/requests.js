@@ -1,4 +1,4 @@
-import { Auth } from './actionTypes';
+import { Auth } from './slice';
 
 const failRequestAuth = () => ({
   type: Auth.FAIL_REQUEST_AUTH
