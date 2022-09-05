@@ -1,0 +1,35 @@
+@import 'assets/scss/mixin.scss';
+
+.input-payment {
+  width: 520px;
+  border: transparent;
+  border-bottom: 1px solid #c8c8c8;
+  padding: 5px 0;
+}
+
+.input-payment:focus {
+  border: transparent;
+  outline: none;
+  border-bottom: 1px solid #000000;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: 'Sofia Pro';
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+.input-payment::placeholder {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  font-family: 'Sofia Pro';
+  letter-spacing: 0.05em;
+  color: #c8c8c8;
+}
+
+.input-payment {
+  @include responsive(mobile) {
+    width: 90%;
+  }
+}

@@ -1,0 +1,21 @@
+@import 'assets/scss/mixin.scss';
+
+.default-button {
+  width: 285px;
+  height: 60px;
+  background: #000000;
+  color: #fff;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.default-button {
+  @include responsive(mobile) {
+    width: 90%;
+    height: 40px;
+  }
+}
