@@ -1,0 +1,26 @@
+@import 'assets/scss/mixin.scss';
+
+.default-checkbox {
+  height: 20px;
+  width: 20px;
+  border: none;
+}
+
+.default-checkbox[type='checkbox']:before {
+  background: #f5f6;
+}
+
+.mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: black;
+}
+
+.default-checkbox[type='checkbox']:checked {
+  accent-color: #000;
+  color: #ffffff;
+  border: none;
+}

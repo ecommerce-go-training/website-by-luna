@@ -1,12 +1,16 @@
 import React, { memo } from 'react';
-// import classNames from 'classnames';
+import classNames from 'classnames';
 
 import './style.scss';
 
-function DefaultButton({ type = 'button' }) {
+function DefaultButton({ type = 'button', className, onClick, children }) {
   return (
-    <button type={type} className='default-button'>
-      SUBMIT
+    <button
+      type={type}
+      onClick={onClick}
+      className={classNames(['default-button', className])}
+    >
+      {children}
     </button>
   );
 }

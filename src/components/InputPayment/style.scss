@@ -1,10 +1,12 @@
 @import 'assets/scss/mixin.scss';
 
 .input-payment {
-  width: 520px;
+  width: 640px;
+  height: 40px;
   border: transparent;
   border-bottom: 1px solid #c8c8c8;
-  padding: 5px 0;
+  padding: 0 10px;
+  background: #f3f3f3;
 }
 
 .input-payment:focus {
@@ -21,8 +23,8 @@
 
 .input-payment::placeholder {
   font-weight: 400;
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 21px;
   font-family: 'Sofia Pro';
   letter-spacing: 0.05em;
   color: #c8c8c8;

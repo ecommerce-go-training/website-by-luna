@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Demo from 'pages/Demo/index';
 import Form from 'pages/Form/index';
-import InputPayment from 'components/InputPayment/index';
+import Input from 'components/Checkbox/index';
 
 import 'services/i18n';
 
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route exact path='/demo' element={<Demo />} />
         <Route exact path='/form' element={<Form />} />
-        <Route exact path='/' element={<InputPayment />} />
+        <Route exact path='/' element={<Input />} />
       </Routes>
     </div>
   );
