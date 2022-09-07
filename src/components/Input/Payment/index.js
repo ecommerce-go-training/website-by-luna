@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import React, { memo } from 'react';
 
 import './style.scss';
 
-function DefaultInput({ type = 'text' }) {
+function PaymentInput({ type = 'text' }) {
   return (
     <div>
       <input
@@ -14,4 +15,8 @@ function DefaultInput({ type = 'text' }) {
   );
 }
 
-export default memo(DefaultInput);
+PaymentInput.propTypes = {
+  type: PropTypes.string.isRequired
+};
+
+export default memo(PaymentInput);

@@ -30,7 +30,7 @@
     "jsx-quotes": ["error", "prefer-single"],
     "quotes": [2, "single", "avoid-escape"],
 
-    "react/prop-types": ["off"],
+    "react/prop-types": ["error"],
     "react/require-default-props": "error",
 
     "react-hooks/rules-of-hooks": "error",

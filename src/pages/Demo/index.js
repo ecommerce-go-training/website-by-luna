@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { vi } from 'date-fns/locale';
 import React, { Suspense, useState } from 'react';
-import DefaultInput from 'components/Input/index';
+import DefaultInput from 'components/Input/Defaul/index';
 import { useTranslation, Trans } from 'react-i18next';
 
 import 'services/i18n';

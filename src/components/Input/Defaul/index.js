@@ -1,6 +1,7 @@
-import React, { useState, memo } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState, memo } from 'react';
+
 import eye from 'assets/images/icons/eye.png';
 import eyeSlash from 'assets/images/icons/eye-slash.png';
 
@@ -57,5 +58,16 @@ function DefaultInput({
     </div>
   );
 }
+
+DefaultInput.propTypes = {
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  errorStatus: PropTypes.bool.isRequired,
+  errorMsg: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  className: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onKeyDown: PropTypes.func.isRequired
+};
 
 export default memo(DefaultInput);

@@ -1,0 +1,30 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.default-input {
+  width: 100%;
+  border: transparent;
+  border-bottom: 1px solid $gray-smoke;
+  padding: 5px 0;
+
+  &:focus {
+    border: transparent;
+    outline: none;
+    border-bottom: 1px solid $black;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: 'Sofia Pro';
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    color: $black;
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: 'Sofia Pro';
+    letter-spacing: 0.05em;
+    color: $gray-smoke;
+  }
+}
