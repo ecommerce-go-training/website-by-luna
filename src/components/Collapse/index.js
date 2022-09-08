@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 
 import plus from 'assets/images/plus.png';
 import minus from 'assets/images/minus.svg';
@@ -36,7 +36,7 @@ function Collapse({ title, children }) {
 
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired
+  children: PropTypes.array.isRequired
 };
 
-export default Collapse;
+export default memo(Collapse);

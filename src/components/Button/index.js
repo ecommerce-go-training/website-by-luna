@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import './style.scss';
 
-function DefaultButton({ type = 'button', className, onClick, children }) {
+function DefaultButton({ type, className, onClick, children }) {
   return (
     <button
       type={type}
@@ -16,8 +16,12 @@ function DefaultButton({ type = 'button', className, onClick, children }) {
   );
 }
 
+DefaultButton.defaultProps = {
+  type: 'button'
+};
+
 DefaultButton.propTypes = {
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
   className: PropTypes.object.isRequired,
   onClick: PropTypes.func.isRequired,
   children: PropTypes.func.isRequired

@@ -8,66 +8,82 @@ import eyeSlash from 'assets/images/icons/eye-slash.png';
 import './style.scss';
 
 function DefaultInput({
-  name = 'name',
-  type = 'text',
-  errorStatus = false,
-  errorMsg = '',
-  value = '',
-  className = '',
-  onChange,
-  onKeyDown
+  name,
+  type,
+  placeholder,
+  // errorStatus = false,
+  // errorMsg = '',
+  className,
+  onChange
 }) {
-  const [isShow, setIsShow] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const passwordInput = name?.toLowerCase()?.includes('password');
+  const [isShow, setIsShow] = useState(passwordInput ? true : false);
+  const [typeInput, setTypeInput] = useState(type);
 
   const togglePassword = () => {
-    setIsShow(isShown => !isShown);
+    setIsShow(isShow => !isShow);
+  };
+
+  onChange = e => {
+    setInputValue(e.target.value);
   };
 
   return (
     <div>
       <input
-        type={isShow ? type : 'password'}
-        placeholder='Confirm password'
+        type={typeInput}
+        placeholder={placeholder}
         className={classNames(['default-input', className])}
         name={name}
-        value={value}
+        value={inputValue}
         onChange={onChange}
-        onKeyDown={onKeyDown}
-        autoComplete='off'
       />
-      {isShow && (
-        <button
-          type='button'
-          className='default-input__show'
-          onClick={togglePassword}
-        >
+      <button
+        style={{ display: type === 'password' ? 'block' : 'none' }}
+        type='button'
+        className='default-input__show'
+        onClick={togglePassword}
+      >
+        {!isShow ? (
           <img
-            src={!isShow ? eye : eyeSlash}
+            src={eyeSlash}
+            alt='show password'
             className='default-input__show--icon'
+            onClick={() => setTypeInput('text')}
           />
-        </button>
-      )}
+        ) : (
+          <img
+            src={eye}
+            alt='hidden password'
+            className='default-input__show--icon'
+            onClick={() => setTypeInput('password')}
+          />
+        )}
+      </button>
       <p
         className={classNames([
-          'default-input__error',
-          { active: errorStatus }
+          'default-input__error'
+          // { active: errorStatus }
         ])}
-      >
-        {errorStatus ? errorMsg : 'valid'}
-      </p>
+      ></p>
     </div>
   );
 }
 
+DefaultInput.defaultProps = {
+  type: 'text',
+  placeholder: ''
+};
+
 DefaultInput.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['text', 'password', 'email', 'tel']),
+  placeholder: PropTypes.string,
   errorStatus: PropTypes.bool.isRequired,
   errorMsg: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
   className: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onKeyDown: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired
 };
 
 export default memo(DefaultInput);

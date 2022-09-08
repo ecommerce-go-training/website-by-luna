@@ -1,7 +1,18 @@
 @import 'assets/scss/mixins.scss';
 @import 'assets/scss/variable.scss';
 
-.delivery__header--info {
-  height: 20px;
-  background-color: $pink-orange;
+.Announce {
+  text-align: center;
+
+  .delivery__header--info {
+    @include fadein();
+    height: 30px;
+    background-color: $pink-orange;
+    font-family: 'Sofia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+  }
 }

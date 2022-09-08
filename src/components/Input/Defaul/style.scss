@@ -6,6 +6,7 @@
   border: transparent;
   border-bottom: 1px solid $gray-smoke;
   padding: 5px 0;
+  position: relative;
 
   &:focus {
     border: transparent;
@@ -26,5 +27,17 @@
     font-family: 'Sofia Pro';
     letter-spacing: 0.05em;
     color: $gray-smoke;
+  }
+
+  &__show {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    border: transparent;
+    background-color: transparent;
+
+    &--icon {
+      cursor: pointer;
+    }
   }
 }

@@ -1,0 +1,100 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.footer {
+  width: 100%;
+  @include flex(column, center, center);
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  padding-top: 30px;
+  border-top: 1px solid $gray-smoke;
+
+  &__title {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    width: 75%;
+    @include flex(row, flex-start, flex-start);
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000000;
+
+    &--socials {
+      width: 16.667%;
+    }
+
+    .footer__title {
+      margin-bottom: 24px;
+    }
+
+    &--social {
+      @include flex(row, center, flex-start);
+      height: 28px;
+      img {
+        width: 16px;
+        margin-right: 16px;
+      }
+    }
+
+    &--abouts {
+      width: 16.667%;
+      padding-left: 20px;
+
+      .footer__title {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--cares {
+      width: 30%;
+
+      .footer__title {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--contact {
+      width: 36.667%;
+    }
+
+    &--mail,
+    &--phone {
+      @include flex(row, center, flex-start);
+
+      img {
+        margin-right: 16px;
+      }
+    }
+
+    &--mail {
+      p {
+        text-transform: lowercase;
+        margin-right: 28px;
+        p {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  &__publish {
+    width: 75%;
+    text-align: left;
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    color: #000000;
+    margin-top: -30px;
+  }
+}
