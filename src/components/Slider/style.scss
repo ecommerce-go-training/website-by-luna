@@ -1,0 +1,19 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.Slider-container {
+  width: 100%;
+
+  .Slider {
+    width: 100%;
+    @include flex(row, center, center);
+  }
+
+  &__items {
+    width: 80%;
+  }
+
+  &__item {
+    width: 25%;
+  }
+}
