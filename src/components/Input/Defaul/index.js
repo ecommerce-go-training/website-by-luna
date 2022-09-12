@@ -17,8 +17,8 @@ function DefaultInput({
   onChange
 }) {
   const [inputValue, setInputValue] = useState('');
-  const passwordInput = name?.toLowerCase()?.includes('password');
-  const [isShow, setIsShow] = useState(passwordInput ? true : false);
+  // const passwordInput = name?.toLowerCase()?.includes('password');
+  const [isShow, setIsShow] = useState(false);
   const [typeInput, setTypeInput] = useState(type);
 
   const togglePassword = () => {

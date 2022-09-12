@@ -4,15 +4,14 @@
 .Announce {
   text-align: center;
 
-  .delivery__header--info {
-    @include fadein();
+  &__header {
     height: 30px;
     background-color: $pink-orange;
-    font-family: 'Sofia';
+    font-family: 'Sofia Pro';
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
-    line-height: 150%;
+    line-height: 30px;
     letter-spacing: 0.05em;
   }
 }

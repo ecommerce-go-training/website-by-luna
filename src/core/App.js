@@ -2,8 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Demo from 'pages/Demo/index';
 import Form from 'pages/Form/index';
-// import Collapse from 'components/Collapse/demo';
-import Slider from 'components/Slider/index';
+import Header from 'components/Header/index';
+// import Search from 'components/Search/index';
 
 import 'services/i18n';
 
@@ -15,8 +15,7 @@ function App() {
       <Routes>
         <Route exact path='/demo' element={<Demo />} />
         <Route exact path='/form' element={<Form />} />
-        {/* <Route exact path='/' element={<Collapse />} /> */}
-        <Route exact path='/' element={<Slider />} />
+        <Route exact path='/' element={<Header />} />
       </Routes>
     </div>
   );

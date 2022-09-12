@@ -17,7 +17,7 @@ function Announce() {
 
   return (
     <div className='Announce'>
-      <div className='delivery__header--info'>{deliveryState}</div>
+      <div className='Announce__header'>{deliveryState}</div>
     </div>
   );
 }

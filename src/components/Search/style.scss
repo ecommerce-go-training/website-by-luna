@@ -1,0 +1,71 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.Search {
+  width: 100%;
+  height: 400px;
+  padding-bottom: 70px;
+  background-color: $peaches-pink;
+  @include flex(column, center, flex-end);
+  position: relative;
+
+  &__close {
+    position: absolute;
+    top: 28%;
+    right: 18%;
+    cursor: pointer;
+  }
+
+  &__input {
+    @include flex(column, flex-start, center);
+    input {
+      width: 800px;
+      border: transparent;
+      border-bottom: 0.5px solid $black;
+      background-color: transparent;
+      padding-left: 30px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      &:focus {
+        outline: transparent;
+        border-bottom: 0.5px solid $black;
+        background-color: transparent;
+      }
+    }
+
+    &--icon {
+      height: 10px;
+      margin-left: 10px;
+      margin-bottom: -24px;
+    }
+  }
+
+  p {
+    margin-top: 20px;
+  }
+
+  &__quick {
+    @include flex(row, center, center);
+
+    &--link {
+      text-decoration: none;
+      color: $white;
+      margin: 20px;
+      font-family: 'Sofia Pro';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 50px;
+      line-height: 120%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      text-transform: capitalize;
+      cursor: pointer;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}
