@@ -1,0 +1,17 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.Announce {
+  text-align: center;
+
+  &__header {
+    height: 30px;
+    background-color: $pink-orange;
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+  }
+}

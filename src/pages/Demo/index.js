@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { vi } from 'date-fns/locale';
 import React, { Suspense, useState } from 'react';
+import DefaultInput from 'components/Input/Defaul/index';
 import { useTranslation, Trans } from 'react-i18next';
 
 import 'services/i18n';
@@ -56,6 +57,16 @@ function Demo() {
             <Link to='/form'>Form Demo</Link>
             <Link to='/redux'>Redux Demo</Link>
           </div>
+          <DefaultInput
+            name='password'
+            type='password'
+            errorStatus={false}
+            errorMsg=''
+            value=''
+            className=''
+            onChange=''
+            onKeyDown=''
+          />
         </header>
       </div>
     </Suspense>

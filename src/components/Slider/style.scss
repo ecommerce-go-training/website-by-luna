@@ -1,0 +1,49 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.Slider-container {
+  width: 100%;
+  @include flex(row, center, center);
+
+  .Slider {
+    width: 86%;
+    @include flex(row, center, center);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__item {
+      &--image {
+        margin: 8px;
+        object-fit: contain;
+        height: 470px;
+      }
+    }
+  }
+
+  .Slider__button {
+    border: transparent;
+    background-color: transparent;
+    cursor: pointer;
+
+    &--left {
+      margin-right: 40px;
+      width: 14px;
+      height: 25px;
+    }
+
+    &--right {
+      margin-left: 40px;
+      width: 14px;
+      height: 25px;
+    }
+
+    &:focus {
+      border: transparent;
+      background-color: transparent;
+    }
+  }
+}
