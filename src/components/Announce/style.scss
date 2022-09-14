@@ -1,17 +1,35 @@
 @import 'assets/scss/mixins.scss';
 @import 'assets/scss/variable.scss';
 
-.Announce {
+.announce {
   text-align: center;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   &__header {
     height: 30px;
     background-color: $pink-orange;
-    font-family: 'Sofia Pro';
+    font-family: SofiaPro-Light, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 30px;
     letter-spacing: 0.05em;
+    color: $black;
+    @include responsive(mobile) {
+      overflow: hidden;
+      display: block;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      color: $black;
+    }
+
+    &:hover {
+      color: $gray-smoke;
+    }
   }
 }

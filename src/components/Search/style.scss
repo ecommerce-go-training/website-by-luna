@@ -9,15 +9,34 @@
   @include flex(column, center, flex-end);
   position: relative;
 
+  @include responsive(tablet) {
+    height: 300px;
+  }
+
+  @include responsive(mobile) {
+    height: 290px;
+  }
+
   &__close {
     position: absolute;
     top: 28%;
     right: 18%;
     cursor: pointer;
+
+    @include responsive(tablet) {
+      top: 18%;
+      right: 8%;
+    }
+
+    @include responsive(mobile) {
+      top: 10%;
+      right: 8%;
+    }
   }
 
   &__input {
     @include flex(column, flex-start, center);
+    width: 90%;
     input {
       width: 800px;
       border: transparent;
@@ -26,6 +45,14 @@
       padding-left: 30px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+
+      @include responsive(tablet) {
+        width: 500px;
+      }
+
+      @include responsive(mobile) {
+        width: 90%;
+      }
 
       &:focus {
         outline: transparent;
@@ -62,6 +89,17 @@
       text-align: center;
       text-transform: capitalize;
       cursor: pointer;
+
+      @include responsive(tablet) {
+        font-size: 30px;
+      }
+
+      @include responsive(mobile) {
+        font-size: 12px;
+        font-weight: 400;
+        color: $black;
+        margin: 10px;
+      }
 
       &:hover {
         color: $black;

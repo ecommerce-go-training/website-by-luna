@@ -1,25 +1,29 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Search from 'components/Search';
 import bag from 'assets/images/bag.png';
-import bagActive from 'assets/images/bag.svg';
-import test from 'assets/images/test1.png';
 import logo from 'assets/images/logo.jpg';
+// import test from 'assets/images/test1.png';
+import search from 'assets/images/search.svg';
+import bagActive from 'assets/images/bag.svg';
+import navbar from 'assets/images/icons/navbar.svg';
 import logoTrans from 'assets/images/logoTrans.png';
 import searchWhite from 'assets/images/searchWhite.png';
-import search from 'assets/images/search.svg';
+import navbarAct from 'assets/images/icons/navbarAct.svg';
 
 import './style.scss';
+import classNames from 'classnames';
 
-function Header() {
+function Header({ className }) {
   const [show, setShow] = useState(false);
-  const [fix, setFix] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
   const handleScroll = () => {
     if (window.scrollY >= 100) {
-      setFix(true);
+      setIsScrolling(true);
     } else {
-      setFix(false);
+      setIsScrolling(false);
     }
   };
 
@@ -32,7 +36,13 @@ function Header() {
           <Search setShow={setShow} />
         </div>
       )}
-      <div className={fix ? 'header active' : 'header'}>
+      <div className={classNames(className, { white: isScrolling })}>
+        <img src={navbar} alt='icon navbar' className='header__navbar' />
+        <img
+          src={navbarAct}
+          alt='icon navbar'
+          className='header__navbar--active'
+        />
         <div className='navigate-page'>
           <Link to='/' className='link-to-page'>
             NEW ARRIVALS
@@ -68,15 +78,23 @@ function Header() {
           <img src={bagActive} alt='' className='header-cart__active' />
         </div>
       </div>
-      <div className='test__image'>
+      {/* <div className='test__image'>
         <img src={test} alt='' />
-      </div>
+        <img src={test} alt='' />
+        <img src={test} alt='' />
+        <img src={test} alt='' />
+        <img src={test} alt='' />
+      </div> */}
     </div>
   );
 }
 
-// Search.propTypes = {
-//   setShow: PropTypes.func.isRequired
-// };
+Header.defaultProps = {
+  className: 'header'
+};
+
+Header.propTypes = {
+  className: PropTypes.oneOf(['header', 'header white'])
+};
 
 export default Header;
