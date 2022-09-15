@@ -16,7 +16,25 @@ function Footer() {
     <div className='footer'>
       <div className='footer__content'>
         <div className='footer__content--socials'>
-          <p className='footer__title'>follow us</p>
+          <div className='footer-desk'>
+            <p className='footer__title'>follow us</p>
+            <div className='footer__content--social'>
+              <img src={facebook} alt='facebook social' className='facebook' />
+              <p>facebook</p>
+            </div>
+            <div className='footer__content--social'>
+              <img src={instagram} alt='instagram social' />
+              <p>instagram</p>
+            </div>
+            <div className='footer__content--social'>
+              <img src={pinterest} alt='pinterest social' />
+              <p>pinterest</p>
+            </div>
+            <div className='footer__content--social'>
+              <img src={tiktok} alt='tiktok social' />
+              <p>tiktok</p>
+            </div>
+          </div>
           <Collapse title='follow us' className={'footer__collapse'}>
             <div className='footer__content--social'>
               <img src={facebook} alt='facebook social' className='facebook' />
@@ -37,7 +55,13 @@ function Footer() {
           </Collapse>
         </div>
         <div className='footer__content--abouts'>
-          <p className='footer__title'>About</p>
+          <div className='footer-desk'>
+            <p className='footer__title'>About</p>
+            <div className='footer__content--about'>
+              <p>brand</p>
+              <p>store locator</p>
+            </div>
+          </div>
           <Collapse title='About' className={'footer__collapse'}>
             <div className='footer__content--about'>
               <p>brand</p>
@@ -46,7 +70,18 @@ function Footer() {
           </Collapse>
         </div>
         <div className='footer__content--cares'>
-          <p className='footer__title'>Customer care</p>
+          <div className='footer-desk'>
+            <p className='footer__title'>Customer care</p>
+            <div className='footer__content--care'>
+              <p>Faq</p>
+              <p>sizing</p>
+              <p>shipping & returns</p>
+              <p>terms & conditions</p>
+              <p>privacy policy</p>
+              <p>garment care</p>
+              <p>make a return</p>
+            </div>
+          </div>
           <Collapse title='Customer care' className={'footer__collapse'}>
             <div className='footer__content--care'>
               <p>Faq</p>

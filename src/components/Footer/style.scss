@@ -10,6 +10,12 @@
   padding-top: 30px;
   border-top: 1px solid $gray-smoke;
 
+  .footer-desk {
+    @include responsive(mobile) {
+      display: none;
+    }
+  }
+
   &__title {
     font-family: 'Sofia Pro';
     font-style: normal;
@@ -33,6 +39,9 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #000000;
+    @include responsive(tablet) {
+      width: 90%;
+    }
 
     .footer__collapse {
       display: none;
@@ -44,7 +53,7 @@
         margin-left: -30px;
       }
       @include responsive(mobile) {
-        display: block;
+        display: flex;
       }
     }
 
@@ -57,6 +66,9 @@
 
     &--socials {
       width: 16.667%;
+      @include responsive(tablet) {
+        width: 20%;
+      }
       @include responsive(mobile) {
         width: 90%;
         padding-left: 30px;
@@ -106,6 +118,9 @@
 
     &--contact {
       width: 36.667%;
+      @include responsive(tablet) {
+        width: 33.333%;
+      }
       @include responsive(mobile) {
         width: 100%;
       }
@@ -120,6 +135,7 @@
     &--mail,
     &--phone {
       width: 100%;
+      margin-top: 10px;
       @include flex(row, center, flex-start);
 
       @include responsive(mobile) {
@@ -142,6 +158,10 @@
       p {
         text-transform: lowercase;
         margin-right: 28px;
+        @include responsive(tablet) {
+          margin-right: 6px;
+          letter-spacing: 0.01em;
+        }
         @include responsive(mobile) {
           font-size: 11px;
           margin-right: 6px;
@@ -163,6 +183,11 @@
     color: #000000;
     margin-top: -30px;
     text-transform: none;
+    @include responsive(tablet) {
+      width: 90%;
+      margin-top: -10px;
+      font-size: 12px;
+    }
     @include responsive(mobile) {
       font-size: 12px;
       text-align: center;
