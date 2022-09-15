@@ -71,7 +71,7 @@ function Header({ className }) {
             className='header-search__active'
             onClick={() => setShow(true)}
           />
-          <Link to='/' className='link-to-page'>
+          <Link to='/signin' className='link-to-page'>
             Login
           </Link>
           <img src={bag} alt='' className='header-cart' />

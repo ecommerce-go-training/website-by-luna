@@ -1,0 +1,58 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.home-container {
+  width: 100%;
+  @include flex(column, center, center);
+
+  img {
+    width: 100%;
+  }
+
+  .introduce-infor {
+    margin-top: -250px;
+    width: 32%;
+    text-align: center;
+    color: $white;
+    letter-spacing: 0.15em;
+
+    h3 {
+      font-weight: 500;
+      font-size: 40px;
+    }
+
+    .introduce {
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .invite-collection {
+      font-family: 'Sofia Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      color: $white;
+      text-transform: uppercase;
+    }
+  }
+
+  .grid {
+    width: 100%;
+    text-align: center;
+
+    &__4--2 {
+      width: 50%;
+      @include flex(row, space-between, space-between);
+      .type-item {
+        font-family: 'Sofia Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: $black;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

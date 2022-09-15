@@ -18,7 +18,9 @@ function SignUp() {
       <div className='sign-up'>
         <div className='sign-up__form'>
           <h3>Create an account</h3>
-          <p>Please register your details below to create an account</p>
+          <p className='please-register'>
+            Please register your details below to create an account
+          </p>
           <form>
             <DefaultInput
               name='user'
@@ -57,31 +59,41 @@ function SignUp() {
             />
             <DefaultCheckbox
               type='checkbox'
-              className=''
+              className='sign-up__checkbox'
               value='Sign me up to reveive updates on new arivals, events, promotions and much more!'
               checked='false'
-            />
+              // children='Sign me up to reveive updates on new arivals, events, promotions and much more!'
+            >
+              Sign me up to reveive updates on new arivals, events, promotions
+              and much more!
+            </DefaultCheckbox>
+            <p className='agree-policy'>
+              By signing up you agree to Dear José{' '}
+              <Link to='/' className='agree-policy__link'>
+                {''}
+                Terms of Service
+              </Link>{' '}
+              and{' '}
+              <Link to='/' className='agree-policy__link'>
+                {''}
+                Privacy Policy
+              </Link>
+            </p>
             <DefaultButton
               type='submit'
               // onClick=
               className=''
             >
-              CREATE ACCOUNT
+              CREATE
             </DefaultButton>
           </form>
         </div>
-        <div className='reset-create__account'>
-          <Link to='/' className='reset-password'>
-            Forgot your password?
-          </Link>
-          <Link to='/' className='create__account'>
-            SIGN UP
-          </Link>
-        </div>
+        <Link to='/' className='have-account'>
+          I have an account
+        </Link>
       </div>
-      <footer>
-        <Footer />
-      </footer>
+
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,86 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.check-mail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 180px;
+  margin-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Sofia Pro';
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  &__image {
+    margin: -80px 0 20px 20px;
+    @include responsive(mobile) {
+      width: 80px;
+    }
+  }
+
+  @include responsive(tablet) {
+    margin-top: 240px;
+  }
+
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  .please-code {
+    letter-spacing: 0.05em;
+    width: 34%;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    margin-bottom: 80px;
+    @include responsive(tablet) {
+      width: 80%;
+    }
+    @include responsive(mobile) {
+      width: 90%;
+    }
+  }
+
+  form {
+    width: 34%;
+    .default-button {
+      margin-top: 20px;
+      width: 60%;
+      @include responsive(mobile) {
+        width: 100%;
+      }
+    }
+    @include responsive(mobile) {
+      width: 90%;
+    }
+    @include responsive(tablet) {
+      width: 80%;
+    }
+  }
+
+  .notify-code {
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    color: $black;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    @include responsive(mobile) {
+      font-size: 11px;
+    }
+    .resend {
+      text-decoration: none;
+      color: $red-pink;
+    }
+  }
+}

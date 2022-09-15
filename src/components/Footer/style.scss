@@ -2,6 +2,7 @@
 @import 'assets/scss/variable.scss';
 
 .footer {
+  margin-top: 60px;
   width: 100%;
   @include flex(column, center, center);
   flex-wrap: wrap;
@@ -17,6 +18,9 @@
     line-height: 120%;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    @include responsive(mobile) {
+      display: none;
+    }
   }
 
   &__content {
@@ -30,8 +34,34 @@
     text-transform: uppercase;
     color: #000000;
 
+    .footer__collapse {
+      display: none;
+
+      .footer__collapse p {
+        margin-left: -6px;
+      }
+      .footer__collapse img {
+        margin-left: -30px;
+      }
+      @include responsive(mobile) {
+        display: block;
+      }
+    }
+
+    @include responsive(tablet) {
+    }
+    @include responsive(mobile) {
+      width: 100%;
+      @include flex(column, flex-start, flex-start);
+    }
+
     &--socials {
       width: 16.667%;
+      @include responsive(mobile) {
+        width: 90%;
+        padding-left: 30px;
+        border-bottom: 0.25px dashed $gray-smoke;
+      }
     }
 
     .footer__title {
@@ -50,6 +80,11 @@
     &--abouts {
       width: 16.667%;
       padding-left: 20px;
+      @include responsive(mobile) {
+        width: 90%;
+        padding-left: 30px;
+        border-bottom: 0.25px dashed $gray-smoke;
+      }
 
       .footer__title {
         margin-bottom: 30px;
@@ -58,6 +93,11 @@
 
     &--cares {
       width: 30%;
+      @include responsive(mobile) {
+        width: 90%;
+        padding-left: 30px;
+        border-bottom: 0.25px dashed $gray-smoke;
+      }
 
       .footer__title {
         margin-bottom: 30px;
@@ -66,21 +106,47 @@
 
     &--contact {
       width: 36.667%;
+      @include responsive(mobile) {
+        width: 100%;
+      }
+
+      .notified {
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
     }
 
     &--mail,
     &--phone {
+      width: 100%;
       @include flex(row, center, flex-start);
+
+      @include responsive(mobile) {
+        @include flex(row, center, center);
+      }
 
       img {
         margin-right: 16px;
+        @include responsive(mobile) {
+          margin-right: 10px;
+        }
       }
     }
 
     &--mail {
+      img {
+        margin-left: -6px;
+        margin-bottom: 5px;
+      }
       p {
         text-transform: lowercase;
         margin-right: 28px;
+        @include responsive(mobile) {
+          font-size: 11px;
+          margin-right: 6px;
+          letter-spacing: 0.01em;
+        }
         p {
           text-transform: uppercase;
         }
@@ -96,8 +162,11 @@
     font-size: 13px;
     color: #000000;
     margin-top: -30px;
-  }
-
-  @include responsive(mobile) {
+    text-transform: none;
+    @include responsive(mobile) {
+      font-size: 12px;
+      text-align: center;
+      margin-top: 0px;
+    }
   }
 }

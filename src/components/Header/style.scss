@@ -89,8 +89,8 @@
       @include flex(row, center, space-between);
       .header-search {
         color: $white;
-        margin-right: 100px;
-        margin-left: 30px;
+        margin-right: 120px;
+        margin-left: 40px;
         cursor: pointer;
         @include responsive(tablet) {
           margin-right: 50px;
@@ -158,8 +158,8 @@
       @include flex(row, center, space-between);
       .header-search__active {
         display: block;
-        margin-right: 100px;
-        margin-left: 30px;
+        margin-right: 120px;
+        margin-left: 40px;
         cursor: pointer;
         @include responsive(tablet) {
           margin-right: 50px;

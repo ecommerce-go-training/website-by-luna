@@ -28,14 +28,17 @@
     margin-bottom: 100px;
 
     @include responsive(mobile) {
-      width: 100%;
+      width: 90%;
     }
   }
 
   form {
     .default-button {
       margin-top: 20px;
-      width: 64%;
+      width: 60%;
+      @include responsive(mobile) {
+        width: 100%;
+      }
     }
   }
 

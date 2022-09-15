@@ -1,28 +1,18 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-// import Header from 'components/Header';
-// // import Footer from 'components/Footer';
-// import DefaultButton from 'components/Button';
-// import Announce from 'components/Announce';
-// import DefaultInput from 'components/Input/Defaul';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import DefaultButton from 'components/Button';
+import Announce from 'components/Announce';
+import DefaultInput from 'components/Input/Defaul';
 
 import './style.scss';
 
-// eslint-disable-next-line react/prop-types
-function Input({ label, type }) {
-  return (
-    <div style={{ width: '100%' }}>
-      <p style={{ margin: 0 }}>{label}</p>
-      <input style={{ width: '100%' }} type={type} />
-    </div>
-  );
-}
-
 function SignIn() {
   return (
-    <div className='sign-in-v2'>
-      {/* <Announce />
+    <div className='sign-in'>
+      <Announce />
       <Header className='header white' />
       <div className='sign-in'>
         <div className='sign-in__form'>
@@ -59,16 +49,8 @@ function SignIn() {
             SIGN UP
           </Link>
         </div>
-      </div> */}
-      {/* <footer>
-        <Footer />
-      </footer> */}
-      <h2>Title</h2>
-      <form>
-        <Input label='email' />
-        <Input label='password' type='password' />
-        <button type='submit'>Submit</button>
-      </form>
+      </div>
+      <Footer />
     </div>
   );
 }
