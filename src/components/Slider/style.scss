@@ -6,19 +6,83 @@
   @include flex(row, center, center);
 
   .Slider {
+    width: 92%;
     @include flex(row, center, center);
     overflow-x: scroll;
     scroll-behavior: smooth;
+
+    @include responsive(mobile) {
+      width: 90%;
+    }
 
     &::-webkit-scrollbar {
       display: none;
     }
 
     &__item {
+      position: relative;
+      flex: 1;
+      text-align: left;
+      p {
+        margin-left: 10px;
+        font-size: 13px;
+        line-height: 140%;
+        // margin-top: 0;
+      }
+
+      &:hover {
+        background-size: auto 200%;
+      }
+      // width: 332px;
+      // height: 488px;
       &--image {
+        width: 332px;
+        height: 488px;
         margin: 8px;
         object-fit: contain;
-        height: 470px;
+        background-position: center;
+        box-sizing: none;
+        transition: 0.3s all;
+        cursor: pointer;
+        @include responsive(mobile) {
+          width: 240px;
+          height: 364px;
+          object-fit: cover;
+          margin: 8px;
+        }
+        &:hover {
+          max-width: 332px;
+          scale: 1.1;
+        }
+      }
+
+      .image-content {
+        display: none;
+      }
+
+      &:hover {
+        .image-content {
+          @include responsive(mobile) {
+            display: none;
+          }
+          position: absolute;
+          bottom: 100px;
+          left: 30px;
+          @include flex(row, center, flex-start);
+          color: $black;
+
+          &:hover {
+            color: $white;
+          }
+
+          img {
+            width: 11px;
+            margin-right: 10px;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
       }
     }
   }
@@ -27,15 +91,18 @@
     border: transparent;
     background-color: transparent;
     cursor: pointer;
+    @include responsive(mobile) {
+      display: none;
+    }
 
     &--left {
-      margin-right: 40px;
+      margin-right: 20px;
       width: 14px;
       height: 25px;
     }
 
     &--right {
-      margin-left: 40px;
+      margin-left: 20px;
       width: 14px;
       height: 25px;
     }

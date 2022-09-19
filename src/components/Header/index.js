@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import Search from 'components/Search';
 import bag from 'assets/images/bag.png';
 import logo from 'assets/images/logo.jpg';
-// import test from 'assets/images/test1.png';
 import search from 'assets/images/search.svg';
 import bagActive from 'assets/images/bag.svg';
 import navbar from 'assets/images/icons/navbar.svg';
@@ -78,13 +77,6 @@ function Header({ className }) {
           <img src={bagActive} alt='' className='header-cart__active' />
         </div>
       </div>
-      {/* <div className='test__image'>
-        <img src={test} alt='' />
-        <img src={test} alt='' />
-        <img src={test} alt='' />
-        <img src={test} alt='' />
-        <img src={test} alt='' />
-      </div> */}
     </div>
   );
 }

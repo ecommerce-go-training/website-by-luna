@@ -14,7 +14,7 @@
   }
 
   @include responsive(mobile) {
-    height: 290px;
+    height: 230px;
   }
 
   &__close {
@@ -36,7 +36,7 @@
 
   &__input {
     @include flex(column, flex-start, center);
-    width: 90%;
+    // width: 90%;
     input {
       width: 800px;
       border: transparent;
@@ -62,9 +62,9 @@
     }
 
     &--icon {
-      height: 10px;
-      margin-left: 10px;
-      margin-bottom: -24px;
+      height: 11px;
+      margin-left: 0px;
+      margin-bottom: -14px;
     }
   }
 
