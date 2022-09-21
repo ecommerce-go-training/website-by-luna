@@ -1,0 +1,90 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.brand__container {
+  width: 100%;
+  @include flex(row, flex-start, center);
+  padding-top: 100px;
+  @include responsive(mobile) {
+    padding: 0;
+  }
+
+  .grid__1--4 {
+    width: 25%;
+    p {
+      padding-left: 100px;
+      font-family: 'Sofia Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    span {
+      line-height: 30px;
+    }
+
+    @include responsive(mobile) {
+      display: none;
+    }
+  }
+
+  .grid__3--4 {
+    width: 75%;
+    @include responsive(mobile) {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+      object-position: 86%;
+    }
+
+    .brand__story {
+      @include flex(row, center, space-between);
+      padding-bottom: 50px;
+
+      @include responsive(mobile) {
+        @include flex(column, center, center);
+      }
+
+      &--title {
+        width: 35%;
+        font-family: 'Ogg';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 88%;
+        @include responsive(mobile) {
+          padding: 30px 0;
+          width: 90%;
+          font-size: 40px;
+          text-align: center;
+        }
+      }
+
+      &--content {
+        width: 50%;
+        padding: 70px 120px 0 20px;
+        font-weight: lighter;
+        font-family: 'Sofia Pro';
+        font-style: normal;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+
+        @include responsive(mobile) {
+          width: 90%;
+          padding: 0;
+          text-align: justify;
+        }
+
+        p {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+}

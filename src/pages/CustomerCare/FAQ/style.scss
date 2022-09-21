@@ -1,0 +1,47 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.faq__container {
+  width: 100%;
+  @include flex(row, center, flex-start);
+  padding-top: 100px;
+
+  .grid__1--4 {
+    width: 25%;
+    height: 100vh;
+
+    p {
+      padding-left: 100px;
+      font-family: 'Sofia Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+    }
+    .link__page {
+      text-decoration: none;
+      color: $black;
+
+      &:hover {
+        color: $gray-smoke;
+      }
+    }
+
+    .active {
+      text-decoration: underline;
+    }
+  }
+
+  .grid__3--4 {
+    width: 55%;
+    height: 100vh;
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: justify;
+    letter-spacing: 0.05em;
+  }
+}
