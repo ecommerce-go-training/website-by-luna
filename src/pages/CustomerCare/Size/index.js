@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from 'components/Header';
 import Announce from 'components/Announce';
+import classNames from 'classnames';
+import Collapse from 'components/Collapse';
+
 import body from 'assets/images/body.svg';
 
 import './style.scss';
@@ -20,32 +23,27 @@ function Size() {
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page active'>
+            <Link to='/size' className='link__page active'>
               sizing
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/ship' className='link__page '>
               shipping & returns
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/term' className='link__page '>
               term & conditions
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/policy' className='link__page '>
               privacy policy
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
-              privacy policy
-            </Link>
-          </p>
-          <p>
-            <Link to='/' className='link__page '>
+            <Link to='/garment' className='link__page '>
               garment care
             </Link>
           </p>
@@ -58,44 +56,41 @@ function Size() {
         <div className='grid__3--4'>
           <div className='size__content'>
             <h4>SIZE GUIDE</h4>
+            <p className='size__page'>
+              Home /<span> Size guide</span>
+            </p>
             <p>
               If your measurements are not consistent with a single column, use
               your waist measurement to determine your ideal size.
             </p>
             <div className='link__size'>
               <button
-                className={
-                  pageSize === 1
-                    ? 'link__size--table active'
-                    : 'link__size--table'
-                }
+                className={classNames('link__size--table', {
+                  active: pageSize === 1
+                })}
                 onClick={() => setPageSize(1)}
               >
                 Size conversation
               </button>
               <button
-                className={
-                  pageSize === 2
-                    ? 'link__size--table active'
-                    : 'link__size--table'
-                }
-                onClick={() => setPageSize(1)}
+                className={classNames('link__size--table', {
+                  active: pageSize === 2
+                })}
+                onClick={() => setPageSize(2)}
               >
                 Centimetres
               </button>
               <button
-                className={
-                  pageSize === 3
-                    ? 'link__size--table active'
-                    : 'link__size--table'
-                }
-                onClick={() => setPageSize(1)}
+                className={classNames('link__size--table', {
+                  active: pageSize === 3
+                })}
+                onClick={() => setPageSize(3)}
               >
                 Inches
               </button>
             </div>
             {pageSize == 1 && (
-              <table className='table__siz'>
+              <table className='table__size'>
                 <tr>
                   <td>our size</td>
                   <td>uk</td>
@@ -130,7 +125,7 @@ function Size() {
             )}
 
             {pageSize == 2 && (
-              <table className='table__siz'>
+              <table className='table__size'>
                 <tr>
                   <td></td>
                   <td>Size xs</td>
@@ -194,6 +189,60 @@ function Size() {
                 </tr>
               </table>
             )}
+            <div className='size__content--noti'>
+              <p>
+                <b>BUST</b>
+                <br />
+                Measure around the fullest part of your chest, keeping the tape
+                level to the floor
+              </p>
+              <p>
+                <b>WAIST</b>
+                <br />
+                Measure around your natural waistline (the smallest part of your
+                waist)
+              </p>
+              <p>
+                <b>HIPS</b>
+                <br />
+                Measure aroud the fullest part of your hips. Slim-hipped ladies
+                can take this measurement from 20cm/8in below the waistline
+              </p>
+            </div>
+            {/* <Collapse title='HAHA' className={'collapse-siz'}>
+              <p>
+                Registered Business: Pika meow <br />
+                Registered in Ho Chi Minh , Vietnam <br />
+                Registered Address: 19B Le Thi Rieng, District 1, HCMC, Vietnam
+                <br />
+                Registered Business Number: 41A8046023. <br />
+                Tax Registration Number: 8432006613
+              </p>
+            </Collapse> */}
+            <Collapse
+              title='ABOUT BUST, WAIST, HIPS'
+              className={'collapse-size'}
+            >
+              <img className='img-body' src={body} alt='' />
+              <p>
+                <b>BUST</b>
+                <br />
+                Measure around the fullest part of your chest, keeping the tape
+                level to the floor
+              </p>
+              <p>
+                <b>WAIST</b>
+                <br />
+                Measure around your natural waistline (the smallest part of your
+                waist)
+              </p>
+              <p>
+                <b>HIPS</b>
+                <br />
+                Measure aroud the fullest part of your hips. Slim-hipped ladies
+                can take this measurement from 20cm/8in below the waistline
+              </p>
+            </Collapse>
           </div>
           <div className='size__image'>
             <img src={body} alt='' />

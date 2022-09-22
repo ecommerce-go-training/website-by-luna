@@ -1,7 +1,7 @@
 @import 'assets/scss/mixins.scss';
 @import 'assets/scss/variable.scss';
 
-.size__container {
+.term__container {
   width: 100%;
   @include flex(row, flex-start, flex-start);
   padding-top: 130px;
@@ -49,37 +49,16 @@
     font-size: 13px;
     text-align: justify;
     letter-spacing: 0.05em;
-    @include flex(row, flex-start, center);
+    @include flex(row, flex-start, flex-start);
 
     @include responsive(mobile) {
       width: 90%;
     }
 
-    .size__content {
+    .term__content {
       width: 50%;
 
       @include responsive(mobile) {
-        width: 90%;
-      }
-
-      // .collapse-size {
-      //   display: none;
-      //   @include responsive(mobile) {
-      //     width: 100%;
-      //     display: none;
-      //     @include flex(row, center, flex-start);
-      //     .img-body {
-      //       width: 100%;
-      //       height: auto;
-      //       object-fit: contain;
-      //     }
-      //   }
-      // }
-
-      // .collapse-siz {
-      //   display: none;
-      // }
-      .collapse-size {
         display: none;
       }
 
@@ -87,9 +66,6 @@
         width: 70%;
         margin-bottom: 60px;
         text-transform: uppercase;
-        @include responsive(mobile) {
-          width: 90%;
-        }
 
         td {
           text-align: justify;
@@ -110,11 +86,6 @@
           font-weight: 400;
           letter-spacing: 0.15em;
           color: $gray-table;
-          font-size: 14px;
-        }
-
-        @include responsive(mobile) {
-          font-size: 12px;
         }
       }
 
@@ -128,22 +99,46 @@
       }
 
       &--noti {
-        display: block;
         @include responsive(mobile) {
           display: none;
         }
       }
     }
 
-    .size__image {
-      width: 50%;
+    .term__collapse {
+      display: none;
       @include responsive(mobile) {
-        display: none;
-      }
-      img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
+        display: block;
+        .term__page {
+          font-family: 'Sofia Pro';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 300%;
+          color: $gray-smoke;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          span {
+            color: $black;
+          }
+          display: none;
+          @include responsive(mobile) {
+            display: block;
+          }
+        }
+
+        h2 {
+          display: none;
+          @include responsive(mobile) {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-family: 'Sofia Pro';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 36px;
+          }
+        }
       }
     }
   }

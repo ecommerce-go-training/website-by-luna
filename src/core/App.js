@@ -8,6 +8,10 @@ import StoreHCM from 'pages/StoreHCM/index';
 import Brand from 'pages/Brand/index';
 import FAQ from 'pages/CustomerCare/FAQ/index';
 import Size from 'pages/CustomerCare/Size/index';
+import Shipping from 'pages/CustomerCare/Shipping/index';
+import Garment from 'pages/CustomerCare/GarmentCare/index';
+import Policy from 'pages/CustomerCare/Policy/index';
+import Term from 'pages/CustomerCare/TermCondition/index';
 
 import 'services/i18n';
 
@@ -24,6 +28,10 @@ function App() {
       <Route exact path='/brand' element={<Brand />} />
       <Route exact path='/faq' element={<FAQ />} />
       <Route exact path='/size' element={<Size />} />
+      <Route exact path='/garment' element={<Garment />} />
+      <Route exact path='/ship' element={<Shipping />} />
+      <Route exact path='/policy' element={<Policy />} />
+      <Route exact path='/term' element={<Term />} />
     </Routes>
   );
 }

@@ -1,9 +1,9 @@
 @import 'assets/scss/mixins.scss';
 @import 'assets/scss/variable.scss';
 
-.faq__container {
+.policy__container {
   width: 100%;
-  @include flex(row, flex-start, flex-start);
+  @include flex(row, center, flex-start);
   padding-top: 100px;
 
   @include responsive(mobile) {
@@ -12,7 +12,6 @@
 
   .grid__1--4 {
     width: 25%;
-
     @include responsive(mobile) {
       display: none;
     }
@@ -68,7 +67,7 @@
       }
     }
 
-    .faq__page {
+    .policy__page {
       font-family: 'Sofia Pro';
       font-style: normal;
       font-weight: 400;
@@ -86,7 +85,7 @@
       }
     }
 
-    .collapse-faq {
+    .collapse-policy {
       border-top: 0.25px dashed $gray-smoke;
     }
   }

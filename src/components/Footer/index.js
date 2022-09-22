@@ -101,22 +101,22 @@ function Footer() {
                 </Link>
               </p>
               <p>
-                <Link to='/' className='link__page'>
+                <Link to='/ship' className='link__page'>
                   shipping & returns
                 </Link>
               </p>
               <p>
-                <Link to='/' className='link__page'>
+                <Link to='/term' className='link__page'>
                   terms & conditions
                 </Link>
               </p>
               <p>
-                <Link to='/' className='link__page'>
+                <Link to='/policy' className='link__page'>
                   privacy policy
                 </Link>
               </p>
               <p>
-                <Link to='/' className='link__page'>
+                <Link to='/garment' className='link__page'>
                   garment care
                 </Link>
               </p>
@@ -130,32 +130,32 @@ function Footer() {
           <Collapse title='Customer care' className={'footer__collapse'}>
             <div className='footer__content--care'>
               <p>
-                <Link to='/' className='link__page'>
+                <Link to='/faq' className='link__page'>
                   Faq
                 </Link>
               </p>
               <p>
-                <Link to='/' className='link__page'>
+                <Link to='/size' className='link__page'>
                   sizing
                 </Link>
               </p>
               <p>
-                <Link to='/' className='link__page'>
+                <Link to='/ship' className='link__page'>
                   shipping & returns
                 </Link>
               </p>
               <p>
-                <Link to='/' className='link__page'>
+                <Link to='/term' className='link__page'>
                   terms & conditions
                 </Link>
               </p>
               <p>
-                <Link to='/' className='link__page'>
+                <Link to='/policy' className='link__page'>
                   privacy policy
                 </Link>
               </p>
               <p>
-                <Link to='/' className='link__page'>
+                <Link to='/garment' className='link__page'>
                   garment care
                 </Link>
               </p>
