@@ -18,19 +18,20 @@
     height: 100px;
     padding: 0 100px;
     position: fixed;
-    top: 0;
+    top: 30px;
     left: 0;
     right: 0;
     z-index: 2;
     @include flex(row, center, space-between);
 
     @include responsive(tablet) {
-      padding: 0 50px;
+      padding: 0 20px;
+      height: 80px;
     }
 
     @include responsive(mobile) {
       height: 70px;
-      padding: 0 5px;
+      padding: 0;
     }
 
     .logo-header {
@@ -39,7 +40,7 @@
         height: 50px;
       }
       @include responsive(mobile) {
-        height: 30px;
+        height: 35px;
       }
     }
 
@@ -59,9 +60,26 @@
       text-transform: uppercase;
       color: $white;
       @include responsive(tablet) {
-        margin: 8px;
+        margin: 5px;
         font-size: 11px;
       }
+      @include responsive(mobile) {
+        display: none;
+      }
+    }
+
+    &__navbar {
+      display: none;
+      @include responsive(mobile) {
+        display: flex;
+        height: 9px;
+        width: 30px;
+        margin-left: 10px;
+      }
+    }
+
+    &__navbar--active {
+      display: none;
       @include responsive(mobile) {
         display: none;
       }
@@ -71,18 +89,35 @@
       @include flex(row, center, space-between);
       .header-search {
         color: $white;
-        margin-right: 100px;
-        margin-left: 30px;
+        margin-right: 120px;
+        margin-left: 40px;
         cursor: pointer;
         @include responsive(tablet) {
           margin-right: 50px;
           margin-left: 30px;
+        }
+
+        @include responsive(mobile) {
+          margin-right: 0px;
+          margin-left: 0px;
+          height: 14px;
         }
       }
 
       .header-cart {
         margin-left: 40px;
         cursor: pointer;
+
+        @include responsive(tablet) {
+          margin-right: 50px;
+          margin-left: 30px;
+        }
+
+        @include responsive(mobile) {
+          margin-right: 10px;
+          margin-left: 20px;
+          height: 14px;
+        }
       }
 
       .header-cart__active {
@@ -95,9 +130,10 @@
     }
   }
 
-  .active {
+  .white {
     @include flex(row, center, space-between);
     background-color: $white;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 
     .link-to-page {
       color: $black;
@@ -107,6 +143,12 @@
       display: block;
       height: 60px;
       cursor: pointer;
+      @include responsive(tablet) {
+        height: 50px;
+      }
+      @include responsive(mobile) {
+        height: 35px;
+      }
     }
 
     .logo-header {
@@ -117,9 +159,19 @@
       @include flex(row, center, space-between);
       .header-search__active {
         display: block;
-        margin-right: 100px;
-        margin-left: 30px;
+        margin-right: 120px;
+        margin-left: 40px;
         cursor: pointer;
+        @include responsive(tablet) {
+          margin-right: 50px;
+          margin-left: 30px;
+        }
+
+        @include responsive(mobile) {
+          margin-right: 0px;
+          margin-left: 0px;
+          height: 14px;
+        }
       }
 
       .header-search {
@@ -130,10 +182,37 @@
         display: block;
         margin-left: 40px;
         cursor: pointer;
+        @include responsive(tablet) {
+          margin-right: 50px;
+          margin-left: 30px;
+        }
+
+        @include responsive(mobile) {
+          margin-right: 10px;
+          margin-left: 20px;
+          height: 14px;
+        }
       }
 
       .header-cart {
         display: none;
+      }
+    }
+
+    .header__navbar {
+      display: none;
+      @include responsive(mobile) {
+        display: none;
+      }
+    }
+
+    .header__navbar--active {
+      display: none;
+      @include responsive(mobile) {
+        display: flex;
+        height: 9px;
+        width: 30px;
+        margin-left: 10px;
       }
     }
   }

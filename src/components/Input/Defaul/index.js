@@ -30,7 +30,7 @@ function DefaultInput({
   };
 
   return (
-    <div>
+    <div className='input-com'>
       <input
         type={typeInput}
         placeholder={placeholder}
@@ -38,7 +38,11 @@ function DefaultInput({
         name={name}
         value={inputValue}
         onChange={onChange}
+        autoComplete='off'
       />
+      <label className='input__label' data-content='Email'>
+        <span>{placeholder}</span>
+      </label>
       <button
         style={{ display: type === 'password' ? 'block' : 'none' }}
         type='button'

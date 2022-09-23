@@ -1,0 +1,85 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.reset-password {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 180px;
+  margin-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Sofia Pro';
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  @include responsive(tablet) {
+    margin-top: 240px;
+  }
+
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  .please-fill-mail {
+    letter-spacing: 0.05em;
+    width: 36%;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    margin-bottom: 80px;
+    @include responsive(tablet) {
+      width: 80%;
+    }
+    @include responsive(mobile) {
+      width: 90%;
+    }
+  }
+
+  form {
+    width: 36%;
+    .default-button {
+      margin-top: 20px;
+      width: 60%;
+      @include responsive(mobile) {
+        width: 100%;
+      }
+    }
+    @include responsive(mobile) {
+      width: 90%;
+    }
+    @include responsive(tablet) {
+      width: 80%;
+    }
+
+    .notify-no-account {
+      display: none;
+      font-size: 15px;
+      letter-spacing: 0.05em;
+      color: $red-pink;
+      text-transform: none;
+      @include responsive(mobile) {
+        font-size: 11px;
+      }
+    }
+  }
+
+  .back-signin {
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    color: $black;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    @include responsive(mobile) {
+      font-size: 11px;
+    }
+  }
+}

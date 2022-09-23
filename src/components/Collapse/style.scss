@@ -4,8 +4,10 @@
 .collapse {
   display: flex;
   align-items: center;
+  margin-left: -20px;
 
   &__button {
+    margin-right: 10px;
     border: transparent;
     background-color: transparent;
     &--plus,

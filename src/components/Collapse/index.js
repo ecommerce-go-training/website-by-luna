@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import React, { useState, memo } from 'react';
 
 import plus from 'assets/images/plus.png';
@@ -6,14 +7,14 @@ import minus from 'assets/images/minus.svg';
 
 import './style.scss';
 
-function Collapse({ title, children }) {
+function Collapse({ title, children, className }) {
   const [open, setOPen] = useState(false);
   const handleOpening = () => {
     setOPen(prev => !prev);
   };
   return (
     <div>
-      <div className='collapse'>
+      <div className={classNames(['collapse', className])}>
         <button onClick={handleOpening} className='collapse__button'>
           {!open ? (
             <img src={plus} alt='extend' className='collapse__button--plus' />
@@ -36,7 +37,8 @@ function Collapse({ title, children }) {
 
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.array.isRequired
+  children: PropTypes.array.isRequired,
+  className: PropTypes.array.isRequired
 };
 
 export default memo(Collapse);

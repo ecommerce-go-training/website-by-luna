@@ -2,6 +2,7 @@ import React from 'react';
 
 import './style.scss';
 
+import Collapse from 'components/Collapse';
 import notified from 'assets/images/notified.png';
 import mail from 'assets/images/icons/mail.svg';
 import phone from 'assets/images/icons/phone.svg';
@@ -15,42 +16,83 @@ function Footer() {
     <div className='footer'>
       <div className='footer__content'>
         <div className='footer__content--socials'>
-          <p className='footer__title'>follow us</p>
-          <div className='footer__content--social'>
-            <img src={facebook} alt='facebook social' className='facebook' />
-            <p>facebook</p>
+          <div className='footer-desk'>
+            <p className='footer__title'>follow us</p>
+            <div className='footer__content--social'>
+              <img src={facebook} alt='facebook social' className='facebook' />
+              <p>facebook</p>
+            </div>
+            <div className='footer__content--social'>
+              <img src={instagram} alt='instagram social' />
+              <p>instagram</p>
+            </div>
+            <div className='footer__content--social'>
+              <img src={pinterest} alt='pinterest social' />
+              <p>pinterest</p>
+            </div>
+            <div className='footer__content--social'>
+              <img src={tiktok} alt='tiktok social' />
+              <p>tiktok</p>
+            </div>
           </div>
-          <div className='footer__content--social'>
-            <img src={instagram} alt='instagram social' />
-            <p>instagram</p>
-          </div>
-          <div className='footer__content--social'>
-            <img src={pinterest} alt='pinterest social' />
-            <p>pinterest</p>
-          </div>
-          <div className='footer__content--social'>
-            <img src={tiktok} alt='tiktok social' />
-            <p>tiktok</p>
-          </div>
+          <Collapse title='follow us' className={'footer__collapse'}>
+            <div className='footer__content--social'>
+              <img src={facebook} alt='facebook social' className='facebook' />
+              <p>facebook</p>
+            </div>
+            <div className='footer__content--social'>
+              <img src={instagram} alt='instagram social' />
+              <p>instagram</p>
+            </div>
+            <div className='footer__content--social'>
+              <img src={pinterest} alt='pinterest social' />
+              <p>pinterest</p>
+            </div>
+            <div className='footer__content--social'>
+              <img src={tiktok} alt='tiktok social' />
+              <p>tiktok</p>
+            </div>
+          </Collapse>
         </div>
         <div className='footer__content--abouts'>
-          <p className='footer__title'>About</p>
-          <div className='footer__content--about'>
-            <p>brand</p>
-            <p>store locator</p>
+          <div className='footer-desk'>
+            <p className='footer__title'>About</p>
+            <div className='footer__content--about'>
+              <p>brand</p>
+              <p>store locator</p>
+            </div>
           </div>
+          <Collapse title='About' className={'footer__collapse'}>
+            <div className='footer__content--about'>
+              <p>brand</p>
+              <p>store locator</p>
+            </div>
+          </Collapse>
         </div>
         <div className='footer__content--cares'>
-          <p className='footer__title'>Customer care</p>
-          <div className='footer__content--care'>
-            <p>Faq</p>
-            <p>sizing</p>
-            <p>shipping & returns</p>
-            <p>terms & conditions</p>
-            <p>privacy policy</p>
-            <p>garment care</p>
-            <p>make a return</p>
+          <div className='footer-desk'>
+            <p className='footer__title'>Customer care</p>
+            <div className='footer__content--care'>
+              <p>Faq</p>
+              <p>sizing</p>
+              <p>shipping & returns</p>
+              <p>terms & conditions</p>
+              <p>privacy policy</p>
+              <p>garment care</p>
+              <p>make a return</p>
+            </div>
           </div>
+          <Collapse title='Customer care' className={'footer__collapse'}>
+            <div className='footer__content--care'>
+              <p>Faq</p>
+              <p>sizing</p>
+              <p>shipping & returns</p>
+              <p>terms & conditions</p>
+              <p>privacy policy</p>
+              <p>garment care</p>
+              <p>make a return</p>
+            </div>
+          </Collapse>
         </div>
         <div className='footer__content--contact'>
           <p className='footer__title'>Contact us</p>
@@ -62,14 +104,14 @@ function Footer() {
             <img src={mail} alt='phone icon' className='' />
             <p>
               customer service
-              <p>CONTACT@PIKAMEOW.COM</p>
+              <p>CONTACT@PIKA.COM</p>
             </p>
             <p>
-              whosesales & pressed
-              <p>TEAM@PIKAMEOW.COM</p>
+              whosesales & press
+              <p>TEAM@PIKA.COM</p>
             </p>
           </div>
-          <img src={notified} alt='notified' />
+          <img src={notified} alt='notified' className='notified' />
         </div>
       </div>
       <div className='footer__publish'>

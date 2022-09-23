@@ -1,0 +1,211 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.home-container {
+  width: 100%;
+  position: relative;
+  @include flex(column, center, center);
+
+  img {
+    width: 100%;
+    @include responsive(mobile) {
+      width: 100%;
+      height: 75vh;
+      object-fit: cover;
+    }
+  }
+
+  .introduce-infor {
+    margin-top: -250px;
+    width: 32%;
+    text-align: center;
+    color: $white;
+    letter-spacing: 0.15em;
+
+    @include responsive(mobile) {
+      width: 80%;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 40px;
+      @include responsive(mobile) {
+        display: none;
+      }
+    }
+
+    h4 {
+      display: none;
+      @include responsive(mobile) {
+        display: block;
+        font-weight: 500;
+        font-size: 20px;
+        margin-top: 20vh;
+        margin-bottom: 10px;
+      }
+    }
+
+    .introduce {
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      @include responsive(mobile) {
+        display: none;
+      }
+    }
+
+    .invite-collection {
+      font-family: 'Sofia Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      color: $white;
+      text-transform: uppercase;
+      @include responsive(mobile) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .introduce-mobile {
+    display: none;
+    @include responsive(mobile) {
+      display: block;
+      margin-top: 10vh;
+      font-family: 'Sofia Pro';
+      width: 90%;
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      color: $black;
+    }
+  }
+
+  .grid {
+    width: 100%;
+    text-align: center;
+    margin-top: 90px;
+    @include flex(column, center, center);
+
+    &__4--2 {
+      width: 34%;
+      margin-bottom: 50px;
+      @include flex(row, space-between, space-between);
+      @include responsive(mobile) {
+        width: 80%;
+      }
+      .type-item {
+        font-family: 'Sofia Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: $gray-smoke;
+        text-decoration: none;
+        text-transform: uppercase;
+        @include responsive(mobile) {
+          font-size: 12px;
+          letter-spacing: 0.15em;
+        }
+      }
+
+      .active {
+        color: $black;
+        text-decoration: underline;
+      }
+    }
+  }
+  .image-home {
+    width: 100%;
+    margin-top: 20px;
+    @include flex(row, space-between, space-between);
+    @include responsive(mobile) {
+      display: none;
+    }
+    img {
+      width: 50%;
+      object-fit: contain;
+    }
+  }
+
+  .link__the-beach {
+    color: $black;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+
+  .follow-us {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    font-weight: 500;
+    @include responsive(mobile) {
+      display: none;
+    }
+    .link__follow-us {
+      text-decoration: none;
+      margin-top: 100px;
+      color: $black;
+    }
+  }
+
+  .grid__full {
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+    @include responsive(mobile) {
+      display: none;
+    }
+    .image__footer {
+      width: 20%;
+      height: 320px;
+      object-position: center;
+      object-fit: cover;
+      transition: 0.3s all;
+      &:hover {
+        object-position: center;
+        width: 20%;
+        max-height: 320px;
+        scale: 1.1;
+      }
+    }
+  }
+
+  .grid__mobile {
+    display: none;
+    @include responsive(mobile) {
+      display: block;
+      width: 90%;
+    }
+
+    &--image {
+      margin-top: 30px;
+    }
+  }
+
+  .signup-for-update {
+    margin-top: 50px;
+    font-family: 'SofiaPro-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    width: 30%;
+    @include responsive(mobile) {
+      width: 90%;
+    }
+    h5 {
+      font-size: 20px;
+      letter-spacing: 0.1em;
+    }
+
+    p {
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      line-height: 150%;
+    }
+
+    .button-signup {
+      width: 70%;
+      margin-top: 20px;
+    }
+  }
+}
