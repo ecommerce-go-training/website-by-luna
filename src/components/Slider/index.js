@@ -76,32 +76,34 @@ import './style.scss';
 
 function Slider({ data }) {
   // data = dataSlider;
-  const slide = useRef(null);
+  const slideitem = useRef(null);
 
   const nextSlide = e => {
     e.preventDefault();
-    let temp = slide.current.scrollLeft;
-    slide.current.scrollLeft += slide.current.offsetWidth;
-    if (slide.current.scrollLeft === temp && temp > 0) {
-      slide.current.scrollLeft = 0;
+    let temp = slideitem.current.scrollLeft;
+    slideitem.current.scrollLeft += slideitem.current.offsetWidth;
+    if (slideitem.current.scrollLeft === temp && temp > 0) {
+      slideitem.current.scrollLeft = 0;
     }
   };
 
   const prevSlide = e => {
     e.preventDefault();
 
-    slide.current.scrollLeft -= slide.current.offsetWidth;
+    slideitem.current.scrollLeft -= slideitem.current.offsetWidth;
   };
   return (
-    <div className='Slider-container'>
-      <button className='Slider__button' onClick={prevSlide}>
-        <img src={left} alt='arrow left' className='Slider__button--left' />
+    <div className='slider-container'>
+      <button className='slider__button' onClick={prevSlide}>
+        <img src={left} alt='arrow left' className='slider__button--left' />
       </button>
-      <div className='Slider' ref={slide}>
+      <div className='slider' ref={slideitem}>
         {data.map((obj, index) => {
           return (
-            <div key={index} className='Slider__item'>
-              <img src={obj.image} className='Slider__item--image' />
+            <div key={index} className='slider__items'>
+              <div className='slider__items--item'>
+                <img src={obj.image} className='slider__item--image' />
+              </div>
               <div className='image-content'>
                 <img src={plus} alt='icon plus' className='icon__view-detail' />
                 <p>XEM CHI TIẾT</p>
@@ -112,8 +114,8 @@ function Slider({ data }) {
           );
         })}
       </div>
-      <button className='Slider__button' onClick={nextSlide}>
-        <img src={right} alt='arrow right' className='Slider__button--right' />
+      <button className='slider__button' onClick={nextSlide}>
+        <img src={right} alt='arrow right' className='slider__button--right' />
       </button>
     </div>
   );

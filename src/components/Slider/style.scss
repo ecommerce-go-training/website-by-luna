@@ -1,11 +1,11 @@
 @import 'assets/scss/mixins.scss';
 @import 'assets/scss/variable.scss';
 
-.Slider-container {
+.slider-container {
   width: 100%;
   @include flex(row, center, center);
 
-  .Slider {
+  .slider {
     width: 92%;
     @include flex(row, center, center);
     overflow-x: scroll;
@@ -19,40 +19,36 @@
       display: none;
     }
 
-    &__item {
+    &__items {
       position: relative;
-      flex: 1;
       text-align: left;
       p {
-        margin-left: 10px;
         font-size: 13px;
         line-height: 140%;
-        // margin-top: 0;
+        margin-top: 20px;
       }
 
-      &:hover {
-        background-size: auto 200%;
-      }
-      // width: 332px;
-      // height: 488px;
-      &--image {
-        width: 332px;
-        height: 488px;
-        margin: 8px;
-        object-fit: contain;
-        background-position: center;
-        box-sizing: none;
-        transition: 0.3s all;
-        cursor: pointer;
-        @include responsive(mobile) {
-          width: 240px;
-          height: 364px;
-          object-fit: cover;
-          margin: 8px;
-        }
-        &:hover {
-          max-width: 332px;
-          scale: 1.1;
+      margin: 8px;
+
+      &--item {
+        overflow: hidden;
+        width: 337px;
+        height: 510px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          background-position: center;
+          box-sizing: none;
+          transition: all 0.3s;
+          cursor: pointer;
+          @include responsive(mobile) {
+            object-fit: cover;
+            margin: 8px;
+          }
+          &:hover {
+            scale: 1.15;
+          }
         }
       }
 
@@ -66,7 +62,7 @@
             display: none;
           }
           position: absolute;
-          bottom: 100px;
+          bottom: 110px;
           left: 30px;
           @include flex(row, center, flex-start);
           color: $black;
@@ -77,6 +73,7 @@
 
           img {
             width: 11px;
+            margin-top: 8px;
             margin-right: 10px;
           }
           p {
@@ -87,7 +84,7 @@
     }
   }
 
-  .Slider__button {
+  .slider__button {
     border: transparent;
     background-color: transparent;
     cursor: pointer;

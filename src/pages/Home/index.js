@@ -205,11 +205,21 @@ function ChangeSuccess() {
             </Link>
           </p>
           <div className='grid__full'>
-            <img src={img1} alt='' className='image__footer' />
-            <img src={img2} alt='' className='image__footer' />
-            <img src={img3} alt='' className='image__footer' />
-            <img src={img4} alt='' className='image__footer' />
-            <img src={img5} alt='' className='image__footer' />
+            <div className='grid__full--item'>
+              <img src={img1} alt='' className='image__footer' />
+            </div>
+            <div className='grid__full--item'>
+              <img src={img2} alt='' className='image__footer' />
+            </div>
+            <div className='grid__full--item'>
+              <img src={img3} alt='' className='image__footer' />
+            </div>
+            <div className='grid__full--item'>
+              <img src={img4} alt='' className='image__footer' />
+            </div>
+            <div className='grid__full--item'>
+              <img src={img5} alt='' className='image__footer' />
+            </div>
           </div>
           <div className='signup-for-update'>
             <h4>SIGN UP FOR UPDATE</h4>
