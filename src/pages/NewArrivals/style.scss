@@ -1,0 +1,87 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.arrivals-container {
+  width: 100%;
+  @include flex(row, flex-start, space-between);
+  margin-top: 140px;
+
+  .grid__4--1 {
+    width: 25%;
+
+    .title {
+      color: $gray-smoke;
+      margin-bottom: 30px;
+    }
+
+    .categories-item {
+      margin-bottom: 50px;
+    }
+
+    p {
+      padding-left: 80px;
+      font-family: 'Sofia Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+    }
+    .link__page {
+      text-decoration: none;
+      color: $black;
+
+      &:hover {
+        color: $gray-smoke;
+      }
+    }
+
+    .active {
+      text-decoration: underline;
+    }
+
+    .filter {
+      @include flex(row, flex-start, flex-start);
+
+      &__item {
+        width: 100%;
+
+        .filter__item--color {
+          width: 94%;
+          display: flex;
+          justify-content: space-between;
+          .item__color {
+            width: 44%;
+            display: flex;
+            span {
+              line-height: 30px;
+              cursor: pointer;
+              padding-left: 10px;
+              font-size: 12px;
+            }
+          }
+        }
+
+        .collapse-filter {
+          padding-left: 30px;
+          margin-top: -15px;
+
+          p {
+            padding-left: 0;
+            padding-top: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .grid__4--3 {
+    width: 75%;
+    padding-right: 80px;
+
+    .grid__image {
+      @include flex(row, flex-start, space-between);
+    }
+  }
+}

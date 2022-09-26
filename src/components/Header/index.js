@@ -43,13 +43,13 @@ function Header({ className }) {
           className='header__navbar--active'
         />
         <div className='navigate-page'>
-          <Link to='/' className='link-to-page'>
+          <Link to='/arrivals' className='link-to-page'>
             NEW ARRIVALS
           </Link>
           <Link to='/' className='link-to-page'>
             SHOP
           </Link>
-          <Link to='/' className='link-to-page'>
+          <Link to='/winter' className='link-to-page'>
             FALL WINTER
           </Link>
         </div>

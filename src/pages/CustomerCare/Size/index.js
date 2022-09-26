@@ -209,16 +209,6 @@ function Size() {
                 can take this measurement from 20cm/8in below the waistline
               </p>
             </div>
-            {/* <Collapse title='HAHA' className={'collapse-siz'}>
-              <p>
-                Registered Business: Pika meow <br />
-                Registered in Ho Chi Minh , Vietnam <br />
-                Registered Address: 19B Le Thi Rieng, District 1, HCMC, Vietnam
-                <br />
-                Registered Business Number: 41A8046023. <br />
-                Tax Registration Number: 8432006613
-              </p>
-            </Collapse> */}
             <Collapse
               title='ABOUT BUST, WAIST, HIPS'
               className={'collapse-size'}

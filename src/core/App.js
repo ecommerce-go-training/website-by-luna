@@ -3,6 +3,8 @@ import React from 'react';
 import Signin from 'pages/SignIn/index';
 import Form from 'pages/Form/index';
 import Home from 'pages/Home/index';
+import Winter from 'pages/FallWinter/index';
+import Arrivals from 'pages/NewArrivals/index';
 import Store from 'pages/StoreStock/index';
 import StoreHCM from 'pages/StoreHCM/index';
 import Brand from 'pages/Brand/index';
@@ -32,6 +34,8 @@ function App() {
       <Route exact path='/ship' element={<Shipping />} />
       <Route exact path='/policy' element={<Policy />} />
       <Route exact path='/term' element={<Term />} />
+      <Route exact path='/winter' element={<Winter />} />
+      <Route exact path='/arrivals' element={<Arrivals />} />
     </Routes>
   );
 }
