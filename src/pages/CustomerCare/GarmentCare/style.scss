@@ -1,0 +1,104 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.garment__container {
+  width: 100%;
+  @include flex(row, flex-start, flex-start);
+  padding-top: 100px;
+  @include responsive(mobile) {
+    @include flex(row, center, center);
+  }
+
+  .grid__1--4 {
+    width: 25%;
+    @include responsive(mobile) {
+      display: none;
+      padding-top: 50px;
+    }
+
+    p {
+      padding-left: 100px;
+      font-family: 'Sofia Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+    }
+    .link__page {
+      text-decoration: none;
+      color: $black;
+
+      &:hover {
+        color: $gray-smoke;
+      }
+    }
+
+    .active {
+      text-decoration: underline;
+    }
+  }
+
+  .grid__3--4 {
+    width: 60%;
+    height: 100vh;
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: justify;
+    letter-spacing: 0.05em;
+
+    @include responsive(mobile) {
+      width: 90%;
+    }
+
+    .garment__content {
+      h2 {
+        display: none;
+        @include responsive(mobile) {
+          display: block;
+          width: 100%;
+          text-align: center;
+          font-family: 'Sofia Pro';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 36px;
+        }
+      }
+
+      .garment__page {
+        font-family: 'Sofia Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 300%;
+        color: $gray-smoke;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        span {
+          color: $black;
+        }
+        display: none;
+        @include responsive(mobile) {
+          display: block;
+        }
+      }
+
+      .content {
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
+
+      .collapse-garment {
+        display: none;
+        @include responsive(mobile) {
+          display: block;
+          @include flex(row, center, flex-start);
+        }
+      }
+    }
+  }
+}

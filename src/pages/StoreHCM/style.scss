@@ -1,0 +1,103 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.storehcm__container {
+  width: 100%;
+  @include flex(row, center, center);
+  padding-top: 100px;
+
+  .grid__1--4 {
+    width: 25%;
+    height: 100vh;
+    p {
+      &:first-child {
+        padding-bottom: 30px;
+      }
+      padding-left: 100px;
+      font-family: 'Sofia Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+    }
+    .link__page {
+      text-decoration: none;
+      color: $black;
+
+      &:hover {
+        color: $gray-smoke;
+      }
+    }
+
+    .active {
+      text-decoration: underline;
+    }
+  }
+
+  .grid__3--4 {
+    width: 75%;
+    height: 100vh;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .storehcm__address {
+      @include flex(row, flex-start, space-between);
+      padding-bottom: 50px;
+
+      &--item {
+        width: 40%;
+        font-family: 'Sofia Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        letter-spacing: 0.15em;
+        h4 {
+          font-size: 12px;
+        }
+
+        p {
+          padding-top: 10px;
+        }
+
+        a {
+          text-decoration: none;
+          color: $black;
+        }
+
+        .phone {
+          padding-top: 0;
+        }
+      }
+
+      &--map {
+        width: 52%;
+        padding: 0 30px;
+        font-family: 'Sofia Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+
+        p {
+          padding-bottom: 30px;
+        }
+
+        .link__page--map {
+          color: $black;
+          text-transform: uppercase;
+
+          &:hover {
+            color: $gray-smoke;
+          }
+        }
+      }
+    }
+  }
+}

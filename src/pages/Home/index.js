@@ -154,7 +154,7 @@ const dataSlider2 = [
   }
 ];
 
-function ChangeSuccess() {
+function Home() {
   return (
     <div>
       <Announce />
@@ -236,4 +236,4 @@ function ChangeSuccess() {
   );
 }
 
-export default ChangeSuccess;
+export default Home;

@@ -1,0 +1,145 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.size__container {
+  width: 100%;
+  @include flex(row, flex-start, flex-start);
+  padding-top: 130px;
+
+  @include responsive(mobile) {
+    @include flex(row, center, center);
+  }
+
+  .grid__1--4 {
+    width: 25%;
+    @include responsive(mobile) {
+      display: none;
+    }
+
+    p {
+      padding-left: 100px;
+      font-family: 'Sofia Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+    }
+    .link__page {
+      text-decoration: none;
+      color: $black;
+
+      &:hover {
+        color: $gray-smoke;
+      }
+    }
+
+    .active {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+
+  .grid__3--4 {
+    width: 70%;
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: justify;
+    letter-spacing: 0.05em;
+    @include flex(row, flex-start, center);
+
+    @include responsive(mobile) {
+      width: 90%;
+    }
+
+    .size__content {
+      width: 50%;
+
+      @include responsive(mobile) {
+        width: 90%;
+      }
+
+      .collapse-size {
+        display: none;
+        @include responsive(mobile) {
+          @include flex(row, center, flex-start);
+          width: 100%;
+
+          p {
+            margin-top: 6px;
+          }
+        }
+      }
+
+      .img-body {
+        width: 100%;
+      }
+
+      .table__size {
+        width: 70%;
+        margin-bottom: 60px;
+        text-transform: uppercase;
+        @include responsive(mobile) {
+          width: 90%;
+        }
+
+        td {
+          text-align: justify;
+          height: 36px;
+          border-bottom: 1px solid $gray-table;
+        }
+      }
+
+      .link__size {
+        margin: 30px 0;
+        &--table {
+          cursor: pointer;
+          border: none;
+          background-color: transparent;
+          text-transform: uppercase;
+          font-family: 'Sofia Pro';
+          font-style: normal;
+          font-weight: 400;
+          letter-spacing: 0.15em;
+          color: $gray-table;
+          font-size: 14px;
+        }
+
+        @include responsive(mobile) {
+          font-size: 12px;
+        }
+      }
+
+      .active {
+        color: $black;
+        text-decoration: underline;
+      }
+
+      p {
+        padding-top: 10px;
+      }
+
+      &--noti {
+        display: block;
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
+    }
+
+    .size__image {
+      width: 50%;
+      @include responsive(mobile) {
+        display: none;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}

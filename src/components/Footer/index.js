@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './style.scss';
 
@@ -58,14 +59,30 @@ function Footer() {
           <div className='footer-desk'>
             <p className='footer__title'>About</p>
             <div className='footer__content--about'>
-              <p>brand</p>
-              <p>store locator</p>
+              <p>
+                <Link to='/brand' className='link__page'>
+                  brand
+                </Link>
+              </p>
+              <p>
+                <Link to='/store' className='link__page'>
+                  store locator
+                </Link>
+              </p>
             </div>
           </div>
           <Collapse title='About' className={'footer__collapse'}>
             <div className='footer__content--about'>
-              <p>brand</p>
-              <p>store locator</p>
+              <p>
+                <Link to='/brand' className='link__page'>
+                  brand
+                </Link>
+              </p>
+              <p>
+                <Link to='/store' className='link__page'>
+                  store locator
+                </Link>
+              </p>
             </div>
           </Collapse>
         </div>
@@ -73,24 +90,80 @@ function Footer() {
           <div className='footer-desk'>
             <p className='footer__title'>Customer care</p>
             <div className='footer__content--care'>
-              <p>Faq</p>
-              <p>sizing</p>
-              <p>shipping & returns</p>
-              <p>terms & conditions</p>
-              <p>privacy policy</p>
-              <p>garment care</p>
-              <p>make a return</p>
+              <p>
+                <Link to='/faq' className='link__page'>
+                  Faq
+                </Link>
+              </p>
+              <p>
+                <Link to='/size' className='link__page'>
+                  sizing
+                </Link>
+              </p>
+              <p>
+                <Link to='/ship' className='link__page'>
+                  shipping & returns
+                </Link>
+              </p>
+              <p>
+                <Link to='/term' className='link__page'>
+                  terms & conditions
+                </Link>
+              </p>
+              <p>
+                <Link to='/policy' className='link__page'>
+                  privacy policy
+                </Link>
+              </p>
+              <p>
+                <Link to='/garment' className='link__page'>
+                  garment care
+                </Link>
+              </p>
+              <p>
+                <Link to='/' className='link__page'>
+                  make a return
+                </Link>
+              </p>
             </div>
           </div>
           <Collapse title='Customer care' className={'footer__collapse'}>
             <div className='footer__content--care'>
-              <p>Faq</p>
-              <p>sizing</p>
-              <p>shipping & returns</p>
-              <p>terms & conditions</p>
-              <p>privacy policy</p>
-              <p>garment care</p>
-              <p>make a return</p>
+              <p>
+                <Link to='/faq' className='link__page'>
+                  Faq
+                </Link>
+              </p>
+              <p>
+                <Link to='/size' className='link__page'>
+                  sizing
+                </Link>
+              </p>
+              <p>
+                <Link to='/ship' className='link__page'>
+                  shipping & returns
+                </Link>
+              </p>
+              <p>
+                <Link to='/term' className='link__page'>
+                  terms & conditions
+                </Link>
+              </p>
+              <p>
+                <Link to='/policy' className='link__page'>
+                  privacy policy
+                </Link>
+              </p>
+              <p>
+                <Link to='/garment' className='link__page'>
+                  garment care
+                </Link>
+              </p>
+              <p>
+                <Link to='/' className='link__page'>
+                  make a return
+                </Link>
+              </p>
             </div>
           </Collapse>
         </div>

@@ -3,6 +3,17 @@ import React from 'react';
 import Signin from 'pages/SignIn/index';
 import Form from 'pages/Form/index';
 import Home from 'pages/Home/index';
+import Winter from 'pages/FallWinter/index';
+import Arrivals from 'pages/NewArrivals/index';
+import Store from 'pages/StoreStock/index';
+import StoreHCM from 'pages/StoreHCM/index';
+import Brand from 'pages/Brand/index';
+import FAQ from 'pages/CustomerCare/FAQ/index';
+import Size from 'pages/CustomerCare/Size/index';
+import Shipping from 'pages/CustomerCare/Shipping/index';
+import Garment from 'pages/CustomerCare/GarmentCare/index';
+import Policy from 'pages/CustomerCare/Policy/index';
+import Term from 'pages/CustomerCare/TermCondition/index';
 
 import 'services/i18n';
 
@@ -14,6 +25,17 @@ function App() {
       <Route exact path='/signin' element={<Signin />} />
       <Route exact path='/form' element={<Form />} />
       <Route exact path='/' element={<Home />} />
+      <Route exact path='/store' element={<Store />} />
+      <Route exact path='/storehcm' element={<StoreHCM />} />
+      <Route exact path='/brand' element={<Brand />} />
+      <Route exact path='/faq' element={<FAQ />} />
+      <Route exact path='/size' element={<Size />} />
+      <Route exact path='/garment' element={<Garment />} />
+      <Route exact path='/ship' element={<Shipping />} />
+      <Route exact path='/policy' element={<Policy />} />
+      <Route exact path='/term' element={<Term />} />
+      <Route exact path='/winter' element={<Winter />} />
+      <Route exact path='/arrivals' element={<Arrivals />} />
     </Routes>
   );
 }

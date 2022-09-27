@@ -1,0 +1,203 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.shipping__container {
+  width: 100%;
+  @include flex(row, flex-start, flex-start);
+  padding-top: 100px;
+  @include responsive(mobile) {
+    @include flex(row, center, center);
+  }
+
+  .grid__1--4 {
+    width: 25%;
+    @include responsive(mobile) {
+      display: none;
+      padding-top: 50px;
+    }
+
+    p {
+      padding-left: 100px;
+      font-family: 'Sofia Pro';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+    }
+    .link__page {
+      text-decoration: none;
+      color: $black;
+
+      &:hover {
+        color: $gray-smoke;
+      }
+    }
+
+    .active {
+      text-decoration: underline;
+    }
+  }
+
+  .grid__3--4 {
+    width: 60%;
+    height: 100vh;
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: justify;
+    letter-spacing: 0.05em;
+
+    @include responsive(mobile) {
+      width: 90%;
+    }
+
+    .shipping__content {
+      h2 {
+        font-family: 'Sofia Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        @include responsive(mobile) {
+          text-align: center;
+          display: block;
+          width: 100%;
+          font-size: 36px;
+        }
+      }
+
+      .return {
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
+
+      .shipping__page {
+        font-family: 'Sofia Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 300%;
+        color: $gray-smoke;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        span {
+          color: $black;
+        }
+        display: none;
+        @include responsive(mobile) {
+          display: block;
+        }
+      }
+
+      .content {
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
+
+      .collapse-garment {
+        display: none;
+        @include responsive(mobile) {
+          display: block;
+          @include flex(row, center, flex-start);
+        }
+      }
+      .table__size {
+        width: 90%;
+        margin-bottom: 60px;
+        text-transform: uppercase;
+        font-size: 16px;
+        @include responsive(mobile) {
+          display: none;
+        }
+        tr {
+          &:nth-child(2) {
+            box-shadow: 0px 1px 0px 0 rgba(0, 0, 0, 0.1);
+          }
+        }
+
+        td {
+          text-align: justify;
+          height: 60px;
+        }
+        .type-ship {
+          p {
+            font-size: 14px;
+            background-color: $gray-table;
+            border-radius: 8px;
+            text-align: center;
+            height: 26px;
+            width: 210px;
+            padding-top: 5px;
+          }
+        }
+      }
+
+      .table__mobile {
+        display: none;
+        @include responsive(mobile) {
+          display: block;
+          width: 100%;
+          text-transform: uppercase;
+          font-size: 16px;
+          color: $black;
+
+          table {
+            &:first-child {
+              padding: 10px;
+              height: 110px;
+            }
+
+            padding: 10px;
+            height: 140px;
+
+            border-top: 5px solid $white;
+            border-bottom: 5px solid $white;
+            width: 100%;
+            border-radius: 4px;
+            background-color: #f5f5f5;
+
+            tr {
+              td {
+                &:first-child {
+                  color: #667380;
+                }
+              }
+            }
+          }
+
+          &--title {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            &::after {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              content: '';
+              display: block;
+              width: 50px;
+              height: 1px;
+              background-color: $black;
+            }
+            &::before {
+              position: absolute;
+              top: 50%;
+              right: 0;
+              content: '';
+              display: block;
+              width: 50px;
+              height: 1px;
+              background-color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

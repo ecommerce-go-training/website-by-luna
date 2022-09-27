@@ -1,0 +1,373 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.season-container {
+  width: 100%;
+  position: relative;
+  @include flex(column, center, center);
+
+  .season-header {
+    position: relative;
+    .background {
+      width: 100%;
+      @include responsive(mobile) {
+        display: none;
+      }
+    }
+
+    .background-mobile {
+      display: none;
+      @include responsive(mobile) {
+        display: block;
+        width: 100%;
+        height: 75%;
+        object-fit: contain;
+      }
+    }
+
+    .introduce-infor {
+      position: absolute;
+      top: 46%;
+      right: 16%;
+      width: 30%;
+      text-align: center;
+      color: $white;
+      letter-spacing: 0.15em;
+
+      @include responsive(mobile) {
+        top: 56%;
+        width: 100%;
+        @include flex(column, center, center);
+        right: 0;
+      }
+
+      h3 {
+        font-weight: 500;
+        font-size: 40px;
+        margin: 0;
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
+
+      .p-mobile,
+      h4 {
+        display: none;
+        @include responsive(mobile) {
+          display: block;
+        }
+      }
+
+      .p-desktop {
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
+
+      .introduce {
+        font-weight: 400;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        margin-bottom: 40px;
+      }
+
+      .invite-discover {
+        font-family: 'Sofia Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: $black;
+        text-decoration: none;
+        padding: 18px 60px;
+        background-color: $white;
+        text-transform: uppercase;
+        @include responsive(mobile) {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .introduce-mobile {
+    display: none;
+    @include responsive(mobile) {
+      display: block;
+      margin-top: 10vh;
+      font-family: 'Sofia Pro';
+      width: 90%;
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      color: $black;
+    }
+  }
+
+  .grid {
+    width: 100%;
+    text-align: center;
+    // margin-top: 90px;
+    @include flex(column, center, center);
+
+    &__4--2 {
+      width: 34%;
+      margin-bottom: 50px;
+      @include flex(row, space-between, space-between);
+      @include responsive(mobile) {
+        width: 80%;
+      }
+
+      .active {
+        color: $black;
+        text-decoration: underline;
+      }
+    }
+    &__full {
+      width: 100%;
+      margin-top: -4px;
+      @include flex(row, space-between, flex-start);
+      @include responsive(mobile) {
+        @include flex(column, space-between, flex-start);
+      }
+
+      &--2 {
+        width: 50%;
+        @include flex(column, space-between, flex-start);
+        @include responsive(mobile) {
+          width: 100%;
+        }
+
+        .grid__full--content {
+          height: 200px;
+          width: 100%;
+          background-color: $white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @include responsive(mobile) {
+            height: 120px;
+            width: 100%;
+          }
+
+          p {
+            width: 70%;
+            font-family: 'Sofia Pro';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: center;
+            letter-spacing: 0.05em;
+          }
+
+          .p-mobile {
+            display: none;
+            @include responsive(mobile) {
+              display: block;
+            }
+          }
+
+          .p-desktop {
+            @include responsive(mobile) {
+              display: none;
+            }
+          }
+        }
+
+        .img__content {
+          @include flex(row, center, center);
+          margin-top: -100px;
+          margin-bottom: 47px;
+          // display: none;
+          img {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+
+    .grid__image {
+      width: 100%;
+      @include flex(row, space-between, space-between);
+      margin-top: -2px;
+      position: relative;
+
+      .collection-infor {
+        position: absolute;
+        top: 42%;
+        right: 10%;
+        width: 20%;
+        text-align: left;
+        color: $white;
+        letter-spacing: 0.15em;
+
+        @include responsive(mobile) {
+          top: 70%;
+          width: 100%;
+
+          text-align: center;
+
+          @include flex(column, center, center);
+          right: 0;
+        }
+
+        h3 {
+          font-weight: 500;
+          font-size: 40px;
+          margin: 0;
+          @include responsive(mobile) {
+            font-weight: 400;
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+        }
+
+        h4 {
+          display: none;
+          @include responsive(mobile) {
+            display: block;
+            font-weight: 500;
+            font-size: 20px;
+            margin-top: 20vh;
+            margin-bottom: 10px;
+          }
+        }
+
+        .introduce {
+          font-weight: 400;
+          font-size: 13px;
+          letter-spacing: 0.05em;
+          margin-bottom: 40px;
+          @include responsive(mobile) {
+            display: none;
+          }
+        }
+
+        .invite-discover {
+          font-family: 'Sofia Pro';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          color: $black;
+          text-decoration: none;
+          padding: 18px 60px;
+          background-color: $white;
+          text-transform: uppercase;
+          @include responsive(mobile) {
+            font-size: 10px;
+          }
+        }
+      }
+
+      &--square {
+        width: 60%;
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
+
+      &--mobile {
+        display: none;
+        @include responsive(mobile) {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      &--img {
+        width: 40%;
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
+    }
+  }
+  .image-home {
+    width: 100%;
+    margin-top: 20px;
+    @include flex(row, space-between, space-between);
+    @include responsive(mobile) {
+      display: none;
+    }
+    img {
+      width: 50%;
+      object-fit: contain;
+    }
+  }
+
+  .follow-us {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    font-weight: 500;
+    @include responsive(mobile) {
+      display: none;
+    }
+    .link__follow-us {
+      text-decoration: none;
+      margin-top: 100px;
+      color: $black;
+    }
+  }
+
+  .grid__footer {
+    width: 100%;
+    @include flex(row, center, center);
+    @include responsive(mobile) {
+      display: none;
+    }
+    &--item {
+      overflow: hidden;
+      width: 20%;
+      height: 320px;
+      .image__footer {
+        background-position: center;
+        transition: all 0.3s;
+        width: 100%;
+        // height: auto;
+        &:hover {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          scale: 1.1;
+        }
+      }
+    }
+  }
+
+  .grid__mobile {
+    display: none;
+    @include responsive(mobile) {
+      display: block;
+      width: 90%;
+    }
+
+    &--image {
+      margin-top: 30px;
+    }
+  }
+
+  .signup-for-update {
+    margin-top: 50px;
+    font-family: 'SofiaPro-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    width: 30%;
+    @include responsive(mobile) {
+      width: 90%;
+    }
+    h5 {
+      font-size: 20px;
+      letter-spacing: 0.1em;
+    }
+
+    p {
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      line-height: 150%;
+    }
+
+    .button-signup {
+      width: 70%;
+      margin-top: 20px;
+    }
+  }
+}
