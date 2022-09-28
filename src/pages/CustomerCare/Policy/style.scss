@@ -3,7 +3,7 @@
 
 .policy__container {
   width: 100%;
-  @include flex(row, center, flex-start);
+  @include flex(row, flex-start, flex-start);
   padding-top: 100px;
 
   @include responsive(mobile) {

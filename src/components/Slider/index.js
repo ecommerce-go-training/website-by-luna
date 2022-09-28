@@ -3,76 +3,9 @@ import React, { useRef, memo } from 'react';
 
 import left from 'assets/images/icons/arrowLeft.svg';
 import right from 'assets/images/icons/arrowRight.svg';
-// import image1 from 'assets/images/image1.png';
-// import image2 from 'assets/images/image2.png';
-// import image3 from 'assets/images/image3.png';
-// import image4 from 'assets/images/image4.png';
 import plus from 'assets/images/plus.svg';
 
 import './style.scss';
-
-// const dataSlider = [
-//   {
-//     image: image1,
-//     title: 'NEW IN DRESSES',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image2,
-//     title: 'NEW IN TOP',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image3,
-//     title: 'NEW IN SHORTS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image4,
-//     title: 'NEW IN JEANS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image2,
-//     title: 'NEW IN TOP',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image3,
-//     title: 'NEW IN SHORTS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image1,
-//     title: 'NEW IN DRESSES',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image4,
-//     title: 'NEW IN JEANS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image2,
-//     title: 'NEW IN TOP',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image3,
-//     title: 'NEW IN SHORTS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image4,
-//     title: 'NEW IN JEANS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image1,
-//     title: 'NEW IN DRESSES',
-//     price: '990.000 VND'
-//   }
-// ];
 
 function Slider({ data }) {
   // data = dataSlider;
