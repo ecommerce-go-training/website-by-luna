@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import React, { useRef, memo } from 'react';
 
+import plus from 'assets/images/plus.svg';
 import left from 'assets/images/icons/arrowLeft.svg';
 import right from 'assets/images/icons/arrowRight.svg';
-import plus from 'assets/images/plus.svg';
 
 import './style.scss';
 
-function Slider({ data }) {
-  // data = dataSlider;
+function Slider({ data, className }) {
   const slideitem = useRef(null);
 
   const nextSlide = e => {
@@ -26,7 +26,7 @@ function Slider({ data }) {
     slideitem.current.scrollLeft -= slideitem.current.offsetWidth;
   };
   return (
-    <div className='slider-container'>
+    <div className={classNames(['slider-container', className])}>
       <button className='slider__button' onClick={prevSlide}>
         <img src={left} alt='arrow left' className='slider__button--left' />
       </button>
@@ -55,7 +55,8 @@ function Slider({ data }) {
 }
 
 Slider.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  className: PropTypes.array.isRequired
 };
 
 export default memo(Slider);

@@ -264,6 +264,14 @@ function NewArrivals() {
                 <p className='active'>M</p>
                 <p className='out-stock'>L</p>
               </div>
+              <div className='item-infor'>
+                <p>
+                  HOLLY SHEER BLOUSE IN SAFARI
+                  <br />
+                  <span>NEW ARRIVALS</span>
+                </p>
+                <p>999.000</p>
+              </div>
             </div>
             <div className='image-item'>
               <img src={ArrivalImg2} alt='' />
@@ -274,6 +282,14 @@ function NewArrivals() {
                 <p className='out-stock'>S</p>
                 <p className='active'>M</p>
                 <p className='out-stock'>L</p>
+              </div>
+              <div className='item-infor'>
+                <p>
+                  HOLLY SHEER BLOUSE IN SAFARI
+                  <br />
+                  <span>PRE-ORDER</span>
+                </p>
+                <p>999.000</p>
               </div>
             </div>
           </div>
@@ -288,6 +304,14 @@ function NewArrivals() {
                 <p className='active'>M</p>
                 <p className='out-stock'>L</p>
               </div>
+              <div className='item-infor'>
+                <p>
+                  HOLLY SHEER BLOUSE IN SAFARI
+                  <br />
+                  <span>NEW ARRIVALS</span>
+                </p>
+                <p>999.000</p>
+              </div>
             </div>
             <div className='image-item'>
               <img src={ArrivalImg4} alt='' />
@@ -298,6 +322,14 @@ function NewArrivals() {
                 <p className='out-stock'>S</p>
                 <p className='active'>M</p>
                 <p className='out-stock'>L</p>
+              </div>
+              <div className='item-infor'>
+                <p>
+                  HOLLY SHEER BLOUSE IN SAFARI
+                  <br />
+                  <span>PRE-ORDER</span>
+                </p>
+                <p>999.000</p>
               </div>
             </div>
           </div>

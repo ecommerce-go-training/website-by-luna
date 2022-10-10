@@ -158,6 +158,26 @@
             }
           }
         }
+
+        .item-infor {
+          @include flex(row, flex-start, space-between);
+          p {
+            font-family: 'Sofia Pro';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: $black;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            line-height: 180%;
+
+            span {
+              color: $gray-outstock;
+            }
+          }
+        }
       }
 
       // img {
