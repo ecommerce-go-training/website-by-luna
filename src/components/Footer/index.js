@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-import './style.scss';
+import { useTranslation } from 'react-i18next';
 
 import Collapse from 'components/Collapse';
 import notified from 'assets/images/notified.png';
@@ -12,13 +11,19 @@ import facebook from 'assets/images/icons/facebook.svg';
 import pinterest from 'assets/images/icons/pinterest.svg';
 import instagram from 'assets/images/icons/instagram.svg';
 
-function Footer() {
+import './style.scss';
+
+const Footer = () => {
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'Components.Footer'
+  });
+
   return (
     <div className='footer'>
       <div className='footer__content'>
         <div className='footer__content--socials'>
           <div className='footer-desk'>
-            <p className='footer__title'>follow us</p>
+            <p className='footer__title'>{t('follow')}</p>
             <div className='footer__content--social'>
               <img src={facebook} alt='facebook social' className='facebook' />
               <p>facebook</p>
@@ -36,7 +41,7 @@ function Footer() {
               <p>tiktok</p>
             </div>
           </div>
-          <Collapse title='follow us' className={'footer__collapse'}>
+          <Collapse title={t('follow')} className={'footer__collapse'}>
             <div className='footer__content--social'>
               <img src={facebook} alt='facebook social' className='facebook' />
               <p>facebook</p>
@@ -57,30 +62,30 @@ function Footer() {
         </div>
         <div className='footer__content--abouts'>
           <div className='footer-desk'>
-            <p className='footer__title'>About</p>
+            <p className='footer__title'>{t('about')}</p>
             <div className='footer__content--about'>
               <p>
                 <Link to='/brand' className='link__page'>
-                  brand
+                  {t('brand')}
                 </Link>
               </p>
               <p>
                 <Link to='/store' className='link__page'>
-                  store locator
+                  {t('storeLocator')}
                 </Link>
               </p>
             </div>
           </div>
-          <Collapse title='About' className={'footer__collapse'}>
+          <Collapse title={t('about')} className={'footer__collapse'}>
             <div className='footer__content--about'>
               <p>
                 <Link to='/brand' className='link__page'>
-                  brand
+                  {t('brand')}
                 </Link>
               </p>
               <p>
                 <Link to='/store' className='link__page'>
-                  store locator
+                  {t('storeLocator')}
                 </Link>
               </p>
             </div>
@@ -88,87 +93,87 @@ function Footer() {
         </div>
         <div className='footer__content--cares'>
           <div className='footer-desk'>
-            <p className='footer__title'>Customer care</p>
+            <p className='footer__title'>{t('customerCare')}</p>
             <div className='footer__content--care'>
               <p>
                 <Link to='/faq' className='link__page'>
-                  Faq
+                  {t('faq')}
                 </Link>
               </p>
               <p>
                 <Link to='/size' className='link__page'>
-                  sizing
+                  {t('size')}
                 </Link>
               </p>
               <p>
                 <Link to='/ship' className='link__page'>
-                  shipping & returns
+                  {t('shipping')}
                 </Link>
               </p>
               <p>
                 <Link to='/term' className='link__page'>
-                  terms & conditions
+                  {t('terms')}
                 </Link>
               </p>
               <p>
                 <Link to='/policy' className='link__page'>
-                  privacy policy
+                  {t('policy')}
                 </Link>
               </p>
               <p>
                 <Link to='/garment' className='link__page'>
-                  garment care
+                  {t('garment')}
                 </Link>
               </p>
               <p>
                 <Link to='/' className='link__page'>
-                  make a return
+                  {t('return')}
                 </Link>
               </p>
             </div>
           </div>
-          <Collapse title='Customer care' className={'footer__collapse'}>
+          <Collapse title={t('customerCare')} className={'footer__collapse'}>
             <div className='footer__content--care'>
               <p>
                 <Link to='/faq' className='link__page'>
-                  Faq
+                  {t('faq')}
                 </Link>
               </p>
               <p>
                 <Link to='/size' className='link__page'>
-                  sizing
+                  {t('size')}
                 </Link>
               </p>
               <p>
                 <Link to='/ship' className='link__page'>
-                  shipping & returns
+                  {t('shipping')}
                 </Link>
               </p>
               <p>
                 <Link to='/term' className='link__page'>
-                  terms & conditions
+                  {t('terms')}
                 </Link>
               </p>
               <p>
                 <Link to='/policy' className='link__page'>
-                  privacy policy
+                  {t('policy')}
                 </Link>
               </p>
               <p>
                 <Link to='/garment' className='link__page'>
-                  garment care
+                  {t('garment')}
                 </Link>
               </p>
               <p>
                 <Link to='/' className='link__page'>
-                  make a return
+                  {t('return')}
                 </Link>
               </p>
             </div>
           </Collapse>
         </div>
         <div className='footer__content--contact'>
-          <p className='footer__title'>Contact us</p>
+          <p className='footer__title'>{t('contact')}</p>
           <div className='footer__content--phone'>
             <img src={phone} alt='phone icon' className='' />
             <p>+84 986 491 486</p>
@@ -176,11 +181,11 @@ function Footer() {
           <div className='footer__content--mail'>
             <img src={mail} alt='phone icon' className='' />
             <p>
-              customer service
+              {t('customerSupport')}
               <p>CONTACT@PIKA.COM</p>
             </p>
             <p>
-              whosesales & press
+              {t('whosesalse')}
               <p>TEAM@PIKA.COM</p>
             </p>
           </div>
@@ -192,6 +197,6 @@ function Footer() {
       </div>
     </div>
   );
-}
+};
 
 export default Footer;

@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import DefaultButton from 'components/Button';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import DefaultInput from 'components/Input/Defaul';
 
 import './style.scss';
 
-function Reset() {
+const ResetPassword = () => {
   return (
     <div>
       <Announce />
@@ -45,6 +45,6 @@ function Reset() {
       <Footer />
     </div>
   );
-}
+};
 
-export default Reset;
+export default ResetPassword;

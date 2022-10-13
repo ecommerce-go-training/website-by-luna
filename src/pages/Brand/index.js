@@ -4,7 +4,7 @@ import brand from 'assets/images/brand.svg';
 
 import './style.scss';
 
-function Brand() {
+const Brand = () => {
   return (
     <div className='brand__container'>
       <div className='grid__1--4'>
@@ -42,6 +42,6 @@ function Brand() {
       </div>
     </div>
   );
-}
+};
 
 export default Brand;

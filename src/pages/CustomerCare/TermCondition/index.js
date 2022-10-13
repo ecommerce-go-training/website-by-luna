@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from 'components/Header';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import Collapse from 'components/Collapse';
 
 import './style.scss';
 
-function Term() {
+const Term = () => {
   return (
     <div>
       <Announce />
@@ -502,6 +502,6 @@ function Term() {
       </div>
     </div>
   );
-}
+};
 
 export default Term;

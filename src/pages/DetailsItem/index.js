@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import Collapse from 'components/Collapse';
 import DefaultButton from 'components/Button';
 
@@ -15,7 +15,7 @@ import ArrivalImg4 from 'assets/images/arrivalImg4.png';
 
 import './style.scss';
 
-function DetailsItem() {
+const DetailsItem = () => {
   const dataSlider = [
     {
       image: ArrivalImg1,
@@ -145,6 +145,6 @@ function DetailsItem() {
       <Footer />
     </div>
   );
-}
+};
 
 export default DetailsItem;

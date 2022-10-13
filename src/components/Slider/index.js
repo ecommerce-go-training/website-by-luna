@@ -2,35 +2,40 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import React, { useRef, memo } from 'react';
 
-import plus from 'assets/images/plus.svg';
+import plus from 'assets/images/icons/plus.svg';
 import left from 'assets/images/icons/arrowLeft.svg';
 import right from 'assets/images/icons/arrowRight.svg';
 
 import './style.scss';
 
-function Slider({ data, className }) {
-  const slideitem = useRef(null);
+const Slider = ({ data, className }) => {
+  const slideItem = useRef(null);
+
+  // useEffect(() => {
+  //   const Elementcount = slideItem.childNodes.length;
+  //   console.log('slider haha ', Elementcount);
+  // });
 
   const nextSlide = e => {
     e.preventDefault();
-    let temp = slideitem.current.scrollLeft;
-    slideitem.current.scrollLeft += slideitem.current.offsetWidth;
-    if (slideitem.current.scrollLeft === temp && temp > 0) {
-      slideitem.current.scrollLeft = 0;
+    let temp = slideItem.current.scrollLeft;
+    slideItem.current.scrollLeft += slideItem.current.offsetWidth;
+    if (slideItem.current.scrollLeft === temp && temp > 0) {
+      slideItem.current.scrollLeft = 0;
     }
   };
 
   const prevSlide = e => {
     e.preventDefault();
 
-    slideitem.current.scrollLeft -= slideitem.current.offsetWidth;
+    slideItem.current.scrollLeft -= slideItem.current.offsetWidth;
   };
   return (
     <div className={classNames(['slider-container', className])}>
       <button className='slider__button' onClick={prevSlide}>
         <img src={left} alt='arrow left' className='slider__button--left' />
       </button>
-      <div className='slider' ref={slideitem}>
+      <div className='slider' ref={slideItem}>
         {data.map((obj, index) => {
           return (
             <div key={index} className='slider__items'>
@@ -52,11 +57,15 @@ function Slider({ data, className }) {
       </button>
     </div>
   );
-}
+};
+
+Slider.defaultProps = {
+  className: ''
+};
 
 Slider.propTypes = {
   data: PropTypes.array.isRequired,
-  className: PropTypes.array.isRequired
+  className: PropTypes.string
 };
 
 export default memo(Slider);

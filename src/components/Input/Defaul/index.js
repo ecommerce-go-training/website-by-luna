@@ -7,17 +7,16 @@ import eyeSlash from 'assets/images/icons/eye-slash.png';
 
 import './style.scss';
 
-function DefaultInput({
+const DefaultInput = ({
   name,
   type,
   placeholder,
-  // errorStatus = false,
-  // errorMsg = '',
+  errorStatus = false,
+  errorMsg = '',
   className,
   onChange
-}) {
+}) => {
   const [inputValue, setInputValue] = useState('');
-  // const passwordInput = name?.toLowerCase()?.includes('password');
   const [isShow, setIsShow] = useState(false);
   const [typeInput, setTypeInput] = useState(type);
 
@@ -67,13 +66,15 @@ function DefaultInput({
       </button>
       <p
         className={classNames([
-          'default-input__error'
-          // { active: errorStatus }
+          'default-input__error',
+          { active: errorStatus }
         ])}
-      ></p>
+      >
+        {errorStatus ? errorMsg : ''}
+      </p>
     </div>
   );
-}
+};
 
 DefaultInput.defaultProps = {
   type: 'text',

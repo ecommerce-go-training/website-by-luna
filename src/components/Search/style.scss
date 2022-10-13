@@ -79,10 +79,12 @@
       text-decoration: none;
       color: $white;
       margin: 20px;
-      font-family: 'Sofia Pro';
+      font-family: 'SofiaPro Light', Arial, Helvetica, sans-serif;
       font-style: normal;
       font-weight: 500;
       font-size: 50px;
+      @include font($font-proLight, normal, 500, 50px, 0em);
+
       line-height: 120%;
       display: flex;
       align-items: center;

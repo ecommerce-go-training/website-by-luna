@@ -2,25 +2,31 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import React, { useState, memo } from 'react';
 
-import plus from 'assets/images/plus.png';
-import minus from 'assets/images/minus.svg';
+import PlusIcon from 'assets/images/icons/plus.svg';
+import MinusIcon from 'assets/images/icons/minus.svg';
 
 import './style.scss';
 
-function Collapse({ title, children, className }) {
-  const [open, setOPen] = useState(false);
-  const handleOpening = () => {
-    setOPen(prev => !prev);
+const Collapse = ({ title, className, children }) => {
+  const [openContent, setOPencontent] = useState(false);
+
+  const handleOpenContent = () => {
+    setOPencontent(!openContent);
   };
+
   return (
     <div>
       <div className={classNames(['collapse', className])}>
-        <button onClick={handleOpening} className='collapse__button'>
-          {!open ? (
-            <img src={plus} alt='extend' className='collapse__button--plus' />
+        <button onClick={handleOpenContent} className='collapse__button'>
+          {!openContent ? (
+            <img
+              src={PlusIcon}
+              alt='extend'
+              className='collapse__button--plus'
+            />
           ) : (
             <img
-              src={minus}
+              src={MinusIcon}
               alt='collapse'
               className='collapse__button--minus'
             />
@@ -29,16 +35,20 @@ function Collapse({ title, children, className }) {
         <p className='collapse__title'>{title}</p>
       </div>
       <div className='collapse__content'>
-        <div>{open && <div className='p-3'>{children}</div>}</div>
+        <div>{openContent && <div className='content'>{children}</div>}</div>
       </div>
     </div>
   );
-}
+};
+
+Collapse.defaultProps = {
+  className: ''
+};
 
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.array.isRequired,
-  className: PropTypes.array.isRequired
+  className: PropTypes.string
 };
 
 export default memo(Collapse);

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 // import Slider from 'components/Slider';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import DefaultButton from 'components/Button';
 
 import img1 from 'assets/images/img1.jpg';
@@ -27,7 +27,7 @@ import imgSeasonMobile from 'assets/images/imgSeasonMobile.png';
 
 import './style.scss';
 
-function FallWinter() {
+const FallWinter = () => {
   return (
     <div>
       <Announce />
@@ -176,6 +176,6 @@ function FallWinter() {
       <Footer />
     </div>
   );
-}
+};
 
 export default FallWinter;

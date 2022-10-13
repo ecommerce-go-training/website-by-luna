@@ -7,7 +7,7 @@
 //   }, [window]);
 // };
 
-function useCheckInternet() {
+const useCheckInternet = () => {
   window.ononline = () => {
     console.log('Back Online');
   };
@@ -15,6 +15,6 @@ function useCheckInternet() {
   window.onoffline = () => {
     console.log('Connection Lost');
   };
-}
+};
 
 export default useCheckInternet;

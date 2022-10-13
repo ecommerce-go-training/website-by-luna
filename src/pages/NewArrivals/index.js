@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import Collapse from 'components/Collapse';
 import DefaultButton from 'components/Button';
 
@@ -16,7 +16,7 @@ import ArrivalImg4 from 'assets/images/arrivalImg4.png';
 
 import './style.scss';
 
-function NewArrivals() {
+const NewArrivals = () => {
   const [click, setClick] = useState(false);
 
   const dataSize1 = [
@@ -338,6 +338,6 @@ function NewArrivals() {
       <Footer />
     </div>
   );
-}
+};
 
 export default NewArrivals;

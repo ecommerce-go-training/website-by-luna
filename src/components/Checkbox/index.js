@@ -4,10 +4,10 @@ import classNames from 'classnames';
 
 import './style.scss';
 
-function DefaultCheckbox({ value, className, checked, children }) {
+const DefaultCheckbox = ({ value, className, checked, children }) => {
   return (
-    <div>
-      <label className='default-checkbox'>
+    <div className='default-checkbox'>
+      <label className='default-checkbox__label' htmlFor='Male'>
         <input
           type='checkbox'
           className={classNames(['default-checkbox__input', className])}
@@ -19,11 +19,15 @@ function DefaultCheckbox({ value, className, checked, children }) {
       </label>
     </div>
   );
-}
+};
+
+DefaultCheckbox.defaultProps = {
+  className: ''
+};
 
 DefaultCheckbox.propTypes = {
   value: PropTypes.string.isRequired,
-  className: PropTypes.object.isRequired,
+  className: PropTypes.string,
   checked: PropTypes.bool.isRequired,
   children: PropTypes.string.isRequired
 };

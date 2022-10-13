@@ -12,12 +12,9 @@
   &__header {
     height: 30px;
     background-color: $pink-orange;
-    font-family: SofiaPro-Light, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
     line-height: 30px;
-    letter-spacing: 0.05em;
+    @include font($font-proLight, normal, 400, 12px, 0.05em);
+
     color: $black;
     @include responsive(mobile) {
       overflow: hidden;

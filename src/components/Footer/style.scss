@@ -17,7 +17,7 @@
   }
 
   &__title {
-    font-family: 'Sofia Pro';
+    font-family: 'Sofia Pro', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -32,11 +32,8 @@
   &__content {
     width: 75%;
     @include flex(row, flex-start, flex-start);
-    font-family: 'Sofia Pro';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 0.05em;
+    @include font($font-pro, normal, 400, 12px, 0.05em);
+
     text-transform: uppercase;
     color: #000000;
     @include responsive(tablet) {
@@ -162,7 +159,7 @@
         margin-bottom: 5px;
       }
       p {
-        text-transform: lowercase;
+        text-transform: none;
         margin-right: 28px;
         @include responsive(tablet) {
           margin-right: 6px;
@@ -190,10 +187,7 @@
   &__publish {
     width: 75%;
     text-align: left;
-    font-family: 'Sofia Pro';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 13px;
+    @include font($font-pro, normal, 300, 13px, 0.05em);
     color: $black;
     margin-top: -30px;
     text-transform: none;

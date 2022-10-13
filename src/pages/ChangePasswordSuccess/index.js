@@ -3,12 +3,12 @@ import React from 'react';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import DefaultButton from 'components/Button';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import check from 'assets/images/checkCircle.svg';
 
 import './style.scss';
 
-function ChangeSuccess() {
+const ChangeSuccess = () => {
   return (
     <div>
       <Announce />
@@ -31,6 +31,6 @@ function ChangeSuccess() {
       <Footer />
     </div>
   );
-}
+};
 
 export default ChangeSuccess;

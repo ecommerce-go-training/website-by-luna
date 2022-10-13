@@ -5,7 +5,7 @@ import store2 from 'assets/images/store2.webp';
 
 import './style.scss';
 
-function Store() {
+const Store = () => {
   return (
     <div className='storehcm__container'>
       <div className='grid__1--4'>
@@ -48,6 +48,6 @@ function Store() {
       </div>
     </div>
   );
-}
+};
 
 export default Store;

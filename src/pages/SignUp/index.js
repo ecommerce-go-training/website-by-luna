@@ -5,12 +5,12 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import DefaultCheckbox from 'components/Checkbox';
 import DefaultButton from 'components/Button';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import DefaultInput from 'components/Input/Defaul';
 
 import './style.scss';
 
-function SignUp() {
+const SignUp = () => {
   return (
     <div>
       <Announce />
@@ -96,6 +96,6 @@ function SignUp() {
       <Footer />
     </div>
   );
-}
+};
 
 export default SignUp;

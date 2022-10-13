@@ -1,0 +1,119 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.change-password {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 180px;
+  margin-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include font($font-pro, normal, 400, 13px, 0.1em);
+
+  text-transform: uppercase;
+
+  @include responsive(tablet) {
+    margin-top: 240px;
+  }
+
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  .please-fill-pass {
+    width: 36%;
+    text-transform: none;
+    @include font($font-pro, normal, 400, 13px, 0.05em);
+    line-height: 150%;
+    margin-bottom: 50px;
+    @include responsive(tablet) {
+      width: 80%;
+    }
+    @include responsive(mobile) {
+      margin: 0px 0 30px;
+      width: 90%;
+      font-size: 11px;
+      letter-spacing: 0.01em;
+      @include font($font-pro, normal, 400, 11px, 0.01em);
+    }
+  }
+
+  form {
+    width: 36%;
+    .default-button {
+      margin-top: 20px;
+      width: 60%;
+      @include responsive(mobile) {
+        width: 100%;
+      }
+    }
+    @include responsive(mobile) {
+      width: 90%;
+    }
+    @include responsive(tablet) {
+      width: 80%;
+    }
+  }
+}
+
+//change success
+
+.change-success {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 180px;
+  margin-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include font($font-pro, normal, 400, 13px, 0.1em);
+
+  text-transform: uppercase;
+
+  @include responsive(tablet) {
+    margin-top: 240px;
+  }
+
+  img {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  .please-fill-pass {
+    width: 36%;
+    text-transform: none;
+    @include font($font-pro, normal, 400, 13px, 0.05em);
+    line-height: 150%;
+    margin-bottom: 50px;
+    @include responsive(tablet) {
+      width: 80%;
+    }
+    @include responsive(mobile) {
+      margin: 0px 0 30px;
+      width: 90%;
+      @include font($font-pro, normal, 400, 11px, 0.01em);
+    }
+  }
+
+  .sign-in__button {
+    width: 14%;
+    @include responsive(tablet) {
+      width: 24%;
+    }
+    @include responsive(mobile) {
+      width: 90%;
+    }
+  }
+}

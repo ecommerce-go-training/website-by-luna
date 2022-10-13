@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from 'components/Header';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import Collapse from 'components/Collapse';
 
 import './style.scss';
 
-function Garment() {
+const Garment = () => {
   return (
     <div>
       <Announce />
@@ -20,27 +20,27 @@ function Garment() {
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/size' className='link__page '>
               sizing
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/ship' className='link__page '>
               shipping & returns
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/term' className='link__page '>
               term & conditions
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/policy' className='link__page '>
               privacy policy
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page active'>
+            <Link to='/garment' className='link__page active'>
               garment care
             </Link>
           </p>
@@ -310,6 +310,6 @@ function Garment() {
       </div>
     </div>
   );
-}
+};
 
 export default Garment;

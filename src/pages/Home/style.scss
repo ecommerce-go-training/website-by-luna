@@ -96,16 +96,12 @@
         width: 80%;
       }
       .type-item {
-        font-family: 'Sofia Pro';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
+        @include font($font-pro, normal, 400, 16px, 0.15em);
         color: $gray-smoke;
         text-decoration: none;
         text-transform: uppercase;
         @include responsive(mobile) {
-          font-size: 12px;
-          letter-spacing: 0.15em;
+          @include font($font-pro, normal, 400, 12px, 0.15em);
         }
       }
 
@@ -188,21 +184,18 @@
 
   .signup-for-update {
     margin-top: 50px;
-    font-family: 'SofiaPro-Regular', sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    @include font($font-regular, normal, 400, 16px, 0.05em);
+
     width: 30%;
     @include responsive(mobile) {
       width: 90%;
     }
     h5 {
-      font-size: 20px;
-      letter-spacing: 0.1em;
+      @include font($font-regular, normal, 400, 20px, 0.1em);
     }
 
     p {
-      font-size: 13px;
-      letter-spacing: 0.05em;
+      @include font($font-regular, normal, 400, 13px, 0.05em);
       line-height: 150%;
     }
 
