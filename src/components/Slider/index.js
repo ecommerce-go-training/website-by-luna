@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import React, { useRef, memo } from 'react';
+import React, { useRef, useEffect, memo } from 'react';
 
 import plus from 'assets/images/icons/plus.svg';
 import left from 'assets/images/icons/arrowLeft.svg';
@@ -11,10 +11,10 @@ import './style.scss';
 const Slider = ({ data, className }) => {
   const slideItem = useRef(null);
 
-  // useEffect(() => {
-  //   const Elementcount = slideItem.childNodes.length;
-  //   console.log('slider haha ', Elementcount);
-  // });
+  useEffect(() => {
+    const Elementcount = slideItem.current.childNodes.length;
+    console.log('slider haha ', Elementcount);
+  });
 
   const nextSlide = e => {
     e.preventDefault();
