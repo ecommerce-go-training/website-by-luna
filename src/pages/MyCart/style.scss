@@ -1,0 +1,155 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.my-cart {
+  background-color: $white;
+  color: $black;
+  width: 100%;
+  @include flex(column, center, flex-start);
+  position: relative;
+
+  .title-MyCart {
+    text-align: left;
+    width: 80%;
+    margin-top: 30px;
+  }
+
+  h2 {
+    @include font($font-pro, normal, 400, 50px, 0.15em);
+    text-transform: capitalize;
+    margin: 10px 0;
+  }
+
+  .icon-exit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+
+    .button-icon {
+      width: 20px;
+      height: 20px;
+      margin: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__items {
+    width: 80%;
+    padding: 20px 0;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      display: block;
+      height: 1.5px;
+      background-color: $gray-smoke;
+    }
+
+    @include flex(row, center, space-between);
+
+    &--info {
+      width: 70%;
+      @include flex(column, space-between, flex-start);
+
+      .title-item {
+        margin-top: 0;
+        @include font($font-pro, normal, 400, 15px, 0.02em);
+      }
+
+      .item-price {
+        @include flex(row, space-between, space-between);
+
+        p {
+          margin: 8px 0px;
+          @include font($font-pro, normal, 400, 15px, 0.02em);
+        }
+
+        &__unit {
+          @include flex(column, space-between, space-between);
+
+          .quickcart-item-qty {
+            margin: 0;
+            span {
+              @include font($font-pro, normal, 400, 24px, 0.01em);
+              cursor: pointer;
+            }
+
+            input {
+              width: 34px;
+              border: none;
+              background: none;
+              text-align: right;
+              @include font($font-pro, normal, 400, 15px, 0.05em);
+            }
+
+            &::after {
+              content: '';
+              display: block;
+              height: 1.3px;
+              width: 78%;
+              background-color: $black;
+            }
+          }
+        }
+
+        &__sum {
+          @include flex(column, flex-end, flex-end);
+          &--remove {
+            &::after {
+              content: '';
+              display: block;
+              height: 1.3px;
+              width: 100%;
+              background-color: $black;
+            }
+          }
+        }
+      }
+    }
+
+    &--image {
+      width: 20%;
+      height: 130px;
+      width: 130px;
+      @include flex(row, center, flex-end);
+
+      img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .button {
+    height: 100%;
+    @include flex(row, flex-end, space-between);
+    width: 80%;
+    margin-bottom: 20px;
+
+    &__view-cart {
+      width: 80%;
+      background-color: $white;
+      color: $black;
+      margin-right: 10px;
+    }
+
+    &__check-out {
+      width: 80%;
+      margin-left: 10px;
+
+      p {
+        margin-top: 0;
+        @include font($font-pro, normal, 400, 13px, 0.05em);
+      }
+    }
+  }
+}

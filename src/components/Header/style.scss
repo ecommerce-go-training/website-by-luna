@@ -10,6 +10,31 @@
   z-index: 4;
 }
 
+.my-cart {
+  width: 100%;
+  z-index: 4;
+  height: 100vh;
+
+  .back-drop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    height: 100vh;
+    background-color: rgba(34, 34, 34, 0.3);
+  }
+
+  .show-my-cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    min-height: 100vh;
+    height: 900px;
+    z-index: 4;
+  }
+}
+
 .header__container {
   width: 100%;
 

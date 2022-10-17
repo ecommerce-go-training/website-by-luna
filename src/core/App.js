@@ -22,6 +22,7 @@ import Policy from 'pages/CustomerCare/Policy';
 import Shipping from 'pages/CustomerCare/Shipping';
 import Term from 'pages/CustomerCare/TermCondition';
 import Garment from 'pages/CustomerCare/GarmentCare';
+// import Mycart from 'pages/MyCart';
 
 import 'services/i18n';
 
@@ -45,8 +46,9 @@ function App() {
             <Route exact path='/detail' element={<Detail />} />
             <Route exact path='/winter' element={<Winter />} />
             <Route exact path='/garment' element={<Garment />} />
-            <Route exact path='/store/ho-chi-minh' element={<StoreHCM />} />
             <Route exact path='/arrivals' element={<Arrivals />} />
+            <Route exact path='/store/ho-chi-minh' element={<StoreHCM />} />
+            {/* <Route exact path='/' element={<Mycart />} /> */}
           </Routes>
         </I18nextProvider>
       </Provider>

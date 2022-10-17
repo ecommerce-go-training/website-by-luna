@@ -8,13 +8,13 @@ import close from 'assets/images/icons/close.svg';
 
 import './style.scss';
 
-const Search = ({ setShow }) => {
+const Search = ({ setShowSearch }) => {
   const { t } = useTranslation('translation', {
     keyPrefix: 'Components.Search'
   });
   return (
     <div className='Search'>
-      <div className='Search__close' onClick={() => setShow(false)}>
+      <div className='Search__close' onClick={() => setShowSearch(false)}>
         <img src={close} alt='close popup' />
       </div>
       <div className='Search__input'>
@@ -44,7 +44,7 @@ const Search = ({ setShow }) => {
 };
 
 Search.propTypes = {
-  setShow: PropTypes.func.isRequired
+  setShowSearch: PropTypes.func.isRequired
 };
 
 export default Search;

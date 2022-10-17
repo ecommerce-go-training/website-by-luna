@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import React, { memo, useState, useEffect } from 'react';
 
 import Search from 'components/Search';
+import MyCart from 'pages/MyCart';
 import bag from 'assets/images/bag.png';
 import logo from 'assets/images/logo.jpg';
 import search from 'assets/images/search.svg';
@@ -18,6 +19,8 @@ import './style.scss';
 
 const Header = ({ className }) => {
   const [showSearch, onShowSearch] = useState(false);
+  const [showMyCart, onShowMyCart] = useState(false);
+
   const [isScrolling, setIsScrolling] = useState(false);
 
   const { t } = useTranslation('translation', {
@@ -44,7 +47,15 @@ const Header = ({ className }) => {
     <div className='header__container'>
       {showSearch && (
         <div className='search__show'>
-          <Search setShow={onShowSearch} />
+          <Search setShowSearch={onShowSearch} />
+        </div>
+      )}
+      {showMyCart && (
+        <div className='my-cart'>
+          <div className='back-drop' onClick={() => onShowMyCart(false)}></div>
+          <div className='show-my-cart'>
+            <MyCart setShowMyCart={onShowMyCart} />
+          </div>
         </div>
       )}
       <div className={classNames(className, { white: isScrolling })}>
@@ -89,8 +100,18 @@ const Header = ({ className }) => {
           <Link to='/signin' className='link-to-page'>
             Login
           </Link>
-          <img src={bag} alt='' className='header-cart' />
-          <img src={bagActive} alt='' className='header-cart__active' />
+          <img
+            src={bag}
+            alt=''
+            className='header-cart'
+            onClick={() => onShowMyCart(true)}
+          />
+          <img
+            src={bagActive}
+            alt=''
+            className='header-cart__active'
+            onClick={() => onShowMyCart(true)}
+          />
         </div>
       </div>
     </div>
