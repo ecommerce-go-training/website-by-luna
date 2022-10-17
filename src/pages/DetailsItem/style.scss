@@ -1,0 +1,215 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.details-container {
+  width: 100%;
+  @include flex(column, center, center);
+
+  .details {
+    width: 100%;
+    @include flex(row, flex-start, space-between);
+
+    @include responsive(mobile) {
+      @include flex(column, flex-start, space-between);
+    }
+    margin-top: 140px;
+
+    .grid__3--1 {
+      width: 33.333%;
+      @include responsive(mobile) {
+        width: 90%;
+        @include flex(row, center, center);
+        padding-left: 5%;
+      }
+      @include flex(row, center, center);
+
+      .item-infor {
+        width: 84%;
+        text-transform: uppercase;
+
+        @include responsive(mobile) {
+          width: 100%;
+        }
+        .item-type {
+          @include font($font-pro, normal, 400, 13px, 0.12em);
+
+          color: $gray-outstock;
+        }
+
+        h3 {
+          @include font($font-pro, normal, 400, 16px, 0.15em);
+        }
+
+        .item-introduce {
+          @include font($font-pro, normal, 400, 13px, 0.05em);
+          text-transform: none;
+        }
+
+        .select__item {
+          @include flex(row, center, space-between);
+          width: 80%;
+          &--size,
+          &--color {
+            @include font($font-pro, normal, 400, 13px, 0.05em);
+
+            h4 {
+              @include font($font-pro, normal, 400, 13px, 0.12em);
+              text-transform: uppercase;
+              color: $gray-outstock;
+            }
+
+            span {
+              margin-right: 20px;
+            }
+          }
+
+          &--color {
+            position: relative;
+            h4 {
+              line-height: 70%;
+            }
+            div {
+              width: 30px;
+              height: 30px;
+              background: $gray-blue;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .btn-add {
+          width: 84%;
+          margin-top: 40px;
+          margin-bottom: 20px;
+          @include responsive(mobile) {
+            width: 100%;
+          }
+        }
+
+        .btn-addToCart {
+          background-color: $gray-smoke;
+          border: $gray-smoke;
+        }
+
+        .collapse-item {
+          padding-left: 14px;
+          @include font($font-pro, normal, 400, 13px, 0.05em);
+          line-height: 150%;
+          text-transform: none;
+        }
+
+        .link-item-infor {
+          color: $black;
+        }
+      }
+    }
+
+    .grid__3--2 {
+      width: 66.667%;
+      @include responsive(mobile) {
+        width: 100%;
+      }
+      img {
+        margin-top: -4px;
+        @include responsive(mobile) {
+          display: none;
+        }
+      }
+    }
+
+    .detail-item__slider {
+      display: none;
+
+      @include responsive(mobile) {
+        display: block;
+        width: 100%;
+
+        p {
+          display: none;
+        }
+      }
+
+      .slider {
+        @include responsive(mobile) {
+          width: 100%;
+
+          &__items {
+            width: 100%;
+            margin: 0px;
+
+            &--item {
+              width: 400px;
+              height: 610px;
+
+              img {
+                @include responsive(mobile) {
+                  object-fit: contain;
+                }
+
+                &:hover {
+                  scale: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .similar-item {
+    margin-top: 20px;
+
+    @include responsive(mobile) {
+      width: 100%;
+    }
+
+    h3 {
+      text-align: center;
+      @include font($font-pro, normal, 400, 20px, 0.1em);
+      text-transform: uppercase;
+    }
+
+    &__slider {
+      width: 100%;
+
+      .slider {
+        width: 100%;
+      }
+
+      @include responsive(mobile) {
+        display: block;
+        width: 100%;
+
+        .slider {
+          width: 100%;
+
+          &__items {
+            width: 100%;
+            margin: 0px;
+
+            &--item {
+              width: 40vw;
+              height: auto;
+
+              img {
+                @include responsive(mobile) {
+                  object-fit: contain;
+                  height: auto;
+                }
+
+                &:hover {
+                  scale: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      button {
+        display: none;
+      }
+    }
+  }
+}

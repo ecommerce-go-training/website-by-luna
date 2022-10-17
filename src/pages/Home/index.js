@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Slider from 'components/Slider';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import DefaultButton from 'components/Button';
 
 import img1 from 'assets/images/img1.jpg';
@@ -154,7 +154,7 @@ const dataSlider2 = [
   }
 ];
 
-function Home() {
+const Home = () => {
   return (
     <div>
       <Announce />
@@ -234,6 +234,6 @@ function Home() {
       <Footer />
     </div>
   );
-}
+};
 
 export default Home;

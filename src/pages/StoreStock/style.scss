@@ -14,11 +14,7 @@
         padding-bottom: 30px;
       }
       padding-left: 100px;
-      font-family: 'Sofia Pro';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      letter-spacing: 0.15em;
+      @include font($font-pro, normal, 400, 12px, 0.15em);
       text-transform: uppercase;
       padding-bottom: 10px;
     }
@@ -52,11 +48,7 @@
 
       &--item {
         width: 25%;
-        font-family: 'Sofia Pro';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 13px;
-        letter-spacing: 0.15em;
+        @include font($font-pro, normal, 400, 13px, 0.15em);
         h4 {
           font-size: 12px;
         }

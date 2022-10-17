@@ -1,0 +1,53 @@
+{
+  "Components": {
+    "Header": {
+      "newArrivals": "New arrivals",
+      "shopWinter": "Shop winter",
+      "shop": "Shop",
+      "about": "About",
+      "fallWinter": "Fall winter",
+      "account": "Account",
+      "logIn": "Log in",
+      "myCart": "My cart"
+    },
+    "Search": {
+      "quickLink": "Quick link",
+      "dress": "Dresses",
+      "top": "Tops",
+      "pant": "Pants",
+      "store": "Store",
+      "ship": "Shipping"
+    },
+    "Footer": {
+      "follow": "Follow us",
+      "copyRight": "© 2022 Pika Meow All Rights Reserved.",
+      "about": "About",
+      "brand": "Brand",
+      "storeLocator": "store locator",
+      "customerCare": "customer care",
+      "faq": "faq",
+      "size": "sizing",
+      "shipping": "shipping & returns",
+      "terms": "terms & conditions",
+      "policy": "privacy policy",
+      "garment": "garment care",
+      "return": "make a return",
+      "contact": "contact us",
+      "customerSupport": "Customer services",
+      "whosesalse": "Whosesales & pressed"
+    },
+    "Announce": {
+      "freeShipInVietnam": "FREE SHIPPING IN VIETNAM",
+      "internationalShip": "FREE SHIPPING FOR INTERNATIONAL ORDERS OVER 500$"
+    }
+  },
+  "Pages": {
+    "SignIn": {
+      "login": "Log in",
+      "forgot": "Forgot your password?",
+      "signup": "Sign up",
+      "password": "Mật khẩu",
+      "submit": "Sign In"
+    }
+  }
+}

@@ -65,17 +65,12 @@
       }
 
       .introduce {
-        font-weight: 400;
-        font-size: 13px;
-        letter-spacing: 0.05em;
+        @include font($font-pro, normal, 400, 13px, 0.05em);
         margin-bottom: 40px;
       }
 
       .invite-discover {
-        font-family: 'Sofia Pro';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
+        @include font($font-pro, normal, 400, 16px, 0.15em);
         color: $black;
         text-decoration: none;
         padding: 18px 60px;
@@ -93,11 +88,8 @@
     @include responsive(mobile) {
       display: block;
       margin-top: 10vh;
-      font-family: 'Sofia Pro';
       width: 90%;
-      font-weight: 400;
-      font-size: 13px;
-      letter-spacing: 0.05em;
+      @include font($font-pro, normal, 400, 13px, 0.05em);
       color: $black;
     }
   }
@@ -105,7 +97,6 @@
   .grid {
     width: 100%;
     text-align: center;
-    // margin-top: 90px;
     @include flex(column, center, center);
 
     &__4--2 {
@@ -151,12 +142,8 @@
 
           p {
             width: 70%;
-            font-family: 'Sofia Pro';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
             text-align: center;
-            letter-spacing: 0.05em;
+            @include font($font-pro, normal, 400, 14px, 0.05em);
           }
 
           .p-mobile {
@@ -175,9 +162,8 @@
 
         .img__content {
           @include flex(row, center, center);
-          margin-top: -100px;
+          margin-top: -102px;
           margin-bottom: 47px;
-          // display: none;
           img {
             margin-left: 20px;
           }
@@ -233,9 +219,7 @@
         }
 
         .introduce {
-          font-weight: 400;
-          font-size: 13px;
-          letter-spacing: 0.05em;
+          @include font($font-pro, normal, 400, 13px, 0.05em);
           margin-bottom: 40px;
           @include responsive(mobile) {
             display: none;
@@ -243,10 +227,7 @@
         }
 
         .invite-discover {
-          font-family: 'Sofia Pro';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
+          @include font($font-pro, normal, 400, 16px, 0.15em);
           color: $black;
           text-decoration: none;
           padding: 18px 60px;
@@ -322,7 +303,6 @@
         background-position: center;
         transition: all 0.3s;
         width: 100%;
-        // height: auto;
         &:hover {
           object-fit: cover;
           width: 100%;
@@ -347,9 +327,8 @@
 
   .signup-for-update {
     margin-top: 50px;
-    font-family: 'SofiaPro-Regular', sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    @include font($font-regular, normal, 400, 13px, 0.05em);
+
     width: 30%;
     @include responsive(mobile) {
       width: 90%;
@@ -357,11 +336,12 @@
     h5 {
       font-size: 20px;
       letter-spacing: 0.1em;
+      @include font($font-regular, normal, 400, 20px, 0.1em);
     }
 
     p {
-      font-size: 13px;
-      letter-spacing: 0.05em;
+      @include font($font-regular, normal, 400, 13px, 0.05em);
+
       line-height: 150%;
     }
 

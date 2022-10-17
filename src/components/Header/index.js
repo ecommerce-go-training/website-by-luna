@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import React, { memo, useState, useEffect } from 'react';
 
 import Search from 'components/Search';
 import bag from 'assets/images/bag.png';
@@ -13,11 +15,15 @@ import searchWhite from 'assets/images/searchWhite.png';
 import navbarAct from 'assets/images/icons/navbarAct.svg';
 
 import './style.scss';
-import classNames from 'classnames';
 
-function Header({ className }) {
-  const [show, setShow] = useState(false);
+const Header = ({ className }) => {
+  const [showSearch, onShowSearch] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
+
+  const { t } = useTranslation('translation', {
+    keyPrefix: 'Components.Header'
+  });
+
   const handleScroll = () => {
     if (window.scrollY >= 100) {
       setIsScrolling(true);
@@ -26,13 +32,19 @@ function Header({ className }) {
     }
   };
 
-  window.addEventListener('scroll', handleScroll);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.addEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className='header__container'>
-      {show && (
+      {showSearch && (
         <div className='search__show'>
-          <Search setShow={setShow} />
+          <Search setShow={onShowSearch} />
         </div>
       )}
       <div className={classNames(className, { white: isScrolling })}>
@@ -44,31 +56,35 @@ function Header({ className }) {
         />
         <div className='navigate-page'>
           <Link to='/arrivals' className='link-to-page'>
-            NEW ARRIVALS
+            {t('newArrivals')}
           </Link>
           <Link to='/' className='link-to-page'>
-            SHOP
+            {t('shop')}
           </Link>
           <Link to='/winter' className='link-to-page'>
-            FALL WINTER
+            {t('fallWinter')}
           </Link>
         </div>
         <div className='logo-image'>
-          <img src={logoTrans} alt='' className='logo-header' />
-          <img src={logo} alt='' className='logo-header__active' />
+          <Link to='/' className='link-to-page'>
+            <img src={logoTrans} alt='' className='logo-header' />
+          </Link>
+          <Link to='/' className='link-to-page'>
+            <img src={logo} alt='' className='logo-header__active' />
+          </Link>
         </div>
         <div className='left-header'>
           <img
             src={searchWhite}
             alt=''
             className='header-search'
-            onClick={() => setShow(true)}
+            onClick={() => onShowSearch(true)}
           />
           <img
             src={search}
             alt=''
             className='header-search__active'
-            onClick={() => setShow(true)}
+            onClick={() => onShowSearch(true)}
           />
           <Link to='/signin' className='link-to-page'>
             Login
@@ -79,7 +95,7 @@ function Header({ className }) {
       </div>
     </div>
   );
-}
+};
 
 Header.defaultProps = {
   className: 'header'
@@ -89,4 +105,4 @@ Header.propTypes = {
   className: PropTypes.oneOf(['header', 'header white'])
 };
 
-export default Header;
+export default memo(Header);

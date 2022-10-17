@@ -13,20 +13,14 @@
     border: transparent;
     outline: none;
     border-bottom: 1px solid $black;
-    font-weight: 400;
-    font-size: 15px;
-    font-family: 'Sofia Pro';
     line-height: 21px;
-    letter-spacing: 0.05em;
+    @include font($font-pro, normal, 400, 15px, 0.05em);
     color: $black;
   }
 
   &::placeholder {
-    font-weight: 400;
-    font-size: 15px;
     line-height: 21px;
-    font-family: 'Sofia Pro';
-    letter-spacing: 0.05em;
+    @include font($font-pro, normal, 400, 15px, 0.05em);
     color: $gray-smoke;
   }
 }

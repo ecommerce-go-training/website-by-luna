@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from 'components/Header';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import classNames from 'classnames';
 import Collapse from 'components/Collapse';
 
@@ -9,7 +9,7 @@ import body from 'assets/images/body.svg';
 
 import './style.scss';
 
-function Size() {
+const Size = () => {
   const [pageSize, setPageSize] = useState(1);
   return (
     <div>
@@ -241,6 +241,6 @@ function Size() {
       </div>
     </div>
   );
-}
+};
 
 export default Size;

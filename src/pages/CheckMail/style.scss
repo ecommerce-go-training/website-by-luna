@@ -13,9 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Sofia Pro';
-  font-style: normal;
-  letter-spacing: 0.1em;
+  @include font($font-pro, normal, 400, 13px, 0.1em);
   text-transform: uppercase;
 
   &__image {
@@ -34,11 +32,9 @@
   }
 
   .please-code {
-    letter-spacing: 0.05em;
     width: 34%;
     text-transform: none;
-    font-weight: 400;
-    font-size: 13px;
+    @include font($font-pro, normal, 400, 13px, 0.05em);
     line-height: 150%;
     margin-bottom: 80px;
     @include responsive(tablet) {
@@ -67,10 +63,8 @@
   }
 
   .notify-code {
-    font-weight: 400;
     text-decoration: none;
-    font-size: 15px;
-    letter-spacing: 0.05em;
+    @include font($font-pro, normal, 400, 15px, 0.05em);
     text-transform: none;
     color: $black;
     margin-top: 30px;

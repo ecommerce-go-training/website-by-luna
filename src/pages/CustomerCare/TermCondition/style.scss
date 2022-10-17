@@ -81,10 +81,7 @@
           border: none;
           background-color: transparent;
           text-transform: uppercase;
-          font-family: 'Sofia Pro';
-          font-style: normal;
-          font-weight: 400;
-          letter-spacing: 0.15em;
+          @include font($font-pro, normal, 400, 13px, 0.15em);
           color: $gray-table;
         }
       }
@@ -110,13 +107,9 @@
       @include responsive(mobile) {
         display: block;
         .term__page {
-          font-family: 'Sofia Pro';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 12px;
           line-height: 300%;
           color: $gray-smoke;
-          letter-spacing: 0.05em;
+          @include font($font-pro, normal, 400, 12px, 0.05em);
           text-transform: uppercase;
           span {
             color: $black;
@@ -133,10 +126,7 @@
             display: block;
             width: 100%;
             text-align: center;
-            font-family: 'Sofia Pro';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 36px;
+            @include font($font-pro, normal, 400, 36px, 0.05em);
           }
         }
       }

@@ -1,0 +1,57 @@
+{
+  "Components": {
+    "Header": {
+      "newArrivals": "hàng mới về",
+      "shopWinter": "Quần áo mùa đông",
+      "shop": "cửa hàng",
+      "about": "thông tin",
+      "fallWinter": "thu đông",
+      "account": "Tài Khoản",
+      "logIn": "Đăng nhập"
+    },
+    "Search": {
+      "quickLink": "Truy cập nhanh",
+      "dress": "Đầm",
+      "top": "Bán chạy",
+      "pant": "quần",
+      "store": "cửa hàng",
+      "ship": "Vận chuyển"
+    },
+    "Footer": {
+      "follow": "Theo dõi",
+      "copyRight": "© 2022 Pika Meow All Rights Reserved.",
+      "about": "Giới thiệu",
+      "brand": "Thương hiệu",
+      "storeLocator": "Cửa hàng",
+      "customerCare": "Chăm sóc khách hàng",
+      "faq": "Câu hỏi thường gặp",
+      "size": "Kích cỡ",
+      "shipping": "Vận chuyển và hoàn trả",
+      "terms": "Điều khoản và điều kiện",
+      "policy": "Chính sách bảo mật",
+      "garment": "Bảo quản",
+      "return": "Trả hàng",
+      "contact": "Liên hệ chúng tôi",
+      "customerSupport": "Dịch vụ chăm sóc khách hàng ",
+      "whosesalse": "Bán sỉ và thông báo"
+    },
+    "Announce": {
+      "freeShipInVietnam": "MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRONG NƯỚC",
+      "internationalShip": "MIỄN PHÍ VẬN CHUYỂN QUỐC TẾ CHO ĐƠN HÀNG TRÊN $500"
+    }
+  },
+  "Pages": {
+    "Home": {
+      "description1": "Bộ sưu tập nghỉ dưỡng 2021 là một lá thư tình gửi đến tuối trẻ của chúng ta",
+      "description2": "Hãy khám phá vẻ đẹp của những bông hoa đang nở dưới ánh bầu trời xanh và nắng",
+      "explore": "khám phá bộ sưu tầm"
+    },
+    "SignIn": {
+      "login": "Đăng nhập",
+      "password": "Mật khẩu",
+      "forgot": "Quên mật khẩu ?",
+      "submit": "Đăng nhập",
+      "signup": "Đăng ký"
+    }
+  }
+}

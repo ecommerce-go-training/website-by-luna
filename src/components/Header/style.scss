@@ -51,12 +51,9 @@
     .link-to-page {
       text-decoration: none;
       margin: 20px;
-      font-family: 'Sofia Pro';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 13px;
       line-height: 100%;
-      letter-spacing: 0.15em;
+      @include font($font-pro, normal, 400, 13px, 0.15em);
+
       text-transform: uppercase;
       color: $white;
       @include responsive(tablet) {

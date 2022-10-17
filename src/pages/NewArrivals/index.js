@@ -3,23 +3,62 @@ import { Link } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import Collapse from 'components/Collapse';
-// import DefaultButton from 'components/Button';
+import DefaultButton from 'components/Button';
 
+import plus from 'assets/images/plus.png';
+import Select from 'assets/images/icons/select.svg';
 import ArrivalImg1 from 'assets/images/arrivalImg1.png';
 import ArrivalImg2 from 'assets/images/arrivalImg2.png';
 import ArrivalImg3 from 'assets/images/arrivalImg3.png';
 import ArrivalImg4 from 'assets/images/arrivalImg4.png';
-import Select from 'assets/images/icons/select.svg';
 
 import './style.scss';
 
-function NewArrivals() {
+const NewArrivals = () => {
   const [click, setClick] = useState(false);
+
+  const dataSize1 = [
+    { item: 'FREESIZE', state: false },
+    { item: 'XS', state: false },
+    { item: 'S', state: false }
+  ];
+  const [dataSize2, setDatasize2] = useState([
+    { item: 'M', state: false },
+    { item: 'L', state: false },
+    { item: 'XL', state: false }
+  ]);
+  const dataColor1 = [
+    'BEIGE',
+    'BLUE',
+    'BLACK',
+    'BROWN',
+    'GREEN',
+    'RED',
+    'METALLIC'
+  ];
+
+  const dataColor2 = [
+    'WHITE',
+    'CREAM',
+    'PINK',
+    'ORANGE',
+    'YELLOW',
+    'LILAC',
+    'FLORAL'
+  ];
+
   const toggle = () => {
     setClick(click => !click);
   };
+
+  const handleChanging = index => {
+    let temp = dataSize2;
+    temp[index].state = !temp[index].state;
+    setDatasize2(temp);
+  };
+
   return (
     <div>
       <Announce />
@@ -105,151 +144,200 @@ function NewArrivals() {
           <div className='filter'>
             <p className='title'>FILTER</p>
             <div className='filter__item'>
-              <Collapse title='COLOR' className={'collapse-filter'}></Collapse>
-              <div className='filter__item--color'>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>BEIGE</span>
+              <Collapse title='COLOR' className={'collapse-filter'}>
+                <div className='filter__select'>
+                  <div className='filter__select--item'>
+                    {dataColor1.map((obj, index) => {
+                      return (
+                        <div className='item__color' key={index}>
+                          <span onClick={toggle}>
+                            <img
+                              key={index}
+                              style={{
+                                display: click === true ? 'block' : 'none'
+                              }}
+                              src={Select}
+                              alt=''
+                            />
+                            {obj}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className='filter__select--item'>
+                    {dataColor2.map((obj, index) => {
+                      return (
+                        <div className='item__color' key={index}>
+                          <span onClick={toggle}>
+                            <img
+                              key={index}
+                              style={{
+                                display: click === true ? 'block' : 'none'
+                              }}
+                              src={Select}
+                              alt=''
+                            />
+                            {obj}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>WHITE</span>
+              </Collapse>
+              <Collapse title='SIZE' className={'collapse-filter'}>
+                <div className='filter__select'>
+                  <div className='filter__select--item'>
+                    {dataSize1.map((obj, index) => {
+                      return (
+                        <div className='item__size' key={index}>
+                          <span onClick={toggle}>
+                            <img
+                              key={index}
+                              style={{
+                                display: click === true ? 'block' : 'none'
+                              }}
+                              src={Select}
+                              alt=''
+                            />
+                            {obj.item}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className='filter__select--item'>
+                    {dataSize2.map((obj, index) => {
+                      return (
+                        <div className='item__size' key={index}>
+                          <span
+                            onClick={() => {
+                              handleChanging(index);
+                              console.log(dataSize2);
+                            }}
+                          >
+                            <img
+                              key={index}
+                              style={{
+                                display:
+                                  dataSize2[index].state === true
+                                    ? 'block'
+                                    : 'none'
+                              }}
+                              src={Select}
+                              alt=''
+                            />
+                            {obj.item}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
+              </Collapse>
+              <div className='filter-submit'>
+                <p>CLEAR FILTERS</p>
+                <DefaultButton>APPLY</DefaultButton>
               </div>
-              <div className='filter__item--color'>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>BLUE</span>
-                </div>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>CREAM</span>
-                </div>
-              </div>
-              <div className='filter__item--color'>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>BLACK</span>
-                </div>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>PINK</span>
-                </div>
-              </div>
-              <div className='filter__item--color'>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>BROWN</span>
-                </div>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>ORANGE</span>
-                </div>
-              </div>
-              <div className='filter__item--color'>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>GREEN</span>
-                </div>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>YELLOW</span>
-                </div>
-              </div>
-              <div className='filter__item--color'>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>RED</span>
-                </div>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>LILAC</span>
-                </div>
-              </div>
-              <div className='filter__item--color'>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>METALLIC</span>
-                </div>
-                <div className='item__color'>
-                  <img
-                    style={{ display: click === true ? 'flex' : 'none' }}
-                    src={Select}
-                    alt=''
-                  />
-                  <span onClick={toggle}>FROLAL</span>
-                </div>
-              </div>
-              <Collapse title='SIZE' className={'collapse-filter'}></Collapse>
+            </div>
+          </div>
+          <div className='sort'>
+            <p className='title'>SORT</p>
+            <div>
+              <p className='active'>NEWEST IN</p>
+              <p>BEST SELLERS</p>
+              <p>PRICE HIGHEST</p>
+              <p>PRICE LOWEST</p>
             </div>
           </div>
         </div>
         <div className='grid__4--3'>
           <div className='grid__image'>
-            <img src={ArrivalImg1} alt='' />
-            <img src={ArrivalImg2} alt='' />
+            <div className='image-item'>
+              <img src={ArrivalImg1} alt='' />
+              <div className='quick-add-size'>
+                <img src={plus} alt='' />
+                <p>QUICK ADD: </p>
+                <p>XS</p>
+                <p className='out-stock'>S</p>
+                <p className='active'>M</p>
+                <p className='out-stock'>L</p>
+              </div>
+              <div className='item-infor'>
+                <p>
+                  HOLLY SHEER BLOUSE IN SAFARI
+                  <br />
+                  <span>NEW ARRIVALS</span>
+                </p>
+                <p>999.000</p>
+              </div>
+            </div>
+            <div className='image-item'>
+              <img src={ArrivalImg2} alt='' />
+              <div className='quick-add-size'>
+                <img src={plus} alt='' />
+                <p>QUICK ADD: </p>
+                <p>XS</p>
+                <p className='out-stock'>S</p>
+                <p className='active'>M</p>
+                <p className='out-stock'>L</p>
+              </div>
+              <div className='item-infor'>
+                <p>
+                  HOLLY SHEER BLOUSE IN SAFARI
+                  <br />
+                  <span>PRE-ORDER</span>
+                </p>
+                <p>999.000</p>
+              </div>
+            </div>
           </div>
           <div className='grid__image'>
-            <img src={ArrivalImg3} alt='' />
-            <img src={ArrivalImg4} alt='' />
+            <div className='image-item'>
+              <img src={ArrivalImg3} alt='' />
+              <div className='quick-add-size'>
+                <img src={plus} alt='' />
+                <p>QUICK ADD: </p>
+                <p>XS</p>
+                <p className='out-stock'>S</p>
+                <p className='active'>M</p>
+                <p className='out-stock'>L</p>
+              </div>
+              <div className='item-infor'>
+                <p>
+                  HOLLY SHEER BLOUSE IN SAFARI
+                  <br />
+                  <span>NEW ARRIVALS</span>
+                </p>
+                <p>999.000</p>
+              </div>
+            </div>
+            <div className='image-item'>
+              <img src={ArrivalImg4} alt='' />
+              <div className='quick-add-size'>
+                <img src={plus} alt='' />
+                <p>QUICK ADD: </p>
+                <p>XS</p>
+                <p className='out-stock'>S</p>
+                <p className='active'>M</p>
+                <p className='out-stock'>L</p>
+              </div>
+              <div className='item-infor'>
+                <p>
+                  HOLLY SHEER BLOUSE IN SAFARI
+                  <br />
+                  <span>PRE-ORDER</span>
+                </p>
+                <p>999.000</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <Footer />
     </div>
   );
-}
+};
 
 export default NewArrivals;

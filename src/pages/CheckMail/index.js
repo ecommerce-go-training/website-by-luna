@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import DefaultButton from 'components/Button';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import DefaultInput from 'components/Input/Defaul';
 import checkmail from 'assets/images/checkmail.svg';
 
 import './style.scss';
 
-function CheckMail() {
+const CheckMail = () => {
   return (
     <div>
       <Announce />
@@ -53,6 +53,6 @@ function CheckMail() {
       <Footer />
     </div>
   );
-}
+};
 
 export default CheckMail;

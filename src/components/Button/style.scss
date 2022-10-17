@@ -7,11 +7,9 @@
   height: 50px;
   background: $black;
   color: $white;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
   line-height: 20px;
-  letter-spacing: 0.15em;
+  @include font($font-pro, normal, 400, 16px, 0.15em);
+
   text-transform: uppercase;
   &:hover {
     background: $gray-smoke;

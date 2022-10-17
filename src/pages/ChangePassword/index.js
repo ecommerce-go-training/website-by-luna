@@ -3,12 +3,12 @@ import React from 'react';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import DefaultButton from 'components/Button';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 import DefaultInput from 'components/Input/Defaul';
 
 import './style.scss';
 
-function ChangePass() {
+const ChangePass = () => {
   return (
     <div>
       <Announce />
@@ -47,6 +47,6 @@ function ChangePass() {
       <Footer />
     </div>
   );
-}
+};
 
 export default ChangePass;

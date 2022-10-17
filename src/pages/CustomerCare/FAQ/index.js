@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Collapse from 'components/Collapse';
 import Header from 'components/Header';
-import Announce from 'components/Announce';
+import Announce from 'components/Announcement';
 
 import './style.scss';
 
-function FAQ() {
+const FAQ = () => {
   return (
     <div>
       <Announce />
@@ -19,27 +19,27 @@ function FAQ() {
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/size' className='link__page '>
               sizing
             </Link>
           </p>
           <p>
-            <Link to='/size' className='link__page '>
+            <Link to='/ship' className='link__page '>
               shipping & returns
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/term' className='link__page '>
               term & conditions
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/policy' className='link__page '>
               privacy policy
             </Link>
           </p>
           <p>
-            <Link to='/' className='link__page '>
+            <Link to='/garment' className='link__page '>
               garment care
             </Link>
           </p>
@@ -233,6 +233,6 @@ function FAQ() {
       </div>
     </div>
   );
-}
+};
 
 export default FAQ;

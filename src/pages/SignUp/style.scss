@@ -22,9 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Sofia Pro';
-  font-style: normal;
-  letter-spacing: 0.1em;
+  @include font($font-pro, normal, 400, 15px, 0.1em);
   text-transform: uppercase;
 
   &__form {
@@ -56,10 +54,8 @@
   .default-checkbox {
     margin-top: 50px;
     p {
-      font-weight: 400;
-      font-size: 11px;
       text-transform: none;
-      letter-spacing: 0.05em;
+      @include font($font-pro, normal, 400, 11px, 0.05em);
       @include responsive(mobile) {
         letter-spacing: 0.04em;
         padding-top: 0px;
@@ -70,11 +66,9 @@
 
   .agree-policy {
     text-align: left;
-    font-weight: 400;
-    font-size: 11px;
     line-height: 150%;
     text-transform: none;
-    letter-spacing: 0.05em;
+    @include font($font-pro, normal, 400, 11px, 0.05em);
     margin: 30px 0;
     @include responsive(mobile) {
       letter-spacing: 0.01em;
@@ -89,9 +83,8 @@
   }
 
   .have-account {
-    font-weight: 400;
-    font-size: 15px;
-    letter-spacing: 0.05em;
+    @include font($font-pro, normal, 400, 15px, 0.05em);
+
     text-transform: none;
     color: $black;
     margin-top: -74px;

@@ -4,7 +4,7 @@ import React, { useState, memo } from 'react';
 
 import './style.scss';
 
-function PaymentInput({
+const PaymentInput = ({
   name,
   type,
   placeholder,
@@ -12,7 +12,7 @@ function PaymentInput({
   // errorMsg = '',
   className,
   onChange
-}) {
+}) => {
   const [inputValue, setInputValue] = useState('');
 
   onChange = e => {
@@ -31,7 +31,7 @@ function PaymentInput({
       />
     </div>
   );
-}
+};
 
 PaymentInput.defaultProps = {
   type: 'text',

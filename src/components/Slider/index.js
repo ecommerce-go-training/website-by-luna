@@ -1,103 +1,41 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import React, { useRef, memo } from 'react';
 
+import plus from 'assets/images/icons/plus.svg';
 import left from 'assets/images/icons/arrowLeft.svg';
 import right from 'assets/images/icons/arrowRight.svg';
-// import image1 from 'assets/images/image1.png';
-// import image2 from 'assets/images/image2.png';
-// import image3 from 'assets/images/image3.png';
-// import image4 from 'assets/images/image4.png';
-import plus from 'assets/images/plus.svg';
 
 import './style.scss';
 
-// const dataSlider = [
-//   {
-//     image: image1,
-//     title: 'NEW IN DRESSES',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image2,
-//     title: 'NEW IN TOP',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image3,
-//     title: 'NEW IN SHORTS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image4,
-//     title: 'NEW IN JEANS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image2,
-//     title: 'NEW IN TOP',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image3,
-//     title: 'NEW IN SHORTS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image1,
-//     title: 'NEW IN DRESSES',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image4,
-//     title: 'NEW IN JEANS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image2,
-//     title: 'NEW IN TOP',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image3,
-//     title: 'NEW IN SHORTS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image4,
-//     title: 'NEW IN JEANS',
-//     price: '990.000 VND'
-//   },
-//   {
-//     image: image1,
-//     title: 'NEW IN DRESSES',
-//     price: '990.000 VND'
-//   }
-// ];
+const Slider = ({ data, className }) => {
+  const slideItem = useRef(null);
 
-function Slider({ data }) {
-  // data = dataSlider;
-  const slideitem = useRef(null);
+  // useEffect(() => {
+  //   const Elementcount = slideItem.childNodes.length;
+  //   console.log('slider haha ', Elementcount);
+  // });
 
   const nextSlide = e => {
     e.preventDefault();
-    let temp = slideitem.current.scrollLeft;
-    slideitem.current.scrollLeft += slideitem.current.offsetWidth;
-    if (slideitem.current.scrollLeft === temp && temp > 0) {
-      slideitem.current.scrollLeft = 0;
+    let temp = slideItem.current.scrollLeft;
+    slideItem.current.scrollLeft += slideItem.current.offsetWidth;
+    if (slideItem.current.scrollLeft === temp && temp > 0) {
+      slideItem.current.scrollLeft = 0;
     }
   };
 
   const prevSlide = e => {
     e.preventDefault();
 
-    slideitem.current.scrollLeft -= slideitem.current.offsetWidth;
+    slideItem.current.scrollLeft -= slideItem.current.offsetWidth;
   };
   return (
-    <div className='slider-container'>
+    <div className={classNames(['slider-container', className])}>
       <button className='slider__button' onClick={prevSlide}>
         <img src={left} alt='arrow left' className='slider__button--left' />
       </button>
-      <div className='slider' ref={slideitem}>
+      <div className='slider' ref={slideItem}>
         {data.map((obj, index) => {
           return (
             <div key={index} className='slider__items'>
@@ -119,10 +57,15 @@ function Slider({ data }) {
       </button>
     </div>
   );
-}
+};
+
+Slider.defaultProps = {
+  className: ''
+};
 
 Slider.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  className: PropTypes.string
 };
 
 export default memo(Slider);

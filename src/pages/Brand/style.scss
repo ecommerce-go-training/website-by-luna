@@ -13,11 +13,7 @@
     width: 25%;
     p {
       padding-left: 100px;
-      font-family: 'Sofia Pro';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      letter-spacing: 0.15em;
+      @include font($font-pro, normal, 400, 12px, 0.15em);
       text-transform: uppercase;
     }
 
@@ -53,15 +49,12 @@
 
       &--title {
         width: 35%;
-        font-family: 'Ogg';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 50px;
+        @include font('Ogg', normal, 400, 50px, 0em);
         line-height: 88%;
         @include responsive(mobile) {
           padding: 30px 0;
           width: 90%;
-          font-size: 40px;
+          @include font('Ogg', normal, 400, 40px, 0em);
           text-align: center;
         }
       }
@@ -69,11 +62,7 @@
       &--content {
         width: 50%;
         padding: 70px 120px 0 20px;
-        font-weight: lighter;
-        font-family: 'Sofia Pro';
-        font-style: normal;
-        font-size: 13px;
-        letter-spacing: 0.05em;
+        @include font($font-pro, normal, lighter, 13px, 0.05em);
 
         @include responsive(mobile) {
           width: 90%;

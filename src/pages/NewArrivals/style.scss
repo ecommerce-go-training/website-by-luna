@@ -20,11 +20,8 @@
 
     p {
       padding-left: 80px;
-      font-family: 'Sofia Pro';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      letter-spacing: 0.15em;
+      @include font($font-pro, normal, 400, 12px, 0.15em);
+
       text-transform: uppercase;
       padding-bottom: 10px;
     }
@@ -47,18 +44,40 @@
       &__item {
         width: 100%;
 
-        .filter__item--color {
-          width: 94%;
-          display: flex;
-          justify-content: space-between;
-          .item__color {
-            width: 44%;
-            display: flex;
-            span {
-              line-height: 30px;
-              cursor: pointer;
-              padding-left: 10px;
-              font-size: 12px;
+        .filter-submit {
+          text-align: center;
+          padding-left: 14px;
+          width: 90%;
+          p {
+            padding: 20px;
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+
+        .filter__select {
+          @include flex(row, flex-start, flex-start);
+
+          &--item {
+            width: 90%;
+            @include flex(column, space-between, space-between);
+
+            .item__color,
+            .item__size {
+              width: 40%;
+              display: flex;
+              span {
+                display: flex;
+                line-height: 30px;
+                cursor: pointer;
+                padding-left: 10px;
+                font-size: 12px;
+
+                img {
+                  padding-right: 10px;
+                }
+              }
             }
           }
         }
@@ -74,14 +93,85 @@
         }
       }
     }
+
+    .sort {
+      @include flex(row, flex-start, flex-start);
+      margin-top: 50px;
+      div {
+        p {
+          padding-left: 20px;
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   .grid__4--3 {
     width: 75%;
-    padding-right: 80px;
+    padding-right: 60px;
+    padding-left: 40px;
 
     .grid__image {
       @include flex(row, flex-start, space-between);
+      margin-bottom: 50px;
+      .image-item {
+        position: relative;
+
+        .quick-add-size {
+          display: none;
+        }
+
+        &:hover {
+          cursor: pointer;
+          .quick-add-size {
+            display: block;
+            position: absolute;
+            height: 90px;
+            width: 100%;
+            @include flex(row, center, center);
+            margin-top: -93px;
+            background-color: rgba(100%, 100%, 100%, 0.5);
+
+            img {
+              width: 10px;
+              height: 10px;
+            }
+
+            p {
+              font-size: 14px;
+              margin-right: 10px;
+              margin-left: 4px;
+              color: $black;
+              cursor: pointer;
+            }
+
+            .out-stock {
+              color: $gray-outstock;
+              cursor: none;
+            }
+
+            .active {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .item-infor {
+          @include flex(row, flex-start, space-between);
+          p {
+            @include font($font-pro, normal, 400, 13px, 0.12em);
+            text-transform: uppercase;
+            color: $black;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            line-height: 180%;
+
+            span {
+              color: $gray-outstock;
+            }
+          }
+        }
+      }
     }
   }
 }

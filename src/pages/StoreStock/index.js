@@ -5,13 +5,13 @@ import store1 from 'assets/images/store1.svg';
 
 import './style.scss';
 
-function Store() {
+const Store = () => {
   return (
     <div className='store__container'>
       <div className='grid__1--4'>
         <p>Our store</p>
         <p>
-          <Link to='/storehcm' className='link__page'>
+          <Link to='/store/ho-chi-minh' className='link__page'>
             Ho chi minh
           </Link>
         </p>
@@ -62,6 +62,6 @@ function Store() {
       </div>
     </div>
   );
-}
+};
 
 export default Store;

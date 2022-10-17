@@ -3,7 +3,7 @@
 
 .policy__container {
   width: 100%;
-  @include flex(row, center, flex-start);
+  @include flex(row, flex-start, flex-start);
   padding-top: 100px;
 
   @include responsive(mobile) {
@@ -18,11 +18,7 @@
 
     p {
       padding-left: 100px;
-      font-family: 'Sofia Pro';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      letter-spacing: 0.15em;
+      @include font($font-pro, normal, 400, 12px, 0.15em);
       text-transform: uppercase;
       padding-bottom: 10px;
     }
@@ -43,12 +39,9 @@
   .grid__3--4 {
     width: 55%;
     height: 100vh;
-    font-family: 'Sofia Pro';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
+    @include font($font-pro, normal, 400, 13px, 0.05em);
     text-align: justify;
-    letter-spacing: 0.05em;
+
     @include responsive(mobile) {
       width: 90%;
       text-align: left;
@@ -60,21 +53,15 @@
         display: block;
         width: 100%;
         text-align: center;
-        font-family: 'Sofia Pro';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 36px;
+        @include font($font-pro, normal, 400, 36px, 0.05em);
       }
     }
 
     .policy__page {
-      font-family: 'Sofia Pro';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
+      @include font($font-pro, normal, 400, 12px, 0.05em);
       line-height: 300%;
       color: $gray-smoke;
-      letter-spacing: 0.05em;
+
       text-transform: uppercase;
       span {
         color: $black;
