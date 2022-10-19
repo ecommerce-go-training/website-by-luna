@@ -37,6 +37,7 @@ const Account = () => {
         </div>
         <div className='account__content'>
           <p>Save your details to complete the order process more quickly</p>
+          <div className='add-new-address'></div>
         </div>
       </div>
       <Footer />
