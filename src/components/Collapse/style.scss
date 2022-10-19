@@ -8,6 +8,8 @@
   padding: 20px 0;
 
   &__button {
+    display: flex;
+    align-items: center;
     margin-right: 10px;
     border: none;
     outline: none;
