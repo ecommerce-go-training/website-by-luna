@@ -30,10 +30,3 @@
 
 /store/ho-chi-minh /store/ho-chi-minh
 
-[[rediects]]
-from = "/"
-to = "/"
-status = 209
-force = true # COMMENT: ensure that we always redirect
-headers = {X-From = "Netlify"}
-signed = "API_SIGNATURE_TOKEN"
