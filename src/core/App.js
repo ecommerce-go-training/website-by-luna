@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from 'components/ScrollToTop';
 
-import Home from 'pages/Home';
+// import Home from 'pages/Home';
 import Brand from 'pages/Brand';
 import Signin from 'pages/SignIn';
 import Signup from 'pages/SignUp';
@@ -22,7 +22,7 @@ import Policy from 'pages/CustomerCare/Policy';
 import Shipping from 'pages/CustomerCare/Shipping';
 import Term from 'pages/CustomerCare/TermCondition';
 import Garment from 'pages/CustomerCare/GarmentCare';
-// import Mycart from 'pages/MyCart';
+import Account from 'pages/Account';
 
 import 'services/i18n';
 
@@ -33,7 +33,7 @@ function App() {
       <Provider store={store}>
         <I18nextProvider i18n={i18n}>
           <Routes>
-            <Route exact path='/' element={<Home />} />
+            {/* <Route exact path='/' element={<Home />} /> */}
             <Route exact path='/faq' element={<FAQ />} />
             <Route exact path='/size' element={<Size />} />
             <Route exact path='/term' element={<Term />} />
@@ -48,7 +48,7 @@ function App() {
             <Route exact path='/garment' element={<Garment />} />
             <Route exact path='/arrivals' element={<Arrivals />} />
             <Route exact path='/store/ho-chi-minh' element={<StoreHCM />} />
-            {/* <Route exact path='/' element={<Mycart />} /> */}
+            <Route exact path='/' element={<Account />} />
           </Routes>
         </I18nextProvider>
       </Provider>
