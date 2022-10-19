@@ -4,3 +4,10 @@
 /blog/my-post.php /blog/my-post
 /news /blog
 /cuties https://www.petsofnetlify.com
+[[rediects]]
+from = "/"
+to = "/"
+status = 209
+force = true # COMMENT: ensure that we always redirect
+headers = {X-From = "Netlify"}
+signed = "API_SIGNATURE_TOKEN"
