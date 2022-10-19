@@ -1,4 +1,4 @@
 [[rediects]]
-from = "/*"
-to = "/"
-status = 209
+  from = "/*"
+  to = "/"
+  status = 200
