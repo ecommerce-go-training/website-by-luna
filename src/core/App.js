@@ -33,22 +33,22 @@ function App() {
       <Provider store={store}>
         <I18nextProvider i18n={i18n}>
           <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route exact path='/faq' element={<FAQ />} />
-            <Route exact path='/size' element={<Size />} />
-            <Route exact path='/term' element={<Term />} />
-            <Route exact path='/brand' element={<Brand />} />
-            <Route exact path='/store' element={<Store />} />
-            <Route exact path='/sign-in' element={<Signin />} />
-            <Route exact path='/sign-up' element={<Signup />} />
-            <Route exact path='/ship' element={<Shipping />} />
-            <Route exact path='/policy' element={<Policy />} />
-            <Route exact path='/detail' element={<Detail />} />
-            <Route exact path='/winter' element={<Winter />} />
-            <Route exact path='/garment' element={<Garment />} />
-            <Route exact path='/arrivals' element={<Arrivals />} />
-            <Route exact path='/store/ho-chi-minh' element={<StoreHCM />} />
-            {/* <Route exact path='/' element={<Account />} /> */}
+            <Route path='/' element={<Home />} />
+            <Route path='/faq' element={<FAQ />} />
+            <Route path='/size' element={<Size />} />
+            <Route path='/term' element={<Term />} />
+            <Route path='/brand' element={<Brand />} />
+            <Route path='/store' element={<Store />} />
+            <Route path='/sign-in' element={<Signin />} />
+            <Route path='/sign-up' element={<Signup />} />
+            <Route path='/ship' element={<Shipping />} />
+            <Route path='/policy' element={<Policy />} />
+            <Route path='/detail' element={<Detail />} />
+            <Route path='/winter' element={<Winter />} />
+            <Route path='/garment' element={<Garment />} />
+            <Route path='/arrivals' element={<Arrivals />} />
+            <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
+            {/* <Route path='/' element={<Account />} /> */}
           </Routes>
         </I18nextProvider>
       </Provider>
