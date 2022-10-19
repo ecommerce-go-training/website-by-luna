@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Announce from 'components/Announcement';
+import DefaultInput from 'components/Input/Defaul';
 
 import './style.scss';
 
@@ -37,7 +38,12 @@ const Account = () => {
         </div>
         <div className='account__content'>
           <p>Save your details to complete the order process more quickly</p>
-          <div className='add-new-address'></div>
+          <div className='add-new-address'>
+            <span>ADD NEW ADDRESS</span>
+            <div className='address_fill-info'>
+              <DefaultInput></DefaultInput>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />

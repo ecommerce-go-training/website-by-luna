@@ -42,5 +42,9 @@
   &__content {
     width: 75%;
     background-color: antiquewhite;
+
+    .add-new-address {
+      border: $gray;
+    }
   }
 }
