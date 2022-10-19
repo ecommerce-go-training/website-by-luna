@@ -19,17 +19,21 @@ const Collapse = ({ title, className, children }) => {
   return (
     <div>
       <div className={classNames(['collapse', className])}>
-        {/* <button onClick={handleOpenContent} className='collapse__button'> */}
-        {!openContent ? (
-          <img src={PlusIcon} alt='extend' className='collapse__button--plus' />
-        ) : (
-          <img
-            src={MinusIcon}
-            alt='collapse'
-            className='collapse__button--minus'
-          />
-        )}
-        {/* </button> */}
+        <button onClick={handleOpenContent} className='collapse__button'>
+          {!openContent ? (
+            <img
+              src={PlusIcon}
+              alt='extend'
+              className='collapse__button--plus'
+            />
+          ) : (
+            <img
+              src={MinusIcon}
+              alt='collapse'
+              className='collapse__button--minus'
+            />
+          )}
+        </button>
         <p className='collapse__title'>{title}</p>
       </div>
       <div className='collapse__content'>

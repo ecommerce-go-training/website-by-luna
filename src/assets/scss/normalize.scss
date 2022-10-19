@@ -1,691 +1,525 @@
-// Helper function for the normalize() mixin.
-@function _normalize-include($section, $exclude: null) {
-  // Initialize the global variables needed by this function.
-  @if not global_variable_exists(_normalize-include) {
-    $_normalize-include: () !global;
-    $_normalize-exclude: () !global;
-  }
-  // Since we are given 2 parameters, set the global variables.
-  @if $exclude != null {
-    $include: $section;
-    // Sass doesn't have static variables, so the work-around is to stuff these
-    // values into global variables so we can access them in future calls.
-    $_normalize-include: if(
-      type-of($include) == 'list',
-      $include,
-      ($include)
-    ) !global;
-    $_normalize-exclude: if(
-      type-of($exclude) == 'list',
-      $exclude,
-      ($exclude)
-    ) !global;
-    @return true;
-  }
+// =============================================================================
+// Normalize.scss based on Nicolas Gallagher and Jonathan Neal's
+// normalize.css v2.1.3 | MIT License | git.io/normalize
+// =============================================================================
 
-  // Check if $section is in the $include list.
-  @if index($_normalize-include, $section) {
-    @return true;
-  }
-  // If $include is set to (all), make sure $section is not in $exclude.
-  @else if not
-    index($_normalize-exclude, $section) and
-    index($_normalize-include, all)
-  {
-    @return true;
-  }
-  @return false;
+// =============================================================================
+// Normalize.scss settings
+// =============================================================================
+
+// Set to true if you want to add support for IE6 and IE7
+// Notice: setting to true might render some elements
+// slightly differently than when set to false
+$legacy_support_for_ie: false !default; // Used also in Compass
+
+// Set the default font family here so you don't have to override it later
+$normalized_font_family: sans-serif !default;
+
+$normalize_headings: true !default;
+
+$h1_font_size: 2em !default;
+$h2_font_size: 1.5em !default;
+$h3_font_size: 1.17em !default;
+$h4_font_size: 1em !default;
+$h5_font_size: 0.83em !default;
+$h6_font_size: 0.75em !default;
+
+$h1_margin: 0.67em 0 !default;
+$h2_margin: 0.83em 0 !default;
+$h3_margin: 1em 0 !default;
+$h4_margin: 1.33em 0 !default;
+$h5_margin: 1.67em 0 !default;
+$h6_margin: 2.33em 0 !default;
+
+$background: #fff !default;
+$color: #000 !default;
+
+// =============================================================================
+// HTML5 display definitions
+// =============================================================================
+
+// Corrects block display not defined in IE6/7/8/9 & FF3
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
 }
 
-@mixin normalize(
-  $include: (
-    all
-  ),
-  $exclude: ()
-) {
-  // Initialize the helper function by passing it this mixin's parameters.
-  $init: _normalize-include($include, $exclude);
+// Corrects inline-block display not defined in IE6/7/8/9 & FF3
 
-  // If we've customized any font variables, we'll need extra properties.
-  @if $base-line-height !=
-    24px or
-    $base-unit !=
-    'em' or
-    $h2-font-size !=
-    1.5 *
-    $base-font-size or
-    $h3-font-size !=
-    1.17 *
-    $base-font-size or
-    $h4-font-size !=
-    1 *
-    $base-font-size or
-    $h5-font-size !=
-    0.83 *
-    $base-font-size or
-    $h6-font-size !=
-    0.67 *
-    $base-font-size
-  {
-    $normalize-vertical-rhythm: true !global;
+audio,
+canvas,
+video {
+  display: inline-block;
+  @if $legacy_support_for_ie {
+    *display: inline;
+    *zoom: 1;
+  }
+}
+
+// 1. Prevents modern browsers from displaying 'audio' without controls
+// 2. Remove excess height in iOS5 devices
+
+audio:not([controls]) {
+  display: none; // 1
+  height: 0; // 2
+}
+
+//
+// Address [hidden] styling not present in IE 8/9.
+// Hide the template element in IE, Safari, and Firefox < 22.
+//
+
+[hidden],
+template {
+  display: none;
+}
+
+// =============================================================================
+// Base
+// =============================================================================
+
+// 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+//    http://clagnut.com/blog/348/#c790
+// 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+//    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+
+html {
+  @if $legacy_support_for_ie {
+    font-size: 100%; // 1
+  }
+  background: $background;
+  color: $color;
+  -webkit-text-size-adjust: 100%; // 2
+  -ms-text-size-adjust: 100%; // 2
+}
+
+// Addresses font-family inconsistency between 'textarea' and other form elements.
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: $normalized_font_family;
+}
+
+// Addresses margins handled incorrectly in IE6/7
+
+body {
+  margin: 0;
+}
+
+// =============================================================================
+// Links
+// =============================================================================
+
+// 1. Remove the gray background color from active links in IE 10.
+// 2. Addresses outline displayed oddly in Chrome
+// 3. Improves readability when focused and also mouse hovered in all browsers
+//    people.opera.com/patrickl/experiments/keyboard/test
+
+a {
+  // 1
+
+  background: transparent;
+
+  // 2
+
+  &:focus {
+    outline: thin dotted;
   }
 
-  /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+  // 3
 
-  @if _normalize-include(document) {
-    /* Document
-       ========================================================================== */
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
 
-    /**
-     * 1. Correct the line height in all browsers.
-     * 2. Prevent adjustments of font size after orientation changes in
-     *    IE on Windows Phone and in iOS.
-     */
+// =============================================================================
+// Typography
+// =============================================================================
 
-    html {
-      @if $base-font-family {
-        /* Change the default font family in all browsers (opinionated). */
-        font-family: $base-font-family;
-      }
-      @if $base-font-size != 16px or $normalize-vertical-rhythm {
-        // Correct old browser bug that prevented accessible resizing of text
-        // when root font-size is set with px or em.
-        font-size: ($base-font-size / 16px) * 100%;
-      }
-      @if $normalize-vertical-rhythm {
-        line-height: ($base-line-height / $base-font-size) * 1em; /* 1 */
-      } @else {
-        line-height: 1.15; /* 1 */
-      }
-      -ms-text-size-adjust: 100%; /* 2 */
-      -webkit-text-size-adjust: 100%; /* 2 */
-    }
+// Addresses font sizes and margins set differently in IE6/7
+// Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
+
+@if $normalize_headings == true {
+  h1 {
+    font-size: $h1_font_size;
+    margin: $h1_margin;
+  }
+  h2 {
+    font-size: $h2_font_size;
+    margin: $h2_margin;
   }
 
-  @if _normalize-include(sections) {
-    /* Sections
-       ========================================================================== */
-
-    /**
-     * Remove the margin in all browsers (opinionated).
-     */
-
-    body {
-      margin: 0;
-    }
-
-    /**
-     * Add the correct display in IE 9-.
-     */
-
-    article,
-    aside,
-    footer,
-    header,
-    nav,
-    section {
-      display: block;
-    }
-
-    /**
-     * Correct the font size and margin on `h1` elements within `section` and
-     * `article` contexts in Chrome, Firefox, and Safari.
-     */
-
-    h1 {
-      @include normalize-font-size($h1-font-size);
-      @if $normalize-vertical-rhythm {
-        @include normalize-line-height($h1-font-size);
-      }
-
-      @if $normalize-vertical-rhythm {
-        /* Set 1 unit of vertical rhythm on the top and bottom margins. */
-        @include normalize-margin(1 0, $h1-font-size);
-      } @else {
-        margin: 0.67em 0;
-      }
-    }
-
-    @if $normalize-vertical-rhythm {
-      h2 {
-        @include normalize-font-size($h2-font-size);
-        @include normalize-line-height($h2-font-size);
-        @include normalize-margin(1 0, $h2-font-size);
-      }
-
-      h3 {
-        @include normalize-font-size($h3-font-size);
-        @include normalize-line-height($h3-font-size);
-        @include normalize-margin(1 0, $h3-font-size);
-      }
-
-      h4 {
-        @include normalize-font-size($h4-font-size);
-        @include normalize-line-height($h4-font-size);
-        @include normalize-margin(1 0, $h4-font-size);
-      }
-
-      h5 {
-        @include normalize-font-size($h5-font-size);
-        @include normalize-line-height($h5-font-size);
-        @include normalize-margin(1 0, $h5-font-size);
-      }
-
-      h6 {
-        @include normalize-font-size($h6-font-size);
-        @include normalize-line-height($h6-font-size);
-        @include normalize-margin(1 0, $h6-font-size);
-      }
-    }
+  h3 {
+    font-size: $h3_font_size;
+    margin: $h3_margin;
   }
 
-  @if _normalize-include(grouping) {
-    /* Grouping content
-       ========================================================================== */
-
-    @if $normalize-vertical-rhythm {
-      /**
-       * Set 1 unit of vertical rhythm on the top and bottom margin.
-       */
-
-      blockquote {
-        @include normalize-margin(1 $indent-amount);
-      }
-
-      dl,
-      ol,
-      ul {
-        @include normalize-margin(1 0);
-      }
-
-      /**
-       * Turn off margins on nested lists.
-       */
-
-      ol,
-      ul {
-        ol,
-        ul {
-          margin: 0;
-        }
-      }
-
-      dd {
-        margin: 0 0 0 $indent-amount;
-      }
-
-      ol,
-      ul {
-        padding: 0 0 0 $indent-amount;
-      }
-    }
-
-    /**
-     * Add the correct display in IE 9-.
-     */
-
-    figcaption,
-    figure {
-      display: block;
-    }
-
-    /**
-     * Add the correct margin in IE 8.
-     */
-
-    figure {
-      @if $normalize-vertical-rhythm {
-        @include normalize-margin(1 $indent-amount);
-      } @else {
-        margin: 1em $indent-amount;
-      }
-    }
-
-    /**
-     * 1. Add the correct box sizing in Firefox.
-     * 2. Show the overflow in Edge and IE.
-     */
-
-    hr {
-      box-sizing: content-box; /* 1 */
-      height: 0; /* 1 */
-      overflow: visible; /* 2 */
-    }
-
-    /**
-     * Add the correct display in IE.
-     */
-
-    main {
-      display: block;
-    }
-
-    @if $normalize-vertical-rhythm {
-      /**
-       * Set 1 unit of vertical rhythm on the top and bottom margin.
-       */
-
-      p,
-      pre {
-        @include normalize-margin(1 0);
-      }
-    }
-
-    /**
-     * 1. Correct the inheritance and scaling of font size in all browsers.
-     * 2. Correct the odd `em` font sizing in all browsers.
-     */
-
-    pre {
-      font-family: monospace, monospace; /* 1 */
-      font-size: 1em; /* 2 */
-    }
+  h4 {
+    font-size: $h4_font_size;
+    margin: $h4_margin;
   }
 
-  @if _normalize-include(links) {
-    /* Links
-       ========================================================================== */
-
-    /**
-     * 1. Remove the gray background on active links in IE 10.
-     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
-     */
-
-    a {
-      background-color: transparent; /* 1 */
-      -webkit-text-decoration-skip: objects; /* 2 */
-    }
+  h5 {
+    font-size: $h5_font_size;
+    margin: $h5_margin;
   }
 
-  @if _normalize-include(text) {
-    /* Text-level semantics
-       ========================================================================== */
+  h6 {
+    font-size: $h6_font_size;
+    margin: $h6_margin;
+  }
+}
 
-    /**
-     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
-     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-     */
+// Addresses styling not present in IE 8/9, S5, Chrome
 
-    abbr[title] {
-      border-bottom: none; /* 1 */
-      text-decoration: underline; /* 2 */
-      text-decoration: underline dotted; /* 2 */
-    }
+abbr[title] {
+  border-bottom: 1px dotted;
+}
 
-    /**
-     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
-     */
+// Addresses style set to 'bolder' in FF3+, S4/5, Chrome
 
-    b,
-    strong {
-      font-weight: inherit;
-    }
+b,
+strong {
+  font-weight: bold;
+}
 
-    /**
-     * Add the correct font weight in Chrome, Edge, and Safari.
-     */
+@if $legacy_support_for_ie {
+  blockquote {
+    margin: 1em 40px;
+  }
+}
 
-    b,
-    strong {
-      font-weight: bolder;
-    }
+// Addresses styling not present in S5, Chrome
 
-    /**
-     * 1. Correct the inheritance and scaling of font size in all browsers.
-     * 2. Correct the odd `em` font sizing in all browsers.
-     */
+dfn {
+  font-style: italic;
+}
 
-    code,
-    kbd,
-    samp {
-      font-family: monospace, monospace; /* 1 */
-      font-size: 1em; /* 2 */
-    }
+// Addresses styling not present in IE6/7/8/9
 
-    /**
-     * Add the correct font style in Android 4.3-.
-     */
+mark {
+  background: #ff0;
+  color: #000;
+}
 
-    dfn {
-      font-style: italic;
-    }
+// Addresses margins set differently in IE6/7
+@if $legacy_support_for_ie {
+  p,
+  pre {
+    margin: 1em 0;
+  }
+}
 
-    /**
-     * Add the correct background and color in IE 9-.
-     */
+// Corrects font family set oddly in IE6, S4/5, Chrome
+// en.wikipedia.org/wiki/User:Davidgothberg/Test59
 
-    mark {
-      background-color: #ff0;
-      color: #000;
-    }
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  @if $legacy_support_for_ie {
+    _font-family: 'courier new', monospace;
+  }
+  font-size: 1em;
+}
 
-    /**
-     * Add the correct font size in all browsers.
-     */
+// Improves readability of pre-formatted text in all browsers
 
-    small {
-      font-size: 80%;
-    }
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
 
-    /**
-     * Prevent `sub` and `sup` elements from affecting the line height in
-     * all browsers.
-     */
+// Set consistent quote types.
 
-    sub,
-    sup {
-      font-size: 75%;
-      line-height: 0;
-      position: relative;
-      vertical-align: baseline;
-    }
+q {
+  quotes: '\201C''\201D''\2018''\2019';
+}
 
-    sub {
-      bottom: -0.25em;
-    }
+// 1. Addresses CSS quotes not supported in IE6/7
+// 2. Addresses quote property not supported in S4
 
-    sup {
-      top: -0.5em;
+// 1
+@if $legacy_support_for_ie {
+  q {
+    quotes: none;
+  }
+}
+
+// 2
+q {
+  &:before,
+  &:after {
+    content: '';
+    content: none;
+  }
+}
+
+// Address inconsistent and variable font size in all browsers.
+
+small {
+  font-size: 80%;
+}
+
+// Prevents sub and sup affecting line-height in all browsers
+// gist.github.com/413930
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+// =============================================================================
+// Lists
+// =============================================================================
+
+// Addresses margins set differently in IE6/7
+@if $legacy_support_for_ie {
+  dl,
+  menu,
+  ol,
+  ul {
+    margin: 1em 0;
+  }
+}
+
+@if $legacy_support_for_ie {
+  dd {
+    margin: 0 0 0 40px;
+  }
+}
+
+// Addresses paddings set differently in IE6/7
+@if $legacy_support_for_ie {
+  menu,
+  ol,
+  ul {
+    padding: 0 0 0 40px;
+  }
+}
+
+// Corrects list images handled incorrectly in IE7
+
+nav {
+  ul,
+  ol {
+    @if $legacy_support_for_ie {
+      list-style-image: none;
     }
   }
+}
 
-  @if _normalize-include(embedded) {
-    /* Embedded content
-       ========================================================================== */
+// =============================================================================
+// Embedded content
+// =============================================================================
 
-    /**
-     * Add the correct display in IE 9-.
-     */
+// 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
+// 2. Improves image quality when scaled in IE7
+//    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
 
-    audio,
-    video {
-      display: inline-block;
-    }
-
-    /**
-     * Add the correct display in iOS 4-7.
-     */
-
-    audio:not([controls]) {
-      display: none;
-      height: 0;
-    }
-
-    /**
-     * Remove the border on images inside links in IE 10-.
-     */
-
-    img {
-      border-style: none;
-    }
-
-    /**
-     * Hide the overflow in IE.
-     */
-
-    svg:not(:root) {
-      overflow: hidden;
-    }
+img {
+  border: 0; // 1
+  @if $legacy_support_for_ie {
+    -ms-interpolation-mode: bicubic; // 2
   }
+}
 
-  @if _normalize-include(forms) {
-    /* Forms
-       ========================================================================== */
+// Corrects overflow displayed oddly in IE9
 
-    /**
-     * 1. Change the font styles in all browsers (opinionated).
-     * 2. Remove the margin in Firefox and Safari.
-     */
+svg:not(:root) {
+  overflow: hidden;
+}
 
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-      font-family: if($base-font-family, $base-font-family, sans-serif); /* 1 */
-      font-size: 100%; /* 1 */
-      @if $normalize-vertical-rhythm {
-        line-height: ($base-line-height / $base-font-size) * 1em; /* 1 */
-      } @else {
-        line-height: 1.15; /* 1 */
-      }
-      margin: 0; /* 2 */
-    }
+// =============================================================================
+// Figures
+// =============================================================================
 
-    /**
-     * Show the overflow in IE.
-     */
+// Addresses margin not present in IE6/7/8/9, S5, O11
 
-    button {
-      overflow: visible;
-    }
+figure {
+  margin: 0;
+}
 
-    /**
-     * Remove the inheritance of text transform in Edge, Firefox, and IE.
-     * 1. Remove the inheritance of text transform in Firefox.
-     */
+// =============================================================================
+// Forms
+// =============================================================================
 
-    button,
-    select {
-      /* 1 */
-      text-transform: none;
-    }
+// Corrects margin displayed oddly in IE6/7
+@if $legacy_support_for_ie {
+  form {
+    margin: 0;
+  }
+}
 
-    /**
-     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
-     *    controls in Android 4.
-     * 2. Correct the inability to style clickable types in iOS and Safari.
-     */
+// Define consistent border, margin, and padding
 
-    button,
-    html [type="button"], /* 1 */
-    [type="reset"],
-    [type="submit"] {
-      -webkit-appearance: button; /* 2 */
-    }
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
 
-    button,
-    [type='button'],
-    [type='reset'],
-    [type='submit'] {
-      /**
-       * Remove the inner border and padding in Firefox.
-       */
+// 1. Corrects color not being inherited in IE6/7/8/9
+// 2. Remove padding so people aren't caught out if they zero out fieldsets.
+// 3. Corrects text not wrapping in FF3
+// 4. Corrects alignment displayed oddly in IE6/7
 
-      &::-moz-focus-inner {
-        border-style: none;
-        padding: 0;
-      }
+legend {
+  border: 0; // 1
+  padding: 0; // 2
+  white-space: normal; // 3
+  @if $legacy_support_for_ie {
+    *margin-left: -7px; // 4
+  }
+}
 
-      /**
-       * Restore the focus styles unset by the previous rule.
-       */
+// 1. Correct font family not being inherited in all browsers.
+// 2. Corrects font size not being inherited in all browsers
+// 3. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+// 4. Improves appearance and consistency in all browsers
 
-      &:-moz-focusring {
-        outline: 1px dotted ButtonText;
-      }
-    }
+button,
+input,
+select,
+textarea {
+  font-family: inherit; // 1
+  font-size: 100%; // 2
+  margin: 0; // 3
+  vertical-align: baseline; // 4
+  @if $legacy_support_for_ie {
+    *vertical-align: middle; // 4
+  }
+}
 
-    /**
-     * Show the overflow in Edge.
-     */
+// Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
 
-    input {
-      overflow: visible;
-    }
+button,
+input {
+  line-height: normal;
+}
 
-    /**
-     * 1. Add the correct box sizing in IE 10-.
-     * 2. Remove the padding in IE 10-.
-     */
+// Address inconsistent text-transform inheritance for button and select.
+// All other form control elements do not inherit text-transform values.
+// Correct button style inheritance in Chrome, Safari 5+, and IE 8+.
+// Correct select style inheritance in Firefox 4+ and Opera.
 
-    [type='checkbox'],
-    [type='radio'] {
-      box-sizing: border-box; /* 1 */
-      padding: 0; /* 2 */
-    }
+button,
+select {
+  text-transform: none;
+}
 
-    /**
-     * Correct the cursor style of increment and decrement buttons in Chrome.
-     */
+// 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native audio
+//    and video controls
+// 2. Corrects inability to style clickable 'input' types in iOS
+// 3. Improves usability and consistency of cursor style between image-type
+//    'input' and others
+// 4. Removes inner spacing in IE7 without affecting normal text inputs
+//    Known issue: inner spacing remains in IE6
 
-    [type='number']::-webkit-inner-spin-button,
-    [type='number']::-webkit-outer-spin-button {
-      height: auto;
-    }
+button,
+html input[type="button"], // 1
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; // 2
+  cursor: pointer; // 3
+  @if $legacy_support_for_ie {
+    *overflow: visible; // 4
+  }
+}
 
-    /**
-     * 1. Correct the odd appearance in Chrome and Safari.
-     * 2. Correct the outline style in Safari.
-     */
+// Re-set default cursor for disabled elements
 
-    [type='search'] {
-      -webkit-appearance: textfield; /* 1 */
-      outline-offset: -2px; /* 2 */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
 
-      /**
-       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
-       */
+// Removes inner padding and border in FF3+
+// www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
 
-      &::-webkit-search-cancel-button,
-      &::-webkit-search-decoration {
-        -webkit-appearance: none;
-      }
-    }
+button,
+input {
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
 
-    /**
-     * 1. Correct the inability to style clickable types in iOS and Safari.
-     * 2. Change font properties to `inherit` in Safari.
-     */
+// 1. Removes default vertical scrollbar in IE6/7/8/9
+// 2. Improves readability and alignment in all browsers
 
-    ::-webkit-file-upload-button {
-      -webkit-appearance: button; /* 1 */
-      font: inherit; /* 2 */
-    }
+textarea {
+  overflow: auto; // 1
+  vertical-align: top; // 2
+}
 
-    /**
-     * Correct the padding in Firefox.
-     */
+// =============================================================================
+// Tables
+// =============================================================================
 
-    fieldset {
-      padding: 0.35em 0.75em 0.625em;
-    }
+// Remove most spacing between table cells
 
-    /**
-     * 1. Correct the text wrapping in Edge and IE.
-     * 2. Correct the color inheritance from `fieldset` elements in IE.
-     * 3. Remove the padding so developers are not caught out when they zero out
-     *    `fieldset` elements in all browsers.
-     */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
-    legend {
-      box-sizing: border-box; /* 1 */
-      display: table; /* 1 */
-      max-width: 100%; /* 1 */
-      padding: 0; /* 3 */
-      color: inherit; /* 2 */
-      white-space: normal; /* 1 */
-    }
+input {
+  // 1. Addresses appearance set to searchfield in S5, Chrome
+  // 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
+  &[type='search'] {
+    -webkit-appearance: textfield; // 1
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; // 2
+    box-sizing: content-box;
 
-    /**
-     * 1. Add the correct display in IE 9-.
-     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
-     */
-
-    progress {
-      display: inline-block; /* 1 */
-      vertical-align: baseline; /* 2 */
-    }
-
-    /**
-     * Remove the default vertical scrollbar in IE.
-     */
-
-    textarea {
-      overflow: auto;
+    // Remove inner padding and search cancel button in Safari 5 and Chrome
+    // on OS X.
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
     }
   }
 
-  @if _normalize-include(interactive) {
-    /* Interactive
-       ========================================================================== */
-
-    /*
-     * Add the correct display in Edge, IE, and Firefox.
-     */
-
-    details {
-      display: block;
-    }
-
-    /*
-     * Add the correct display in all browsers.
-     */
-
-    summary {
-      display: list-item;
-    }
-
-    /*
-     * Add the correct display in IE 9-.
-     */
-
-    menu {
-      display: block;
-
-      @if $normalize-vertical-rhythm {
-        /*
-         * 1. Set 1 unit of vertical rhythm on the top and bottom margin.
-         * 2. Set consistent space for the list style image.
-         */
-
-        @include normalize-margin(1 0); /* 1 */
-        padding: 0 0 0 $indent-amount; /* 2 */
-
-        /**
-         * Turn off margins on nested lists.
-         */
-
-        menu &,
-        ol &,
-        ul & {
-          margin: 0;
-        }
-      }
-    }
-  }
-
-  @if _normalize-include(scripting) {
-    /* Scripting
-       ========================================================================== */
-
-    /**
-     * Add the correct display in IE 9-.
-     */
-
-    canvas {
-      display: inline-block;
-    }
-
-    /**
-     * Add the correct display in IE.
-     */
-
-    template {
-      display: none;
-    }
-  }
-
-  @if _normalize-include(hidden) {
-    /* Hidden
-       ========================================================================== */
-
-    /**
-     * Add the correct display in IE 10-.
-     */
-
-    [hidden] {
-      display: none;
+  // 1. Address box sizing set to content-box in IE 8/9/10.
+  // 2. Remove excess padding in IE 8/9/10.
+  // 3. Removes excess padding in IE7
+  //    Known issue: excess padding remains in IE6
+  &[type='checkbox'],
+  &[type='radio'] {
+    box-sizing: border-box; // 1
+    padding: 0; // 2
+    @if $legacy_support_for_ie {
+      *height: 13px; // 3
+      *width: 13px; // 3
     }
   }
 }
