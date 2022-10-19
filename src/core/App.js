@@ -39,8 +39,8 @@ function App() {
             <Route exact path='/term' element={<Term />} />
             <Route exact path='/brand' element={<Brand />} />
             <Route exact path='/store' element={<Store />} />
-            <Route exact path='/signin' element={<Signin />} />
-            <Route exact path='/signup' element={<Signup />} />
+            <Route exact path='/sign-in' element={<Signin />} />
+            <Route exact path='/sign-up' element={<Signup />} />
             <Route exact path='/ship' element={<Shipping />} />
             <Route exact path='/policy' element={<Policy />} />
             <Route exact path='/detail' element={<Detail />} />
