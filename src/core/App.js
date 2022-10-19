@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import i18n from 'services/i18n';
 import { store } from 'core/store';
 import { Provider } from 'react-redux';
@@ -28,31 +28,33 @@ import 'services/i18n';
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Provider store={store}>
-        <I18nextProvider i18n={i18n}>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/faq' element={<FAQ />} />
-            <Route path='/size' element={<Size />} />
-            <Route path='/term' element={<Term />} />
-            <Route path='/brand' element={<Brand />} />
-            <Route path='/store' element={<Store />} />
-            <Route path='/sign-in' element={<Signin />} />
-            <Route path='/sign-up' element={<Signup />} />
-            <Route path='/ship' element={<Shipping />} />
-            <Route path='/policy' element={<Policy />} />
-            <Route path='/detail' element={<Detail />} />
-            <Route path='/winter' element={<Winter />} />
-            <Route path='/garment' element={<Garment />} />
-            <Route path='/arrivals' element={<Arrivals />} />
-            <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
-            {/* <Route path='/' element={<Account />} /> */}
-          </Routes>
-        </I18nextProvider>
-      </Provider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <I18nextProvider i18n={i18n}>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Suspense>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/faq' element={<FAQ />} />
+              <Route path='/size' element={<Size />} />
+              <Route path='/term' element={<Term />} />
+              <Route path='/brand' element={<Brand />} />
+              <Route path='/store' element={<Store />} />
+              <Route path='/sign-in' element={<Signin />} />
+              <Route path='/sign-up' element={<Signup />} />
+              <Route path='/ship' element={<Shipping />} />
+              <Route path='/policy' element={<Policy />} />
+              <Route path='/detail' element={<Detail />} />
+              <Route path='/winter' element={<Winter />} />
+              <Route path='/garment' element={<Garment />} />
+              <Route path='/arrivals' element={<Arrivals />} />
+              <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
+              {/* <Route path='/' element={<Account />} /> */}
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </I18nextProvider>
+    </Provider>
   );
 }
 
