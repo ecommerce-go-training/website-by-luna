@@ -1,6 +1,7 @@
 # Redirects from what the browser requests to what we serve
+/* /
 
-/* / 200
+/*    /index.html    200
 
 /home /
 

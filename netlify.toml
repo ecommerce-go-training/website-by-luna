@@ -1,4 +1,4 @@
 [[rediects]]
   from = "/*"
-  to = "/index.js"
+  to = "/index.html"
   status = 200
