@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { useNavigate } from 'react-router-dom';
 
 import cartItem1 from 'assets/images/cartItem1.png';
 import time from 'assets/images/icons/time.svg';

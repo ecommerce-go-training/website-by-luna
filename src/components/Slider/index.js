@@ -13,7 +13,7 @@ const Slider = ({ data, className }) => {
 
   useEffect(() => {
     const Elementcount = slideItem.current.childNodes.length;
-    console.log('slider haha ', Elementcount);
+    console.log('slider ', Elementcount);
   });
 
   const nextSlide = e => {

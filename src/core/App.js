@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from 'components/ScrollToTop';
 
-import Home from 'pages/Home';
+// import Home from 'pages/Home';
 import Brand from 'pages/Brand';
 import Signin from 'pages/SignIn';
 import Signup from 'pages/SignUp';
@@ -22,7 +22,7 @@ import Policy from 'pages/CustomerCare/Policy';
 import Shipping from 'pages/CustomerCare/Shipping';
 import Term from 'pages/CustomerCare/TermCondition';
 import Garment from 'pages/CustomerCare/GarmentCare';
-// import Account from 'pages/Account';
+import OrderHistory from 'pages/OrderHistory';
 
 import 'services/i18n';
 
@@ -34,22 +34,22 @@ function App() {
           <ScrollToTop />
           <Suspense>
             <Routes>
-              <Route path='/' element={<Home />} />
+              {/* <Route path='/' element={<Home />} /> */}
               <Route path='/faq' element={<FAQ />} />
               <Route path='/size' element={<Size />} />
               <Route path='/term' element={<Term />} />
               <Route path='/brand' element={<Brand />} />
               <Route path='/store' element={<Store />} />
-              <Route path='/sign-in' element={<Signin />} />
-              <Route path='/sign-up' element={<Signup />} />
               <Route path='/ship' element={<Shipping />} />
               <Route path='/policy' element={<Policy />} />
               <Route path='/detail' element={<Detail />} />
               <Route path='/winter' element={<Winter />} />
+              <Route path='/sign-in' element={<Signin />} />
+              <Route path='/sign-up' element={<Signup />} />
               <Route path='/garment' element={<Garment />} />
               <Route path='/arrivals' element={<Arrivals />} />
               <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
-              {/* <Route path='/' element={<Account />} /> */}
+              <Route path='/' element={<OrderHistory />} />
             </Routes>
           </Suspense>
         </BrowserRouter>

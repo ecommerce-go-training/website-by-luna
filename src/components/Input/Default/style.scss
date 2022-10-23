@@ -20,17 +20,15 @@
     letter-spacing: 0.02em;
     text-transform: capitalize;
     text-align: left;
-    //opacity: 0;
-  }
 
-  .input__label::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    bottom: 0px;
-    // width: 100%;
-    transition: transform 0.3s ease;
-    transform: translateX(-100%);
+    &::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      bottom: 0px;
+      transition: transform 0.3s ease;
+      transform: translateX(-100%);
+    }
   }
 
   .default-input:focus + .input__label,

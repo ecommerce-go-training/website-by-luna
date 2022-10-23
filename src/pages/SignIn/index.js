@@ -8,7 +8,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import DefaultButton from 'components/Button';
 import Announce from 'components/Announcement';
-import DefaultInput from 'components/Input/Defaul';
+import DefaultInput from 'components/Input/Default';
 
 import schema from './validate';
 import './style.scss';
@@ -24,8 +24,8 @@ const SignIn = () => {
     formState: { errors }
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
 
-  const onSubmit = data => console.log(data);
-  console.log(errors);
+  const onSubmit = data => console.log('data', data);
+  console.log('errors', errors);
   return (
     <div className='sign-in'>
       <Announce />
@@ -35,24 +35,26 @@ const SignIn = () => {
           <h3>{t('login')}</h3>
           <form onSubmit={handleSubmit(onSubmit)}>
             <DefaultInput
-              {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
-              name='user'
+              name='email'
               type='text'
               placeholder='email'
               className=''
-              onChange
+              errorMsg='Email invalid'
+              register={register}
             />
+            {errors.email && <p className='error'>{errors.email.message}</p>}
             <DefaultInput
-              {...register('password', {
-                required: true,
-                pattern: /^(?=.*\d)(?=.*[a-zA-Z])[\da-zA-Z_.\-@]{8,}$/
-              })}
               name='password'
               type='password'
               placeholder={t('password')}
               className=''
-              onChange
+              errorMsg='Password invalid'
+              register={register}
             />
+            {errors.password && (
+              <p className='error'>{errors.password.message}</p>
+            )}
+
             <DefaultButton
               type='submit'
               // onClick=
@@ -66,7 +68,7 @@ const SignIn = () => {
           <Link to='/' className='reset-password'>
             {t('forgot')}
           </Link>
-          <Link to='/signup' className='create__account'>
+          <Link to='/sign-up' className='create__account'>
             {t('signup')}
           </Link>
         </div>

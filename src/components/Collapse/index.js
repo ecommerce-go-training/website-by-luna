@@ -14,8 +14,6 @@ const Collapse = ({ title, className, children }) => {
     setOPencontent(!openContent);
   };
 
-  console.log(handleOpenContent);
-
   return (
     <div>
       <div className={classNames(['collapse', className])}>
@@ -49,7 +47,10 @@ Collapse.defaultProps = {
 
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.array.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
   className: PropTypes.string
 };
 
