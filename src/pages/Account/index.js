@@ -22,7 +22,7 @@ const Account = () => {
       <div className='account'>
         <div className='account__page'>
           <p>
-            <Link to='/' className='link__page'>
+            <Link to='/history' className='link__page'>
               orders & returns
             </Link>
           </p>

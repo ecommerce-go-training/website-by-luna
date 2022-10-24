@@ -21,6 +21,7 @@ import Info from 'pages/Checkout/Infor';
 import Arrivals from 'pages/NewArrivals';
 import FAQ from 'pages/CustomerCare/FAQ';
 import Size from 'pages/CustomerCare/Size';
+import OrderHistory from 'pages/OrderHistory';
 import Policy from 'pages/CustomerCare/Policy';
 import Shipping from 'pages/CustomerCare/Shipping';
 import Term from 'pages/CustomerCare/TermCondition';
@@ -52,6 +53,7 @@ function App() {
               <Route path='/sign-up' element={<Signup />} />
               <Route path='/garment' element={<Garment />} />
               <Route path='/arrivals' element={<Arrivals />} />
+              <Route path='/history' element={<OrderHistory />} />
               <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
               <Route path='/' element={<Account />} />
             </Routes>
