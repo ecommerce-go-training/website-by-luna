@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 import cartItem1 from 'assets/images/cartItem1.png';
 import time from 'assets/images/icons/time.svg';
@@ -8,10 +9,11 @@ import './style.scss';
 import DefaultButton from 'components/Button';
 
 const MyCart = ({ setShowMyCart }) => {
-  // const navigate = useNavigate();
-  // const redirectCart = () => {
-  //   return navigate('/cart');
-  // };
+  const navigate = useNavigate();
+  const redirectCart = () => {
+    return navigate('/cart');
+  };
+
   return (
     <div className='my-cart'>
       <button className='icon-exit' onClick={() => setShowMyCart(false)}>
@@ -52,7 +54,9 @@ const MyCart = ({ setShowMyCart }) => {
         </div>
       </div>
       <div className='button'>
-        <DefaultButton className='button__view-cart'>VIEW CART</DefaultButton>
+        <DefaultButton className='button__view-cart' onClick={redirectCart}>
+          VIEW CART
+        </DefaultButton>
         <DefaultButton className='button__check-out'>
           Check out
           <p>2.250.000 đ</p>

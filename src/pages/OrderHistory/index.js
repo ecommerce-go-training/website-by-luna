@@ -221,11 +221,11 @@ const OrderHistory = () => {
             </div>
           </div>
           {showMakeAReturn && (
-            <div
-              className='make-return'
-              onClick={() => setShowMakeAReturn(false)}
-            >
-              <div className='back-drop'></div>
+            <div className='make-return'>
+              <div
+                className='back-drop'
+                onClick={() => setShowMakeAReturn(false)}
+              ></div>
               <div className='popup-make-a-return'>
                 <img
                   src={time}
@@ -278,11 +278,11 @@ const OrderHistory = () => {
             </div>
           )}
           {showSuccessRequest && (
-            <div
-              className='request-submitted'
-              onClick={() => setShowSuccessRequest(false)}
-            >
-              <div className='back-drop'></div>
+            <div className='request-submitted'>
+              <div
+                className='back-drop'
+                onClick={() => setShowSuccessRequest(false)}
+              ></div>
               <div className='popup-request-submitted'>
                 <p className='exit-popup'>Close</p>
                 <p onClick={() => setShowSuccessRequest(false)} />

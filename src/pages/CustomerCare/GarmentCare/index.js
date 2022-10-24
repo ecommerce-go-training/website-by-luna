@@ -11,7 +11,7 @@ const Garment = () => {
   return (
     <div>
       <Announce />
-      <Header />
+      <Header className='header white' />
       <div className='garment__container'>
         <div className='grid__1--4'>
           <p>

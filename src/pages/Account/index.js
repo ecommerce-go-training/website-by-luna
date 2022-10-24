@@ -140,7 +140,7 @@ const Account = () => {
             )}
           </div>
         </div>
-        <div className='back-drop'>
+        {/* <div className='back-drop'>
           <div className='popup-confirm-delete'>
             <p>Are you sure you want to delete this address?</p>
             <div className='button-confirm'>
@@ -150,7 +150,7 @@ const Account = () => {
               </DefaultButton>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <Footer />
     </div>

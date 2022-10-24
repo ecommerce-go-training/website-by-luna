@@ -1,0 +1,241 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.information-container {
+  width: 100%;
+
+  .information {
+    // padding-top: 130px;
+    width: 100%;
+    @include flex(row, center, center);
+
+    &__fill {
+      width: 50%;
+      @include flex(column, center, flex-start);
+      margin-bottom: 50px;
+      &--content {
+        width: 86%;
+        border-bottom: 1px solid $gray-smoke;
+
+        .logo-payment-page {
+          width: 200px;
+          padding-top: 10px;
+          cursor: pointer;
+        }
+
+        .checkout-direction {
+          @include font($font-pro, normal, 400, 12px, 0.05em);
+          text-transform: uppercase;
+          color: $gray-smoke;
+
+          .active {
+            color: $black;
+          }
+        }
+
+        .contact-info-title {
+          @include flex(row, center, space-between);
+          @include font($font-pro, normal, 400, 15px, 0.01em);
+
+          .contact-title {
+            @include font($font-pro, normal, 400, 20px, 0.01em);
+          }
+        }
+
+        .contact-email__checkbox {
+          margin-top: 20px;
+          p {
+            @include font($font-pro, normal, 400, 11px, 0.01em);
+          }
+        }
+
+        .shipping-address-title {
+          @include font($font-pro, normal, 400, 20px, 0.01em);
+          padding-top: 40px;
+          padding-bottom: 10px;
+        }
+
+        .input-name-receive-user,
+        .input-country-and-postal-code {
+          @include flex(row, center, space-between);
+
+          .first-name,
+          .last-name,
+          .input-country,
+          .input-postal-code {
+            width: 48%;
+          }
+        }
+
+        .save-information__checkbox {
+          p {
+            @include font($font-pro, normal, 400, 11px, 0.01em);
+          }
+        }
+
+        .return-or-continue {
+          @include flex(row, center, space-between);
+          padding-top: 30px;
+          padding-bottom: 50px;
+
+          .return-to-bag {
+            img {
+              height: 12px;
+              width: 7px;
+              padding-right: 10px;
+            }
+
+            @include flex(row, center, center);
+            p {
+              text-transform: uppercase;
+              @include font($font-pro, normal, 400, 12px, 0.15em);
+            }
+          }
+
+          .button-continue {
+            width: 48%;
+          }
+        }
+      }
+    }
+
+    &__cart {
+      width: 50%;
+      background-color: $gray-light;
+
+      .payment-items {
+        width: 60%;
+        margin: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $gray-smoke;
+        @include flex(column, center, center);
+        @include font($font-pro, normal, 400, 15px, 0.05em);
+
+        .payment-item {
+          padding-top: 20px;
+          width: 100%;
+          @include flex(row, center, space-between);
+
+          .item-image-info {
+            @include flex(row, center, flex-start);
+
+            img {
+              width: 52px;
+              height: 75px;
+              margin-right: 20px;
+              object-fit: contain;
+            }
+
+            .type-item {
+              color: $gray-outstock;
+            }
+          }
+
+          .item-price {
+            @include font($font-pro, normal, 400, 15px, 0.1em);
+          }
+        }
+      }
+
+      .payment-sale {
+        width: 60%;
+        margin: 30px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid $gray-smoke;
+
+        @include flex(row, center, space-between);
+
+        &__input {
+          width: 76%;
+
+          &--code {
+            margin: 0;
+          }
+        }
+
+        &__button {
+          width: 22%;
+        }
+      }
+
+      .payment-total-price-item {
+        @include flex(column, space-between, center);
+        width: 60%;
+        margin: 30px;
+        @include responsive(mobile) {
+          border-bottom: none;
+        }
+
+        .payment-shipping-fee,
+        .payment-subtotal {
+          @include flex(row, center, space-between);
+          p {
+            @include font($font-pro, normal, 400, 15px, 0.1em);
+            margin: 10px 0;
+          }
+        }
+
+        .payment-total-item {
+          @include flex(row, center, space-between);
+          border-top: 1px solid $gray-smoke;
+          margin-top: 30px;
+          padding-top: 10px;
+
+          p {
+            @include font($font-pro, normal, 400, 20px, 0.01em);
+          }
+        }
+      }
+
+      .payment-footer__content--contact {
+        margin: 30px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        @include responsive(mobile) {
+          width: 100%;
+        }
+      }
+      @include font($font-pro, normal, 400, 12px, 0.05em);
+
+      .payment-footer__content--mail,
+      .payment-footer__content--phone {
+        margin-top: 10px;
+        @include flex(row, center, flex-start);
+
+        @include responsive(mobile) {
+          @include flex(row, center, center);
+        }
+
+        img {
+          margin-right: 16px;
+          @include responsive(mobile) {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .payment-footer__content--mail {
+        img {
+          margin-left: 0;
+          margin-bottom: 5px;
+        }
+        p {
+          text-transform: none;
+          margin-right: 28px;
+          @include responsive(tablet) {
+            margin-right: 6px;
+            letter-spacing: 0.01em;
+          }
+          @include responsive(mobile) {
+            font-size: 11px;
+            margin-right: 6px;
+            letter-spacing: 0.01em;
+          }
+          p {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}

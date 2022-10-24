@@ -10,7 +10,7 @@ import './style.scss';
 const Shipping = () => {
   return (
     <div>
-      <Announce />
+      <Announce className='header white' />
       <Header />
       <div className='shipping__container'>
         <div className='grid__1--4'>
