@@ -268,7 +268,10 @@ const OrderHistory = () => {
                   <div className='button-start-return'>
                     <DefaultButton
                       className='button-start--return'
-                      onClick={() => setShowSuccessRequest(true)}
+                      onClick={() => {
+                        setShowMakeAReturn(false);
+                        setShowSuccessRequest(true);
+                      }}
                     >
                       START MY RETURN
                     </DefaultButton>
@@ -284,8 +287,12 @@ const OrderHistory = () => {
                 onClick={() => setShowSuccessRequest(false)}
               ></div>
               <div className='popup-request-submitted'>
-                <p className='exit-popup'>Close</p>
-                <p onClick={() => setShowSuccessRequest(false)} />
+                <p
+                  className='exit-popup'
+                  onClick={() => setShowSuccessRequest(false)}
+                >
+                  Close
+                </p>
                 <div className='request-content'>
                   <img src={checkSuccess} alt='check success' />
                   <p className='popup-title'>REQUEST SUBMITTED !</p>
