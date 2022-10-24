@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from 'components/ScrollToTop';
 
-import Home from 'pages/Home';
+// import Home from 'pages/Home';
 import Brand from 'pages/Brand';
 import Signin from 'pages/SignIn';
 import Signup from 'pages/SignUp';
@@ -36,7 +36,7 @@ function App() {
           <ScrollToTop />
           <Suspense>
             <Routes>
-              <Route path='/' element={<Home />} />
+              {/* <Route path='/' element={<Home />} /> */}
               <Route path='/faq' element={<FAQ />} />
               <Route path='/size' element={<Size />} />
               <Route path='/term' element={<Term />} />
@@ -53,7 +53,7 @@ function App() {
               <Route path='/garment' element={<Garment />} />
               <Route path='/arrivals' element={<Arrivals />} />
               <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
-              <Route path='/account' element={<Account />} />
+              <Route path='/' element={<Account />} />
             </Routes>
           </Suspense>
         </BrowserRouter>
