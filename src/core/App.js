@@ -7,11 +7,11 @@ import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from 'components/ScrollToTop';
 
-// import Home from 'pages/Home';
+import Home from 'pages/Home';
 import Brand from 'pages/Brand';
 import Signin from 'pages/SignIn';
 import Signup from 'pages/SignUp';
-import Account from 'pages/Account';
+// import Account from 'pages/Account';
 import Store from 'pages/StoreStock';
 import StoreHCM from 'pages/StoreHCM';
 import Winter from 'pages/FallWinter';
@@ -26,6 +26,7 @@ import Policy from 'pages/CustomerCare/Policy';
 import Shipping from 'pages/CustomerCare/Shipping';
 import Term from 'pages/CustomerCare/TermCondition';
 import Garment from 'pages/CustomerCare/GarmentCare';
+import ShipPayment from 'pages/Checkout/Shipping';
 
 import 'services/i18n';
 
@@ -37,7 +38,7 @@ function App() {
           <ScrollToTop />
           <Suspense>
             <Routes>
-              {/* <Route path='/' element={<Home />} /> */}
+              <Route path='/' element={<Home />} />
               <Route path='/faq' element={<FAQ />} />
               <Route path='/size' element={<Size />} />
               <Route path='/term' element={<Term />} />
@@ -54,8 +55,9 @@ function App() {
               <Route path='/garment' element={<Garment />} />
               <Route path='/arrivals' element={<Arrivals />} />
               <Route path='/history' element={<OrderHistory />} />
+              <Route path='/ship-payment' element={<ShipPayment />} />
               <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
-              <Route path='/' element={<Account />} />
+              {/* <Route path='/' element={<Account />} /> */}
             </Routes>
           </Suspense>
         </BrowserRouter>

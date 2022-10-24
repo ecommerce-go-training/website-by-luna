@@ -24,6 +24,10 @@ const Information = () => {
     return navigate('/');
   };
 
+  const redirectShippingPayment = () => {
+    return navigate('/ship-payment');
+  };
+
   return (
     <div className='information-container'>
       <div className='information '>
@@ -149,7 +153,9 @@ const Information = () => {
                 <p>Return to bag</p>
               </div>
               <div className='button-continue'>
-                <DefaultButton>Continue to shipping</DefaultButton>
+                <DefaultButton onClick={redirectShippingPayment}>
+                  Continue to shipping
+                </DefaultButton>
               </div>
             </div>
           </form>

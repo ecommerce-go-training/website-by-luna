@@ -1,15 +1,19 @@
 @import 'assets/scss/mixins.scss';
 @import 'assets/scss/variable.scss';
 
-.information-container {
+.ship-payment-container {
   width: 100%;
 
-  .information {
+  .ship-payment {
     // padding-top: 130px;
     width: 100%;
-    @include flex(row, center, center);
+    @include flex(row, flex-start, center);
 
-    &__fill {
+    &__info {
+      width: 50%;
+      height: 100vh;
+      background-color: aqua;
+
       width: 50%;
       @include flex(column, center, flex-start);
       margin-bottom: 50px;
@@ -33,67 +37,11 @@
           }
         }
 
-        .contact-info-title {
-          @include flex(row, center, space-between);
-          @include font($font-pro, normal, 400, 15px, 0.01em);
-
-          .contact-title {
-            @include font($font-pro, normal, 400, 20px, 0.01em);
-          }
-        }
-
-        .contact-email__checkbox {
-          margin-top: 20px;
-          p {
-            @include font($font-pro, normal, 400, 11px, 0.01em);
-          }
-        }
-
-        .shipping-address-title {
-          @include font($font-pro, normal, 400, 20px, 0.01em);
-          padding-top: 40px;
-          padding-bottom: 10px;
-        }
-
-        .input-name-receive-user,
-        .input-country-and-postal-code {
-          @include flex(row, center, space-between);
-
-          .first-name,
-          .last-name,
-          .input-country,
-          .input-postal-code {
-            width: 48%;
-          }
-        }
-
-        .save-information__checkbox {
-          p {
-            @include font($font-pro, normal, 400, 11px, 0.01em);
-          }
-        }
-
-        .return-or-continue {
-          @include flex(row, center, space-between);
-          padding-top: 30px;
-          padding-bottom: 50px;
-
-          .return-to-bag {
-            img {
-              height: 12px;
-              width: 7px;
-              padding-right: 10px;
-            }
-
-            @include flex(row, center, center);
-            p {
-              text-transform: uppercase;
-              @include font($font-pro, normal, 400, 12px, 0.15em);
-            }
-          }
-
-          .button-continue {
-            width: 48%;
+        .ship-payment__info-contact-address {
+          .ship-payment__info-contact,
+          .ship-payment__info-address {
+            @include flex(row, center, space-between);
+            @include font($font-pro, normal, 400, 15px, 0.05em);
           }
         }
       }
