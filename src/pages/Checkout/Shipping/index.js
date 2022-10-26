@@ -10,11 +10,11 @@ import logo from 'assets/images/logo.jpg';
 import mail from 'assets/images/icons/mail.svg';
 import phone from 'assets/images/icons/phone.svg';
 import cartItem1 from 'assets/images/cartItem1.png';
-// import back from 'assets/images/icons/arrowBack.svg';
+import back from 'assets/images/icons/arrowBack.svg';
 
 import './style.scss';
 
-const Information = () => {
+const ShipPayment = () => {
   const { t } = useTranslation('translation', {
     keyPrefix: 'Components.Footer'
   });
@@ -22,6 +22,10 @@ const Information = () => {
   const navigate = useNavigate();
   const redirectHome = () => {
     return navigate('/');
+  };
+
+  const redirectPayment = () => {
+    return navigate('/payment');
   };
 
   return (
@@ -43,17 +47,55 @@ const Information = () => {
             </p>
             <div className='ship-payment__info-contact-address'>
               <div className='ship-payment__info-contact'>
-                <p>
-                  Contact<span> tinmar09poke@gmail.com</span>
-                </p>
+                <div className='ship-payment__info-contact-content'>
+                  <p className='title-user'>Contact </p>
+                  <p>tinmar09poke@gmail.com</p>
+                </div>
                 <p className='change-info'>Change</p>
               </div>
               <div className='ship-payment__info-address'>
-                <p>
-                  Ship to{' '}
-                  <span>123 Tang Bat Ho, Ho Chi Minh 70000, Vietnam</span>
-                </p>
+                <div className='ship-payment__info-address-content'>
+                  <p className='title-type'>Ship to </p>
+                  <p>123 Tang Bat Ho, Ho Chi Minh 70000, Vietnam</p>
+                </div>
                 <p className='change-info'>Change</p>
+              </div>
+            </div>
+            <p className='shipping-method-title'>Shipping method</p>
+            {/* <div className='shipping-method-save-delivery'>
+              <div className='shipping-method-point-and-name'>
+                <div className='shipping-method-point'>
+                  <p>GIAO HÀNG TIẾT KIỆM</p>
+                </div>
+                <p>40.000 VND</p>
+              </div>
+              <p className='time-shipping'>2 - 5 days bussiness days</p>
+            </div> */}
+            {/* <div className='shipping-method-express-service'>
+              <div className='shipping-method-point-and-name'>
+                <div className='shipping-method-point'>
+                  <p>DHL Express Service</p>
+                </div>
+                <p>Free</p>
+              </div>
+            </div> */}
+            <div className='shipping-method-save'>
+              <div className='shipping-method-point-and-name'>
+                <div className='shipping-method-point'>
+                  <p>GIAO HÀNG TIẾT KIỆM</p>
+                </div>
+                <p>40.000 VND</p>
+              </div>
+            </div>
+            <div className='shipping-return-or-continue'>
+              <div className='return-to-bag'>
+                <img src={back} alt='icon back' />
+                <p>Return to bag</p>
+              </div>
+              <div className='button-continue'>
+                <DefaultButton onClick={redirectPayment}>
+                  Continue to payment
+                </DefaultButton>
               </div>
             </div>
           </div>
@@ -150,4 +192,4 @@ const Information = () => {
   );
 };
 
-export default Information;
+export default ShipPayment;

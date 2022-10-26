@@ -1,0 +1,563 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.payment-container {
+  width: 100%;
+
+  .payment {
+    width: 100%;
+    @include flex(row, flex-start, center);
+
+    &__info {
+      width: 50%;
+      @include flex(column, center, flex-start);
+      margin-bottom: 60px;
+      &--content {
+        width: 86%;
+        border-bottom: 1px solid $gray-smoke;
+        .logo-payment-page {
+          width: 200px;
+          padding-top: 10px;
+          cursor: pointer;
+        }
+
+        .checkout-direction {
+          @include font($font-pro, normal, 400, 12px, 0.05em);
+          text-transform: uppercase;
+          color: $gray-smoke;
+
+          .active {
+            color: $black;
+          }
+        }
+
+        .payment__info-contact-address {
+          border: 1px solid $gray-smoke;
+          margin-top: 50px;
+          padding: 0 20px;
+
+          .payment__info-contact {
+            border-bottom: 1px solid $gray-smoke;
+          }
+
+          .payment__info-contact,
+          .payment__info-address {
+            @include flex(row, center, space-between);
+            @include font($font-pro, normal, 400, 15px, 0.05em);
+
+            .payment__info-contact-content,
+            .payment__info-address-content {
+              @include flex(row, center, space-between);
+              color: $gray-outstock;
+
+              .title-user {
+                padding-right: 24px;
+              }
+
+              .title-type {
+                padding-right: 30px;
+              }
+            }
+
+            .change-info {
+              text-decoration: underline;
+            }
+          }
+
+          .payment__info-method {
+            border-top: 1px solid $gray-smoke;
+            padding-bottom: 20px;
+            @include flex(row, center, flex-start);
+            @include font($font-pro, normal, 400, 15px, 0.05em);
+
+            .title-method-payment {
+              padding-right: 24px;
+            }
+
+            p {
+              color: $gray-outstock;
+
+              span {
+                color: $black;
+              }
+            }
+          }
+        }
+
+        .payment-title {
+          @include font($font-pro, normal, 400, 20px, 0.01em);
+          padding-top: 30px;
+        }
+
+        .content {
+          @include font($font-pro, normal, 400, 15px, 0.05em);
+          color: $gray-outstock;
+        }
+
+        .payment-method-credit {
+          padding: 10px 0;
+          border: 1px solid $gray-smoke;
+          .payment-method-credit-title {
+            @include flex(row, center, space-between);
+            padding: 0 30px;
+            @include font($font-pro, normal, 400, 15px, 0.05em);
+
+            .payment-method-point {
+              position: relative;
+              padding-left: 30px;
+
+              &::before {
+                position: absolute;
+                top: 14px;
+                left: 0;
+                content: '';
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background-color: $black;
+              }
+            }
+          }
+
+          .payment-method-paypal-title {
+            @include flex(row, center, space-between);
+            padding: 10px 30px;
+            @include font($font-pro, normal, 400, 15px, 0.05em);
+
+            .payment-method-point {
+              position: relative;
+              padding-left: 40px;
+
+              img {
+                height: 42px;
+                width: 164px;
+              }
+
+              &::before {
+                position: absolute;
+                top: 14px;
+                left: 0;
+                content: '';
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                border: 1px solid $black;
+                background-color: $white;
+              }
+            }
+          }
+
+          .time-shipping {
+            @include font($font-pro, normal, 400, 11px, 0.05em);
+            color: $gray-outstock;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-left: 60px;
+          }
+
+          .input-payment-credit-cart {
+            padding: 20px;
+            margin: 10px;
+            border-bottom: 1px solid $gray-smoke;
+
+            .expiration-and-security-code {
+              @include flex(row, center, space-between);
+
+              .expiration,
+              .security-code {
+                width: 49%;
+              }
+            }
+          }
+        }
+        .payment-method-paypal {
+          padding: 10px 0;
+          border: 1px solid $gray-smoke;
+          .payment-method-credit-title {
+            @include flex(row, center, space-between);
+            margin: 0 30px;
+            padding-bottom: 10px;
+            @include font($font-pro, normal, 400, 15px, 0.05em);
+            border-bottom: 1px solid $gray-smoke;
+
+            .payment-method-point {
+              position: relative;
+              padding-left: 30px;
+
+              &::before {
+                position: absolute;
+                top: 14px;
+                left: 0;
+                content: '';
+                width: 21px;
+                height: 21px;
+                border-radius: 50%;
+                border: 1px solid $black;
+                background-color: $white;
+              }
+            }
+          }
+
+          .payment-method-paypal-title {
+            @include flex(row, center, space-between);
+            padding: 20px 30px 10px;
+            @include font($font-pro, normal, 400, 15px, 0.05em);
+
+            .payment-method-point {
+              position: relative;
+              padding-left: 40px;
+
+              img {
+                height: 42px;
+                width: 164px;
+              }
+
+              &::before {
+                position: absolute;
+                top: 14px;
+                left: 0;
+                content: '';
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background-color: $black;
+              }
+            }
+          }
+
+          .payment-paypal-redirect {
+            background-color: $white-gray;
+            margin: 50px;
+            padding: 50px 10px 10px;
+            @include flex(column, center, center);
+            text-align: center;
+            p {
+              padding: 20px 40px;
+            }
+          }
+        }
+
+        .shipping-and-billing-with-same {
+          @include flex(column, flex-start, flex-start);
+          border: 1px solid $gray-smoke;
+
+          .same-shipping-address {
+            @include flex(row, center, flex-start);
+            padding: 10px 30px 10px 10px;
+            margin-left: 20px;
+            padding-right: 7%;
+            width: 84%;
+            border-bottom: 1px solid $gray-smoke;
+
+            @include font($font-pro, normal, 400, 15px, 0.05em);
+
+            .payment-method-point {
+              position: relative;
+              padding-left: 40px;
+
+              &::before {
+                position: absolute;
+                top: 14px;
+                left: 0;
+                content: '';
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background-color: $black;
+              }
+            }
+          }
+
+          .different-shipping-address {
+            @include flex(row, center, space-between);
+            padding: 10px 30px;
+            @include font($font-pro, normal, 400, 15px, 0.05em);
+
+            .payment-method-point {
+              position: relative;
+              padding-left: 40px;
+
+              &::before {
+                position: absolute;
+                top: 14px;
+                left: 0;
+                content: '';
+                width: 21px;
+                height: 21px;
+                border-radius: 50%;
+                border: 1px solid $black;
+                background-color: $white;
+              }
+            }
+          }
+        }
+
+        .shipping-and-billing-with-different {
+          @include flex(column, flex-start, flex-start);
+          border: 1px solid $gray-smoke;
+
+          .same-shipping-address {
+            @include flex(row, center, flex-start);
+            padding: 10px 30px 10px 10px;
+            margin-left: 20px;
+            padding-right: 7%;
+            width: 84%;
+            border-bottom: 1px solid $gray-smoke;
+
+            @include font($font-pro, normal, 400, 15px, 0.05em);
+
+            .payment-method-point {
+              position: relative;
+              padding-left: 40px;
+
+              &::before {
+                position: absolute;
+                top: 14px;
+                left: 0;
+                content: '';
+                width: 21px;
+                height: 21px;
+                border-radius: 50%;
+                border: 1px solid $black;
+                background-color: $white;
+              }
+            }
+          }
+
+          .different-shipping-address {
+            @include flex(column, flex-start, space-between);
+            width: 100%;
+            padding: 10px 20px;
+
+            @include font($font-pro, normal, 400, 15px, 0.05em);
+
+            .payment-method-point {
+              position: relative;
+              padding-left: 50px;
+
+              &::before {
+                position: absolute;
+                top: 14px;
+                left: 10px;
+                content: '';
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background-color: $black;
+              }
+            }
+
+            .different-shipping-info {
+              width: 86%;
+              margin-top: 10px;
+              padding: 30px 20px 20px 20px;
+              background-color: $white-gray;
+              border-top: 1px solid $gray-smoke;
+
+              .input-name-receive-user,
+              .input-country-and-postal-code {
+                @include flex(row, center, space-between);
+
+                .first-name,
+                .last-name,
+                .input-country,
+                .input-postal-code {
+                  width: 48%;
+                }
+              }
+            }
+          }
+        }
+
+        .checkbox-agree-term {
+          margin-top: 20px;
+          padding: 20px;
+          border: 1px solid $gray-smoke;
+
+          label {
+            margin-bottom: 0px;
+          }
+
+          p {
+            line-height: 12px;
+            margin: 0;
+            padding: 0;
+            @include font($font-pro, normal, 400, 11px, 0.01em);
+            color: $gray-outstock;
+          }
+        }
+
+        .agree-to-pay {
+          margin-top: 20px;
+          p {
+            @include font($font-pro, normal, 400, 11px, 0.01em);
+            color: $gray-outstock;
+          }
+        }
+
+        .shipping-return-or-continue {
+          @include flex(row, center, space-between);
+          padding-top: 50px;
+          padding-bottom: 50px;
+
+          .return-to-bag {
+            img {
+              height: 12px;
+              width: 7px;
+              padding-right: 10px;
+            }
+
+            @include flex(row, center, center);
+            p {
+              text-transform: uppercase;
+              @include font($font-pro, normal, 400, 12px, 0.15em);
+            }
+          }
+
+          .button-continue {
+            width: 40%;
+          }
+        }
+      }
+    }
+
+    &__cart {
+      width: 50%;
+      background-color: $gray-light;
+
+      .payment-items {
+        width: 60%;
+        margin: 10px 30px 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $gray-smoke;
+        @include flex(column, center, center);
+        @include font($font-pro, normal, 400, 15px, 0.05em);
+
+        .payment-item {
+          padding-top: 20px;
+          width: 100%;
+          @include flex(row, center, space-between);
+
+          .item-image-info {
+            @include flex(row, center, flex-start);
+
+            img {
+              width: 52px;
+              height: 75px;
+              margin-right: 20px;
+              object-fit: contain;
+            }
+
+            .type-item {
+              color: $gray-outstock;
+            }
+          }
+
+          .item-price {
+            @include font($font-pro, normal, 400, 15px, 0.1em);
+          }
+        }
+      }
+
+      .payment-sale {
+        width: 60%;
+        margin: 30px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid $gray-smoke;
+
+        @include flex(row, center, space-between);
+
+        &__input {
+          width: 76%;
+
+          &--code {
+            margin: 0;
+          }
+        }
+
+        &__button {
+          width: 22%;
+        }
+      }
+
+      .payment-total-price-item {
+        @include flex(column, space-between, center);
+        width: 60%;
+        margin: 30px;
+        @include responsive(mobile) {
+          border-bottom: none;
+        }
+
+        .payment-shipping-fee,
+        .payment-subtotal {
+          @include flex(row, center, space-between);
+          p {
+            @include font($font-pro, normal, 400, 15px, 0.1em);
+            margin: 10px 0;
+          }
+        }
+
+        .payment-total-item {
+          @include flex(row, center, space-between);
+          border-top: 1px solid $gray-smoke;
+          margin-top: 30px;
+          padding-top: 10px;
+
+          p {
+            @include font($font-pro, normal, 400, 20px, 0.01em);
+          }
+        }
+      }
+
+      .payment-footer__content--contact {
+        margin: 30px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        @include responsive(mobile) {
+          width: 100%;
+        }
+      }
+      @include font($font-pro, normal, 400, 12px, 0.05em);
+
+      .payment-footer__content--mail,
+      .payment-footer__content--phone {
+        margin-top: 10px;
+        @include flex(row, center, flex-start);
+
+        @include responsive(mobile) {
+          @include flex(row, center, center);
+        }
+
+        img {
+          margin-right: 16px;
+          @include responsive(mobile) {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .payment-footer__content--mail {
+        img {
+          margin-left: 0;
+          margin-bottom: 5px;
+        }
+        p {
+          text-transform: none;
+          margin-right: 28px;
+          @include responsive(tablet) {
+            margin-right: 6px;
+            letter-spacing: 0.01em;
+          }
+          @include responsive(mobile) {
+            font-size: 11px;
+            margin-right: 6px;
+            letter-spacing: 0.01em;
+          }
+          p {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}

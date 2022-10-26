@@ -1,0 +1,112 @@
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/variable.scss';
+
+.payment-now-container {
+  width: 100%;
+
+  .payment-now {
+    margin-top: 150px;
+    margin-left: 20px;
+    border: 1px solid $gray-smoke;
+    padding: 0 10px;
+    width: 46%;
+
+    .method-cash-of-delivery,
+    .method-banking {
+      @include flex(column, flex-start, space-between);
+      padding: 10px 30px;
+      @include font($font-pro, normal, 400, 15px, 0.05em);
+      border-bottom: 1px solid $gray-smoke;
+
+      &__content {
+        @include font($font-pro, normal, 400, 11px, 0.05em);
+        color: $gray-outstock;
+      }
+
+      .choose-bank {
+        background-color: $white-gray;
+        img {
+          margin-right: 10px;
+          margin: 20px 10px 20px 0px;
+          background-color: $white;
+        }
+      }
+
+      .payment-method-point {
+        position: relative;
+        @include flex(row, center, center);
+
+        .point-COD {
+          content: '';
+          width: 21px;
+          height: 21px;
+          margin-right: 20px;
+          border-radius: 50%;
+          border: 1px solid $black;
+          background-color: $white;
+        }
+
+        .point-banking {
+          content: '';
+          width: 21px;
+          height: 21px;
+          margin-right: 20px;
+          border-radius: 50%;
+          border: 1px solid $black;
+          background-color: $white;
+        }
+      }
+    }
+
+    .method-credit {
+      padding: 10px 0;
+      .method-credit-title {
+        @include flex(row, center, space-between);
+        padding: 0 30px;
+        @include font($font-pro, normal, 400, 15px, 0.05em);
+
+        .payment-method-point {
+          position: relative;
+          @include flex(row, center, center);
+
+          .point-credit {
+            content: '';
+            width: 21px;
+            height: 21px;
+            margin-right: 20px;
+            border-radius: 50%;
+            border: 1px solid $black;
+            background-color: $white;
+          }
+
+          // &::before {
+          //   position: absolute;
+          //   top: 14px;
+          //   left: 0;
+          //   content: '';
+          //   width: 21px;
+          //   height: 21px;
+          //   border-radius: 50%;
+          //   border: 1px solid $black;
+          //   background-color: $black;
+          // }
+        }
+      }
+
+      .input-payment-credit-cart {
+        padding: 20px;
+        margin: 10px;
+        // border-bottom: 1px solid $gray-smoke;
+
+        .expiration-and-security-code {
+          @include flex(row, center, space-between);
+
+          .expiration,
+          .security-code {
+            width: 49%;
+          }
+        }
+      }
+    }
+  }
+}

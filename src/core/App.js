@@ -9,6 +9,7 @@ import ScrollToTop from 'components/ScrollToTop';
 
 import Home from 'pages/Home';
 import Brand from 'pages/Brand';
+// import PaySuccess from 'pages/Checkout/Success';
 import Signin from 'pages/SignIn';
 import Signup from 'pages/SignUp';
 // import Account from 'pages/Account';
@@ -27,6 +28,8 @@ import Shipping from 'pages/CustomerCare/Shipping';
 import Term from 'pages/CustomerCare/TermCondition';
 import Garment from 'pages/CustomerCare/GarmentCare';
 import ShipPayment from 'pages/Checkout/Shipping';
+import Payment from 'pages/Checkout/Payment';
+import PayNow from 'pages/Checkout/PayNow';
 
 import 'services/i18n';
 
@@ -53,11 +56,14 @@ function App() {
               <Route path='/sign-in' element={<Signin />} />
               <Route path='/sign-up' element={<Signup />} />
               <Route path='/garment' element={<Garment />} />
+              <Route path='/payment' element={<Payment />} />
               <Route path='/arrivals' element={<Arrivals />} />
               <Route path='/history' element={<OrderHistory />} />
               <Route path='/ship-payment' element={<ShipPayment />} />
               <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
+              <Route path='/pay-now' element={<PayNow />} />
               {/* <Route path='/' element={<Account />} /> */}
+              {/* <Route path='/' element={<PaySuccess />} /> */}
             </Routes>
           </Suspense>
         </BrowserRouter>
