@@ -3,12 +3,12 @@
 @import 'assets/scss/normalize.scss';
 
 .footer {
-  margin-top: 60px;
+  margin-top: 40px;
   width: 100%;
   @include flex(column, center, center);
   flex-wrap: wrap;
-  padding-bottom: 60px;
-  padding-top: 30px;
+  padding-bottom: 40px;
+  padding-top: 20px;
   border-top: 1px solid $gray-smoke;
 
   .footer-desk {

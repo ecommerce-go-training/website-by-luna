@@ -59,20 +59,24 @@
 
         .filter__select {
           @include flex(row, flex-start, flex-start);
+          width: 100%;
 
           &--item {
-            width: 90%;
-            @include flex(column, space-between, space-between);
+            // @include flex(row, space-between, space-between);
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
 
             .item__color,
             .item__size {
-              width: 40%;
+              width: 50%;
               display: flex;
               span {
                 display: flex;
                 line-height: 30px;
                 cursor: pointer;
                 padding-left: 10px;
+                padding-right: 100px;
                 font-size: 12px;
 
                 img {
@@ -89,7 +93,7 @@
 
           p {
             padding-left: 0;
-            padding-top: 14px;
+            padding-top: 10px;
           }
         }
       }
@@ -110,13 +114,14 @@
   .grid__4--3 {
     width: 75%;
     padding-right: 60px;
-    padding-left: 40px;
+    // padding-left: 40px;
 
     .grid__image {
-      @include flex(row, flex-start, space-between);
+      @include flex(row, flex-start, center);
       margin-bottom: 50px;
       .image-item {
         position: relative;
+        margin: 0 40px;
 
         .quick-add-size {
           display: none;

@@ -8,13 +8,18 @@ import right from 'assets/images/icons/arrowRight.svg';
 
 import './style.scss';
 
-const Slider = ({ data, className }) => {
+const Slider = ({ data, className, length }) => {
   const slideItem = useRef(null);
 
   useEffect(() => {
     const Elementcount = slideItem.current.childNodes.length;
     console.log('slider ', Elementcount);
   });
+
+  console.log(length);
+  // if (length === 4) {
+
+  // }
 
   const nextSlide = e => {
     e.preventDefault();
@@ -60,12 +65,14 @@ const Slider = ({ data, className }) => {
 };
 
 Slider.defaultProps = {
-  className: ''
+  className: '',
+  length: 4
 };
 
 Slider.propTypes = {
   data: PropTypes.array.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  length: PropTypes.number
 };
 
 export default memo(Slider);

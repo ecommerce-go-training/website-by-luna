@@ -17,47 +17,100 @@ import ArrivalImg4 from 'assets/images/arrivalImg4.png';
 import './style.scss';
 
 const NewArrivals = () => {
-  const [click, setClick] = useState(false);
+  const dataColor = [
+    {
+      value: 'BEIGE',
+      status: false
+    },
+    {
+      value: 'WHITE',
+      status: false
+    },
+    {
+      value: 'BLUE',
+      status: false
+    },
+    {
+      value: 'CREAM',
+      status: false
+    },
+    {
+      value: 'BLACK',
+      status: false
+    },
+    {
+      value: 'PINK',
+      status: false
+    },
+    {
+      value: 'BROWN',
+      status: false
+    },
+    {
+      value: 'ORANGE',
+      status: false
+    },
+    {
+      value: 'GREEN',
+      status: false
+    },
+    {
+      value: 'YELLOW',
+      status: false
+    },
+    {
+      value: 'RED',
+      status: false
+    },
+    {
+      value: 'LILAC',
+      status: false
+    },
+    {
+      value: 'METALLIC',
+      status: false
+    },
+    {
+      value: 'FLORAL',
+      status: false
+    }
+  ];
 
-  const dataSize1 = [
+  const dataSize = [
     { item: 'FREESIZE', state: false },
-    { item: 'XS', state: false },
-    { item: 'S', state: false }
-  ];
-  const [dataSize2, setDatasize2] = useState([
     { item: 'M', state: false },
+    { item: 'XS', state: false },
     { item: 'L', state: false },
+    { item: 'S', state: false },
     { item: 'XL', state: false }
-  ]);
-  const dataColor1 = [
-    'BEIGE',
-    'BLUE',
-    'BLACK',
-    'BROWN',
-    'GREEN',
-    'RED',
-    'METALLIC'
   ];
 
-  const dataColor2 = [
-    'WHITE',
-    'CREAM',
-    'PINK',
-    'ORANGE',
-    'YELLOW',
-    'LILAC',
-    'FLORAL'
-  ];
+  const [selectedColor, setSelectedColor] = useState(dataColor);
+  const [selectedSize, setSelectedSize] = useState(dataSize);
 
-  const toggle = () => {
-    setClick(click => !click);
-  };
+  function handleShowSelectedColor(index) {
+    const newStatus = selectedColor.map((item, i) => {
+      if (i === index) {
+        item.status = !item.status;
+        return item;
+      } else {
+        return item;
+      }
+    });
+    setSelectedColor(newStatus);
+  }
 
-  const handleChanging = index => {
-    let temp = dataSize2;
-    temp[index].state = !temp[index].state;
-    setDatasize2(temp);
-  };
+  function handleShowSelectedSize(index) {
+    const newState = selectedSize.map((obj, i) => {
+      if (i === index) {
+        obj.state = !obj.state;
+        return obj;
+      } else {
+        return obj;
+      }
+    });
+    setSelectedSize(newState);
+  }
 
   return (
     <div>
@@ -147,38 +200,22 @@ const NewArrivals = () => {
               <Collapse title='COLOR' className={'collapse-filter'}>
                 <div className='filter__select'>
                   <div className='filter__select--item'>
-                    {dataColor1.map((obj, index) => {
+                    {selectedColor.map((obj, index) => {
                       return (
                         <div className='item__color' key={index}>
-                          <span onClick={toggle}>
+                          <span
+                            onClick={() => {
+                              handleShowSelectedColor(index);
+                            }}
+                          >
                             <img
-                              key={index}
                               style={{
-                                display: click === true ? 'block' : 'none'
+                                display: obj.status === true ? 'block' : 'none'
                               }}
                               src={Select}
                               alt=''
                             />
-                            {obj}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <div className='filter__select--item'>
-                    {dataColor2.map((obj, index) => {
-                      return (
-                        <div className='item__color' key={index}>
-                          <span onClick={toggle}>
-                            <img
-                              key={index}
-                              style={{
-                                display: click === true ? 'block' : 'none'
-                              }}
-                              src={Select}
-                              alt=''
-                            />
-                            {obj}
+                            {obj.value}
                           </span>
                         </div>
                       );
@@ -189,41 +226,17 @@ const NewArrivals = () => {
               <Collapse title='SIZE' className={'collapse-filter'}>
                 <div className='filter__select'>
                   <div className='filter__select--item'>
-                    {dataSize1.map((obj, index) => {
-                      return (
-                        <div className='item__size' key={index}>
-                          <span onClick={toggle}>
-                            <img
-                              key={index}
-                              style={{
-                                display: click === true ? 'block' : 'none'
-                              }}
-                              src={Select}
-                              alt=''
-                            />
-                            {obj.item}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <div className='filter__select--item'>
-                    {dataSize2.map((obj, index) => {
+                    {selectedSize.map((obj, index) => {
                       return (
                         <div className='item__size' key={index}>
                           <span
                             onClick={() => {
-                              handleChanging(index);
-                              console.log(dataSize2);
+                              handleShowSelectedSize(index);
                             }}
                           >
                             <img
-                              key={index}
                               style={{
-                                display:
-                                  dataSize2[index].state === true
-                                    ? 'block'
-                                    : 'none'
+                                display: obj.state === true ? 'block' : 'none'
                               }}
                               src={Select}
                               alt=''

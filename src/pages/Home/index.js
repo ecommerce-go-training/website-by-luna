@@ -30,61 +30,73 @@ import './style.scss';
 
 const dataSlider = [
   {
+    id: 1,
     image: image1,
     title: 'NEW IN DRESSES',
     price: '990.000 VND'
   },
   {
+    id: 2,
     image: image2,
     title: 'NEW IN TOP',
     price: '990.000 VND'
   },
   {
+    id: 3,
     image: image3,
     title: 'NEW IN SHORTS',
     price: '990.000 VND'
   },
   {
+    id: 4,
     image: image4,
     title: 'NEW IN JEANS',
     price: '990.000 VND'
   },
   {
+    id: 5,
     image: image2,
     title: 'NEW IN TOP',
     price: '990.000 VND'
   },
   {
+    id: 6,
     image: image3,
     title: 'NEW IN SHORTS',
     price: '990.000 VND'
   },
   {
+    id: 7,
     image: image1,
     title: 'NEW IN DRESSES',
     price: '990.000 VND'
   },
   {
+    id: 8,
     image: image4,
     title: 'NEW IN JEANS',
     price: '990.000 VND'
   },
   {
+    id: 9,
     image: image2,
     title: 'NEW IN TOP',
     price: '990.000 VND'
   },
   {
+    id: 10,
     image: image3,
     title: 'NEW IN SHORTS',
     price: '990.000 VND'
   },
   {
+    id: 11,
     image: image4,
     title: 'NEW IN JEANS',
     price: '990.000 VND'
   },
   {
+    id: 12,
     image: image1,
     title: 'NEW IN DRESSES',
     price: '990.000 VND'
