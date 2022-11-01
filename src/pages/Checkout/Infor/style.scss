@@ -13,14 +13,51 @@
       width: 50%;
       @include flex(column, center, flex-start);
       margin-bottom: 50px;
+
+      @include responsive(mobile) {
+        width: 100%;
+      }
       &--content {
         width: 86%;
+        @include responsive(mobile) {
+          width: 96%;
+        }
         border-bottom: 1px solid $gray-smoke;
 
         .logo-payment-page {
           width: 200px;
           padding-top: 10px;
           cursor: pointer;
+          @include responsive(mobile) {
+            padding-bottom: 10px;
+          }
+        }
+
+        .summary-mobile {
+          display: none;
+          @include responsive(mobile) {
+            display: block;
+            @include flex(row, center, space-between);
+            border-top: 1px solid $gray-smoke;
+            border-bottom: 1px solid $gray-smoke;
+
+            p {
+              @include font($font-pro, normal, 400, 16px, 0.05em);
+            }
+            .cart-and-content {
+              @include flex(row, center, flex-start);
+
+              img {
+                padding-right: 10px;
+              }
+
+              p {
+                @include font($font-pro, normal, 400, 12px, 0.05em);
+                color: #519af0;
+                padding-right: 10px;
+              }
+            }
+          }
         }
 
         .checkout-direction {
@@ -36,9 +73,15 @@
         .contact-info-title {
           @include flex(row, center, space-between);
           @include font($font-pro, normal, 400, 15px, 0.01em);
+          @include responsive(mobile) {
+            @include font($font-pro, normal, 400, 11px, 0.01em);
+          }
 
           .contact-title {
             @include font($font-pro, normal, 400, 20px, 0.01em);
+            @include responsive(mobile) {
+              @include font($font-pro, normal, 400, 15px, 0.01em);
+            }
           }
         }
 
@@ -59,11 +102,18 @@
         .input-country-and-postal-code {
           @include flex(row, center, space-between);
 
+          @include responsive(mobile) {
+            @include flex(column, center, space-between);
+          }
+
           .first-name,
           .last-name,
           .input-country,
           .input-postal-code {
             width: 48%;
+            @include responsive(mobile) {
+              width: 100%;
+            }
           }
         }
 
@@ -77,6 +127,10 @@
           @include flex(row, center, space-between);
           padding-top: 30px;
           padding-bottom: 50px;
+
+          @include responsive(mobile) {
+            @include flex(column-reverse, center, space-between);
+          }
 
           .return-to-bag {
             img {
@@ -93,7 +147,10 @@
           }
 
           .button-continue {
-            width: 48%;
+            width: 40%;
+            @include responsive(mobile) {
+              width: 100%;
+            }
           }
         }
       }
@@ -102,6 +159,10 @@
     &__cart {
       width: 50%;
       background-color: $gray-light;
+
+      @include responsive(mobile) {
+        display: none;
+      }
 
       .payment-items {
         width: 60%;

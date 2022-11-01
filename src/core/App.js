@@ -12,7 +12,7 @@ import Brand from 'pages/Brand';
 // import PaySuccess from 'pages/Checkout/Success';
 import Signin from 'pages/SignIn';
 import Signup from 'pages/SignUp';
-// import Account from 'pages/Account';
+import Account from 'pages/Account';
 import Store from 'pages/StoreStock';
 import StoreHCM from 'pages/StoreHCM';
 import Winter from 'pages/FallWinter';
@@ -62,7 +62,7 @@ function App() {
               <Route path='/ship-payment' element={<ShipPayment />} />
               <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
               <Route path='/pay-now' element={<PayNow />} />
-              {/* <Route path='/' element={<Account />} /> */}
+              <Route path='/' element={<Account />} />
               {/* <Route path='/' element={<PaySuccess />} /> */}
             </Routes>
           </Suspense>

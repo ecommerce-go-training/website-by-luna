@@ -7,7 +7,12 @@
 
   .cart {
     padding-top: 150px;
-    width: 608px;
+    width: 40%;
+
+    @include responsive(mobile) {
+      padding-top: 100px;
+      width: 96%;
+    }
 
     .cart-title-and-qty-item {
       @include font($font-pro, normal, 400, 16px, 0.15em);
@@ -35,6 +40,12 @@
           width: 180px;
           height: 280px;
           object-fit: contain;
+
+          @include responsive(mobile) {
+            width: 125px;
+            height: 185px;
+            object-fit: contain;
+          }
         }
 
         .icon-time {
@@ -47,6 +58,11 @@
           padding-left: 30px;
           @include font($font-pro, normal, 400, 13px, 0.15em);
           text-transform: uppercase;
+
+          @include responsive(mobile) {
+            padding-left: 10px;
+            @include font($font-pro, normal, 400, 10px, 0.02em);
+          }
 
           .cart__item--info-name {
             margin-top: 0;
@@ -69,16 +85,27 @@
     .total-payment {
       width: 100%;
       @include flex(column, center, center);
+      text-align: center;
       padding-top: 10px;
       .total-and-button-proceed {
         width: 40%;
 
+        @include responsive(mobile) {
+          width: 70%;
+        }
+
         p {
           @include font($font-pro, normal, 400, 16px, 0.15em);
           text-transform: uppercase;
+          @include responsive(mobile) {
+            @include font($font-pro, normal, 400, 12px, 0.15em);
+          }
 
           span {
             @include font($font-pro, normal, 400, 30px, 0.15em);
+            @include responsive(mobile) {
+              @include font($font-pro, normal, 400, 16px, 0.15em);
+            }
           }
         }
       }

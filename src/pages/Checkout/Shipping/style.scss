@@ -10,15 +10,50 @@
 
     &__info {
       width: 50%;
+
+      @include responsive(mobile) {
+        width: 100%;
+      }
+
       @include flex(column, center, flex-start);
       margin-bottom: 60px;
       &--content {
         width: 86%;
+        @include responsive(mobile) {
+          width: 94%;
+        }
         border-bottom: 1px solid $gray-smoke;
         .logo-payment-page {
           width: 200px;
           padding-top: 10px;
           cursor: pointer;
+        }
+
+        .summary-mobile {
+          display: none;
+          @include responsive(mobile) {
+            display: block;
+            @include flex(row, center, space-between);
+            border-top: 1px solid $gray-smoke;
+            border-bottom: 1px solid $gray-smoke;
+
+            p {
+              @include font($font-pro, normal, 400, 16px, 0.05em);
+            }
+            .cart-and-content {
+              @include flex(row, center, flex-start);
+
+              img {
+                padding-right: 10px;
+              }
+
+              p {
+                @include font($font-pro, normal, 400, 12px, 0.05em);
+                color: #519af0;
+                padding-right: 10px;
+              }
+            }
+          }
         }
 
         .checkout-direction {
@@ -34,7 +69,7 @@
         .ship-payment__info-contact-address {
           border: 1px solid $gray-smoke;
           margin-top: 50px;
-          padding: 0 20px;
+          padding: 0 10px;
 
           .ship-payment__info-contact {
             border-bottom: 1px solid $gray-smoke;
@@ -48,6 +83,13 @@
             .ship-payment__info-contact-content,
             .ship-payment__info-address-content {
               @include flex(row, center, space-between);
+              @include responsive(mobile) {
+                @include flex(column, flex-start, space-between);
+                p {
+                  margin: 4px;
+                }
+              }
+
               color: $gray-outstock;
 
               .title-user {
@@ -111,6 +153,10 @@
           padding-top: 50px;
           padding-bottom: 50px;
 
+          @include responsive(mobile) {
+            @include flex(column-reverse, center, space-between);
+          }
+
           .return-to-bag {
             img {
               height: 12px;
@@ -127,6 +173,9 @@
 
           .button-continue {
             width: 40%;
+            @include responsive(mobile) {
+              width: 100%;
+            }
           }
         }
       }
@@ -135,6 +184,9 @@
     &__cart {
       width: 50%;
       background-color: $gray-light;
+      @include responsive(mobile) {
+        display: none;
+      }
 
       .payment-items {
         width: 60%;

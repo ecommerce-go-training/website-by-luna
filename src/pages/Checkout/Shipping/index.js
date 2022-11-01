@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import DefaultButton from 'components/Button';
-// import DefaultCheckbox from 'components/Checkbox';
 import PaymentInput from 'components/Input/Payment';
 
 import logo from 'assets/images/logo.jpg';
@@ -11,6 +10,8 @@ import mail from 'assets/images/icons/mail.svg';
 import phone from 'assets/images/icons/phone.svg';
 import cartItem1 from 'assets/images/cartItem1.png';
 import back from 'assets/images/icons/arrowBack.svg';
+import cartIcon from 'assets/images/icons/cartIcon.svg';
+import arrowDown from 'assets/images/icons/arrowDown.svg';
 
 import './style.scss';
 
@@ -26,6 +27,10 @@ const ShipPayment = () => {
 
   const redirectPayment = () => {
     return navigate('/payment');
+  };
+
+  const redirectBack = () => {
+    return navigate('/info');
   };
 
   return (
@@ -45,6 +50,14 @@ const ShipPayment = () => {
               <span className='active'> SHIPPING / </span>
               <span>PAYMENT</span>{' '}
             </p>
+            <div className='summary-mobile'>
+              <div className='cart-and-content'>
+                <img src={cartIcon} alt='icon cart' />
+                <p>Show order summary</p>
+                <img src={arrowDown} alt='icon arrow down' />
+              </div>
+              <p>USD $250</p>
+            </div>
             <div className='ship-payment__info-contact-address'>
               <div className='ship-payment__info-contact'>
                 <div className='ship-payment__info-contact-content'>
@@ -90,7 +103,7 @@ const ShipPayment = () => {
             <div className='shipping-return-or-continue'>
               <div className='return-to-bag'>
                 <img src={back} alt='icon back' />
-                <p>Return to bag</p>
+                <p onClick={redirectBack}>Return to bag</p>
               </div>
               <div className='button-continue'>
                 <DefaultButton onClick={redirectPayment}>

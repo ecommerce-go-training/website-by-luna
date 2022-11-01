@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -99,6 +99,11 @@ const NewArrivals = () => {
     });
     setSelectedColor(newStatus);
   }
+
+  const navigate = useNavigate();
+  const redirectDetail = () => {
+    navigate('/detail');
+  };
 
   function handleShowSelectedSize(index) {
     const newState = selectedSize.map((obj, i) => {
@@ -267,7 +272,7 @@ const NewArrivals = () => {
         </div>
         <div className='grid__4--3'>
           <div className='grid__image'>
-            <div className='image-item'>
+            <div className='image-item' onClick={redirectDetail}>
               <img src={ArrivalImg1} alt='' />
               <div className='quick-add-size'>
                 <img src={plus} alt='' />
@@ -307,7 +312,7 @@ const NewArrivals = () => {
             </div>
           </div>
           <div className='grid__image'>
-            <div className='image-item'>
+            <div className='image-item' onClick={redirectDetail}>
               <img src={ArrivalImg3} alt='' />
               <div className='quick-add-size'>
                 <img src={plus} alt='' />

@@ -5,18 +5,37 @@
 .arrivals-container {
   width: 100%;
   @include flex(row, flex-start, space-between);
+  @include responsive(mobile) {
+    @include flex(column, flex-start, space-between);
+  }
   margin-top: 140px;
 
   .grid__4--1 {
     width: 25%;
 
+    @include responsive(mobile) {
+      width: 100%;
+    }
+
     .title {
       color: $gray-smoke;
       margin-bottom: 30px;
+      @include responsive(mobile) {
+        display: none;
+      }
     }
 
     .categories-item {
       margin-bottom: 50px;
+      @include responsive(mobile) {
+        display: none;
+      }
+    }
+
+    .collections {
+      @include responsive(mobile) {
+        display: none;
+      }
     }
 
     p {
@@ -49,6 +68,10 @@
           text-align: center;
           padding-left: 14px;
           width: 90%;
+          @include responsive(mobile) {
+            display: none;
+          }
+
           p {
             padding: 20px;
             font-size: 14px;
@@ -107,6 +130,10 @@
           padding-left: 20px;
           cursor: pointer;
         }
+
+        @include responsive(mobile) {
+          display: none;
+        }
       }
     }
   }
@@ -114,17 +141,36 @@
   .grid__4--3 {
     width: 75%;
     padding-right: 60px;
-    // padding-left: 40px;
+    @include responsive(mobile) {
+      width: 100%;
+
+      padding-right: 0;
+    }
 
     .grid__image {
       @include flex(row, flex-start, center);
       margin-bottom: 50px;
+
+      @include responsive(mobile) {
+        @include flex(row, center, center);
+      }
+
       .image-item {
         position: relative;
         margin: 0 40px;
 
+        @include responsive(mobile) {
+          margin: 5px;
+        }
+
         .quick-add-size {
           display: none;
+        }
+        img {
+          @include responsive(mobile) {
+            width: 180px;
+            height: 272px;
+          }
         }
 
         &:hover {

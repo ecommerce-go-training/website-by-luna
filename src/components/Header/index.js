@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import React, { memo, useState, useEffect } from 'react';
 
@@ -10,6 +10,7 @@ import bag from 'assets/images/bag.png';
 import logo from 'assets/images/logo.jpg';
 import search from 'assets/images/search.svg';
 import bagActive from 'assets/images/bag.svg';
+import time from 'assets/images/icons/time.svg';
 import navbar from 'assets/images/icons/navbar.svg';
 import logoTrans from 'assets/images/logoTrans.png';
 import searchWhite from 'assets/images/searchWhite.png';
@@ -20,6 +21,7 @@ import './style.scss';
 const Header = ({ className }) => {
   const [showSearch, onShowSearch] = useState(false);
   const [showMyCart, onShowMyCart] = useState(false);
+  const [showLinkPage, onShowLinkPage] = useState(false);
 
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -43,6 +45,11 @@ const Header = ({ className }) => {
     };
   }, []);
 
+  const navigate = useNavigate();
+  const redirectHome = () => {
+    return navigate('/');
+  };
+
   return (
     <div className='header__container'>
       {showSearch && (
@@ -59,31 +66,80 @@ const Header = ({ className }) => {
         </div>
       )}
       <div className={classNames(className, { white: isScrolling })}>
-        <img src={navbar} alt='icon navbar' className='header__navbar' />
+        <img
+          src={navbar}
+          alt='icon navbar'
+          className='header__navbar'
+          onClick={() => onShowLinkPage(true)}
+        />
         <img
           src={navbarAct}
           alt='icon navbar'
           className='header__navbar--active'
+          onClick={() => onShowLinkPage(true)}
         />
         <div className='navigate-page'>
           <Link to='/arrivals' className='link-to-page'>
             {t('newArrivals')}
           </Link>
           <Link to='/' className='link-to-page'>
-            {t('shop')}
+            {t('sales')}
           </Link>
           <Link to='/winter' className='link-to-page'>
-            {t('fallWinter')}
+            {t('shop')}
           </Link>
         </div>
         <div className='logo-image'>
-          <Link to='/' className='link-to-page'>
-            <img src={logoTrans} alt='' className='logo-header' />
-          </Link>
-          <Link to='/' className='link-to-page'>
-            <img src={logo} alt='' className='logo-header__active' />
-          </Link>
+          <img
+            src={logoTrans}
+            alt=''
+            className='logo-header'
+            onClick={redirectHome}
+          />
+          <img
+            src={logo}
+            alt=''
+            className={classNames('logo-header__active', {
+              logoWhite: isScrolling
+            })}
+            onClick={redirectHome}
+          />
         </div>
+        {showLinkPage && (
+          <div className='navigate-mobile'>
+            <div
+              className='back-drop'
+              onClick={() => onShowLinkPage(false)}
+            ></div>
+            <div className='navigate-page-mobile'>
+              <img
+                src={logo}
+                alt=''
+                className='logo-header__mobile'
+                onClick={redirectHome}
+              />
+              <img
+                src={time}
+                alt='icon exit'
+                className='icon-exit'
+                onClick={() => onShowLinkPage(false)}
+              />
+              <Link to='/arrivals' className='link-to-page-mobile'>
+                {t('newArrivals')}
+              </Link>
+              <Link to='/' className='link-to-page-mobile'>
+                {t('sales')}
+              </Link>
+              <Link to='/winter' className='link-to-page-mobile'>
+                {t('shop')}
+              </Link>
+              <Link to='/sign-in' className='link-to-page-mobile'>
+                <br />
+                Login
+              </Link>
+            </div>
+          </div>
+        )}
         <div className='left-header'>
           <img
             src={searchWhite}
