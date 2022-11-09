@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import i18n from 'services/i18n';
 import { store } from 'core/store';
 import { Provider } from 'react-redux';
@@ -7,52 +7,60 @@ import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from 'components/ScrollToTop';
 
-import Home from 'pages/Home';
+// import Home from 'pages/Home';
 import Brand from 'pages/Brand';
 import Signin from 'pages/SignIn';
 import Signup from 'pages/SignUp';
+import Account from 'pages/Account';
 import Store from 'pages/StoreStock';
 import StoreHCM from 'pages/StoreHCM';
 import Winter from 'pages/FallWinter';
+import Cart from 'pages/Checkout/Cart';
 import Detail from 'pages/DetailsItem';
+import Info from 'pages/Checkout/Infor';
 import Arrivals from 'pages/NewArrivals';
 import FAQ from 'pages/CustomerCare/FAQ';
 import Size from 'pages/CustomerCare/Size';
+import OrderHistory from 'pages/OrderHistory';
 import Policy from 'pages/CustomerCare/Policy';
 import Shipping from 'pages/CustomerCare/Shipping';
 import Term from 'pages/CustomerCare/TermCondition';
 import Garment from 'pages/CustomerCare/GarmentCare';
-// import Mycart from 'pages/MyCart';
 
 import 'services/i18n';
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Provider store={store}>
-        <I18nextProvider i18n={i18n}>
-          <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route exact path='/faq' element={<FAQ />} />
-            <Route exact path='/size' element={<Size />} />
-            <Route exact path='/term' element={<Term />} />
-            <Route exact path='/brand' element={<Brand />} />
-            <Route exact path='/store' element={<Store />} />
-            <Route exact path='/signin' element={<Signin />} />
-            <Route exact path='/signup' element={<Signup />} />
-            <Route exact path='/ship' element={<Shipping />} />
-            <Route exact path='/policy' element={<Policy />} />
-            <Route exact path='/detail' element={<Detail />} />
-            <Route exact path='/winter' element={<Winter />} />
-            <Route exact path='/garment' element={<Garment />} />
-            <Route exact path='/arrivals' element={<Arrivals />} />
-            <Route exact path='/store/ho-chi-minh' element={<StoreHCM />} />
-            {/* <Route exact path='/' element={<Mycart />} /> */}
-          </Routes>
-        </I18nextProvider>
-      </Provider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <I18nextProvider i18n={i18n}>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Suspense>
+            <Routes>
+              {/* <Route path='/' element={<Home />} /> */}
+              <Route path='/faq' element={<FAQ />} />
+              <Route path='/size' element={<Size />} />
+              <Route path='/term' element={<Term />} />
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/info' element={<Info />} />
+              <Route path='/brand' element={<Brand />} />
+              <Route path='/store' element={<Store />} />
+              <Route path='/ship' element={<Shipping />} />
+              <Route path='/policy' element={<Policy />} />
+              <Route path='/detail' element={<Detail />} />
+              <Route path='/winter' element={<Winter />} />
+              <Route path='/sign-in' element={<Signin />} />
+              <Route path='/sign-up' element={<Signup />} />
+              <Route path='/garment' element={<Garment />} />
+              <Route path='/arrivals' element={<Arrivals />} />
+              <Route path='/history' element={<OrderHistory />} />
+              <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
+              <Route path='/' element={<Account />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </I18nextProvider>
+    </Provider>
   );
 }
 

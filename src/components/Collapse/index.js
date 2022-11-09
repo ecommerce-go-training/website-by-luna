@@ -47,7 +47,10 @@ Collapse.defaultProps = {
 
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.array.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
   className: PropTypes.string
 };
 

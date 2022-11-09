@@ -64,30 +64,26 @@ const Footer = () => {
           <div className='footer-desk'>
             <p className='footer__title'>{t('about')}</p>
             <div className='footer__content--about'>
-              <p>
-                <Link to='/brand' className='link__page'>
-                  {t('brand')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/store' className='link__page'>
-                  {t('storeLocator')}
-                </Link>
-              </p>
+              <Link to='/brand' className='link__page'>
+                {t('brand')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/store' className='link__page'>
+                {t('storeLocator')}
+              </Link>
             </div>
           </div>
           <Collapse title={t('about')} className={'footer__collapse'}>
             <div className='footer__content--about'>
-              <p>
-                <Link to='/brand' className='link__page'>
-                  {t('brand')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/store' className='link__page'>
-                  {t('storeLocator')}
-                </Link>
-              </p>
+              <Link to='/brand' className='link__page'>
+                {t('brand')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/store' className='link__page'>
+                {t('storeLocator')}
+              </Link>
             </div>
           </Collapse>
         </div>
@@ -95,80 +91,77 @@ const Footer = () => {
           <div className='footer-desk'>
             <p className='footer__title'>{t('customerCare')}</p>
             <div className='footer__content--care'>
-              <p>
-                <Link to='/faq' className='link__page'>
-                  {t('faq')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/size' className='link__page'>
-                  {t('size')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/ship' className='link__page'>
-                  {t('shipping')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/term' className='link__page'>
-                  {t('terms')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/policy' className='link__page'>
-                  {t('policy')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/garment' className='link__page'>
-                  {t('garment')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/' className='link__page'>
-                  {t('return')}
-                </Link>
-              </p>
+              <Link to='/faq' className='link__page'>
+                {t('faq')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/size' className='link__page'>
+                {t('size')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/ship' className='link__page'>
+                {t('shipping')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/term' className='link__page'>
+                {t('terms')}
+              </Link>
+              <br />
+              <br />
+
+              <Link to='/policy' className='link__page'>
+                {t('policy')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/garment' className='link__page'>
+                {t('garment')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/' className='link__page'>
+                {t('return')}
+              </Link>
             </div>
           </div>
           <Collapse title={t('customerCare')} className={'footer__collapse'}>
             <div className='footer__content--care'>
-              <p>
-                <Link to='/faq' className='link__page'>
-                  {t('faq')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/size' className='link__page'>
-                  {t('size')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/ship' className='link__page'>
-                  {t('shipping')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/term' className='link__page'>
-                  {t('terms')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/policy' className='link__page'>
-                  {t('policy')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/garment' className='link__page'>
-                  {t('garment')}
-                </Link>
-              </p>
-              <p>
-                <Link to='/' className='link__page'>
-                  {t('return')}
-                </Link>
-              </p>
+              <Link to='/faq' className='link__page'>
+                {t('faq')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/size' className='link__page'>
+                {t('size')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/ship' className='link__page'>
+                {t('shipping')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/term' className='link__page'>
+                {t('terms')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/policy' className='link__page'>
+                {t('policy')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/garment' className='link__page'>
+                {t('garment')}
+              </Link>
+              <br />
+              <br />
+              <Link to='/' className='link__page'>
+                {t('return')}
+              </Link>
             </div>
           </Collapse>
         </div>
@@ -182,11 +175,15 @@ const Footer = () => {
             <img src={mail} alt='phone icon' className='' />
             <p>
               {t('customerSupport')}
-              <p>CONTACT@PIKA.COM</p>
+              <br />
+              <br />
+              <span>CONTACT@PIKA.COM</span>
             </p>
             <p>
               {t('whosesalse')}
-              <p>TEAM@PIKA.COM</p>
+              <br />
+              <br />
+              <span>TEAM@PIKA.COM</span>
             </p>
           </div>
           <img src={notified} alt='notified' className='notified' />

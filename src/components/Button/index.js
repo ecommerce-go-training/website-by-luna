@@ -18,14 +18,18 @@ const DefaultButton = ({ type, className, onClick, children }) => {
 
 DefaultButton.defaultProps = {
   type: 'button',
-  className: ''
+  className: '',
+  onClick: () => null
 };
 
 DefaultButton.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   className: PropTypes.string,
   onClick: PropTypes.func.isRequired,
-  children: PropTypes.func.isRequired
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
 };
 
 export default memo(DefaultButton);

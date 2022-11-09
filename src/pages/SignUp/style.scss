@@ -40,6 +40,12 @@
     @include responsive(mobile) {
       width: 90%;
     }
+
+    .error {
+      @include font($font-pro, normal, 400, 13px, 0.05em);
+      color: $red-pink;
+      text-transform: none;
+    }
   }
 
   form {

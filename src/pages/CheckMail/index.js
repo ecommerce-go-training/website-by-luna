@@ -5,7 +5,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import DefaultButton from 'components/Button';
 import Announce from 'components/Announcement';
-import DefaultInput from 'components/Input/Defaul';
+import DefaultInput from 'components/Input/Default';
 import checkmail from 'assets/images/checkmail.svg';
 
 import './style.scss';

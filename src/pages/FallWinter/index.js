@@ -29,30 +29,28 @@ import './style.scss';
 
 const FallWinter = () => {
   return (
-    <div>
+    <div className='season-container'>
       <Announce />
       <Header className='header' />
-      <div className='season-container'>
-        <div className='season-header'>
-          <img src={background} alt='background' className='background' />
-          <img
-            src={backgroundMobile}
-            alt='background mobile'
-            className='background-mobile'
-          />
-          <div className='introduce-infor'>
-            <p className='p-desktop'>FALL / WINTER 2022</p>
-            <p className='p-mobile'>NEW ARRIVAL</p>
-            <h3>FALL WINTER</h3>
-            <h4>RESORT 2022</h4>
-            <p className='introduce p-desktop'>
-              The Resort 2021 collection is a love letter to our youth. Discover
-              the beauty of blooming flowers under the blue sky and sunny
-            </p>
-            <Link to='/' className='invite-discover'>
-              Discover
-            </Link>
-          </div>
+      <div className='season'>
+        <img src={background} alt='background' className='background' />
+        <img
+          src={backgroundMobile}
+          alt='background mobile'
+          className='background-mobile'
+        />
+        <div className='introduce-infor'>
+          <p className='p-desktop'>FALL / WINTER 2022</p>
+          <p className='p-mobile'>NEW ARRIVAL</p>
+          <h3>FALL WINTER</h3>
+          <h4>RESORT 2022</h4>
+          <p className='introduce p-desktop'>
+            The Resort 2021 collection is a love letter to our youth. Discover
+            the beauty of blooming flowers under the blue sky and sunny
+          </p>
+          <Link to='/' className='invite-discover'>
+            Discover
+          </Link>
         </div>
         <div className='grid'>
           <div className='grid__full'>

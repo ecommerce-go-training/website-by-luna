@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'assets/scss/global.scss';
 import App from 'core/App';
 import reportWebVitals from './reportWebVitals';
+
+import 'assets/scss/global.scss';
+import 'assets/scss/normalize.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

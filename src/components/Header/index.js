@@ -97,7 +97,7 @@ const Header = ({ className }) => {
             className='header-search__active'
             onClick={() => onShowSearch(true)}
           />
-          <Link to='/signin' className='link-to-page'>
+          <Link to='/sign-in' className='link-to-page'>
             Login
           </Link>
           <img

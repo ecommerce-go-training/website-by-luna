@@ -14,18 +14,13 @@ const DefaultInput = ({
   errorStatus = false,
   errorMsg = '',
   className,
-  onChange
+  register
 }) => {
-  const [inputValue, setInputValue] = useState('');
   const [isShow, setIsShow] = useState(false);
   const [typeInput, setTypeInput] = useState(type);
 
   const togglePassword = () => {
     setIsShow(isShow => !isShow);
-  };
-
-  onChange = e => {
-    setInputValue(e.target.value);
   };
 
   return (
@@ -35,9 +30,8 @@ const DefaultInput = ({
         placeholder={placeholder}
         className={classNames(['default-input', className])}
         name={name}
-        value={inputValue}
-        onChange={onChange}
         autoComplete='off'
+        {...register(name)}
       />
       <label className='input__label' data-content='Email'>
         <span>{placeholder}</span>
@@ -77,18 +71,23 @@ const DefaultInput = ({
 };
 
 DefaultInput.defaultProps = {
+  name: '',
   type: 'text',
-  placeholder: ''
+  placeholder: '',
+  errorStatus: false,
+  errorMsg: '',
+  className: '',
+  register: () => null
 };
 
 DefaultInput.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   type: PropTypes.oneOf(['text', 'password', 'email', 'tel']),
   placeholder: PropTypes.string,
   errorStatus: PropTypes.bool.isRequired,
   errorMsg: PropTypes.string.isRequired,
-  className: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired
+  className: PropTypes.string.isRequired,
+  register: PropTypes.func.isRequired
 };
 
 export default memo(DefaultInput);

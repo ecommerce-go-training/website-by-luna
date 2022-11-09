@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import './style.scss';
 
-const DefaultCheckbox = ({ value, className, checked, children }) => {
+const DefaultCheckbox = ({ value, className, children }) => {
+  const [check, setCheck] = useState(false);
+
   return (
-    <div className='default-checkbox'>
-      <label className='default-checkbox__label' htmlFor='Male'>
+    <div className={classNames(['default-checkbox', className])}>
+      <label className='default-checkbox__label'>
         <input
           type='checkbox'
-          className={classNames(['default-checkbox__input', className])}
+          className='default-checkbox__input'
           value={value}
-          checked={checked}
+          // checked={checked}
+          onClick={() => setCheck(!check)}
         />
         <p>{children}</p>
         <span className='mark'></span>
@@ -28,7 +31,6 @@ DefaultCheckbox.defaultProps = {
 DefaultCheckbox.propTypes = {
   value: PropTypes.string.isRequired,
   className: PropTypes.string,
-  checked: PropTypes.bool.isRequired,
   children: PropTypes.string.isRequired
 };
 

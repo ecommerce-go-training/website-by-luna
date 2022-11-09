@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import React, { useState, memo } from 'react';
+import React, { memo } from 'react';
 
 import './style.scss';
 
@@ -8,17 +8,11 @@ const PaymentInput = ({
   name,
   type,
   placeholder,
-  // errorStatus = false,
-  // errorMsg = '',
+  errorStatus = false,
+  errorMsg = '',
   className,
-  onChange
+  register
 }) => {
-  const [inputValue, setInputValue] = useState('');
-
-  onChange = e => {
-    setInputValue(e.target.value);
-  };
-
   return (
     <div>
       <input
@@ -26,26 +20,32 @@ const PaymentInput = ({
         placeholder={placeholder}
         className={classNames(['input-payment', className])}
         name={name}
-        value={inputValue}
-        onChange={onChange}
+        autoComplete='off'
+        {...register(name)}
       />
+      {errorStatus ? errorMsg : ''}
     </div>
   );
 };
 
 PaymentInput.defaultProps = {
+  name: '',
   type: 'text',
-  placeholder: ''
+  placeholder: '',
+  errorStatus: false,
+  errorMsg: '',
+  className: '',
+  register: () => null
 };
 
 PaymentInput.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   type: PropTypes.oneOf(['text', 'password', 'email', 'tel']),
   placeholder: PropTypes.string,
   errorStatus: PropTypes.bool.isRequired,
   errorMsg: PropTypes.string.isRequired,
-  className: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired
+  className: PropTypes.string.isRequired,
+  register: PropTypes.func.isRequired
 };
 
 export default memo(PaymentInput);

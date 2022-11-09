@@ -10,7 +10,7 @@ const Term = () => {
   return (
     <div>
       <Announce />
-      <Header />
+      <Header className='header white' />
       <div className='term__container'>
         <div className='grid__1--4'>
           <p>
