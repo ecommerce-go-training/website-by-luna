@@ -15,7 +15,7 @@ const CheckMail = () => {
     <div>
       <Announce />
       <Header className='header white' />
-      <div className='check-mail'>
+      <div className='check-mail-container'>
         <h3>Check your email</h3>
         <p className='please-code'>
           Please check your mail box and click in the received link to reset

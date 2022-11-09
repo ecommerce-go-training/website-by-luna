@@ -45,6 +45,16 @@ const Header = ({ className }) => {
     };
   }, []);
 
+  const user = JSON.parse(localStorage.getItem('userInfo'));
+  const token = JSON.parse(localStorage.getItem('accessToken'));
+  const checkIsLoggedIn = () => {
+    if (user && token) {
+      return { Authorization: 'Bearer ' + user.accessToken };
+    } else {
+      return false;
+    }
+  };
+
   const navigate = useNavigate();
   const redirectHome = () => {
     return navigate('/');
@@ -153,9 +163,15 @@ const Header = ({ className }) => {
             className='header-search__active'
             onClick={() => onShowSearch(true)}
           />
-          <Link to='/sign-in' className='link-to-page'>
-            Login
-          </Link>
+          {!checkIsLoggedIn() ? (
+            <Link to='/sign-in' className='link-to-page'>
+              Login
+            </Link>
+          ) : (
+            <Link to='/account' className='link-to-page'>
+              {user.firstName} {user.lastName}
+            </Link>
+          )}
           <img
             src={bag}
             alt=''

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import axios from 'axios';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -20,8 +21,38 @@ const SignUp = () => {
     formState: { errors }
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
 
-  const onSubmit = data => console.log('data', data);
-  console.log('errors', errors);
+  const navigate = useNavigate();
+
+  const onSubmit = async data => {
+    try {
+      await axios
+        .post(
+          'https://ecommerce-training-staging.herokuapp.com/api/v1/register',
+          data
+        )
+        .then(async () => {
+          const response = await axios.post(
+            'https://ecommerce-training-staging.herokuapp.com/api/v1/login',
+            {
+              email: data.email,
+              password: data.password
+            }
+          );
+          localStorage.setItem(
+            'accessToken',
+            JSON.stringify(response.data.data.accessToken)
+          );
+          localStorage.setItem(
+            'userInfo',
+            JSON.stringify(response.data.data.userInfo)
+          );
+          navigate('/');
+        });
+    } catch (error) {
+      alert(error.response.data.message);
+    }
+  };
+
   return (
     <div>
       <Announce />
@@ -54,7 +85,7 @@ const SignUp = () => {
               <p className='error'>{errors.lastName.message}</p>
             )}
             <DefaultInput
-              name='phone'
+              name='phoneNumber'
               type='text'
               placeholder='phone'
               className=''

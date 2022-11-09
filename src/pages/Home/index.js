@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -167,6 +167,22 @@ const dataSlider2 = [
 ];
 
 const Home = () => {
+  // const [data, setData] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
+
+  const redirectSignUp = () => {
+    navigate('/sign-up');
+  };
+
+  useEffect(() => {
+    fetch(
+      'https://ecommerce-training-staging.herokuapp.com/api/v1/products?fbclid=IwAR3znPxcssARiWNCXerlrGPI-8-UE7_lsuSvjWVpmtz20sNqLPqj8t1LRYg'
+    ).then(response => console.log('api', response));
+  }, []);
+
   return (
     <div>
       <Announce />
@@ -239,7 +255,9 @@ const Home = () => {
               Sign-up to receive 10% of your first purchase as well as the
               latest updates on new arrivals, exclusive promotions and events.
             </p>
-            <DefaultButton className='button-signup'>SIGN UP</DefaultButton>
+            <DefaultButton className='button-signup' onClick={redirectSignUp}>
+              SIGN UP
+            </DefaultButton>
           </div>
         </div>
       </div>

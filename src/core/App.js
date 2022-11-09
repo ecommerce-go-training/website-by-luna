@@ -22,14 +22,15 @@ import Info from 'pages/Checkout/Infor';
 import Arrivals from 'pages/NewArrivals';
 import FAQ from 'pages/CustomerCare/FAQ';
 import Size from 'pages/CustomerCare/Size';
+import PayNow from 'pages/Checkout/PayNow';
+import Payment from 'pages/Checkout/Payment';
+import ForgetPassword from 'pages/CheckMail';
 import OrderHistory from 'pages/OrderHistory';
 import Policy from 'pages/CustomerCare/Policy';
 import Shipping from 'pages/CustomerCare/Shipping';
 import Term from 'pages/CustomerCare/TermCondition';
 import Garment from 'pages/CustomerCare/GarmentCare';
 import ShipPayment from 'pages/Checkout/Shipping';
-import Payment from 'pages/Checkout/Payment';
-import PayNow from 'pages/Checkout/PayNow';
 
 import 'services/i18n';
 
@@ -62,7 +63,8 @@ function App() {
               <Route path='/ship-payment' element={<ShipPayment />} />
               <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
               <Route path='/pay-now' element={<PayNow />} />
-              <Route path='/' element={<Account />} />
+              <Route path='/account' element={<Account />} />
+              <Route path='/reset-password' element={<ForgetPassword />} />
               {/* <Route path='/' element={<PaySuccess />} /> */}
             </Routes>
           </Suspense>

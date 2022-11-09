@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -10,9 +11,9 @@ import DefaultButton from 'components/Button';
 import plus from 'assets/images/plus.png';
 import Select from 'assets/images/icons/select.svg';
 import ArrivalImg1 from 'assets/images/arrivalImg1.png';
-import ArrivalImg2 from 'assets/images/arrivalImg2.png';
-import ArrivalImg3 from 'assets/images/arrivalImg3.png';
-import ArrivalImg4 from 'assets/images/arrivalImg4.png';
+// import ArrivalImg2 from 'assets/images/arrivalImg2.png';
+// import ArrivalImg3 from 'assets/images/arrivalImg3.png';
+// import ArrivalImg4 from 'assets/images/arrivalImg4.png';
 
 import './style.scss';
 
@@ -100,7 +101,21 @@ const NewArrivals = () => {
     setSelectedColor(newStatus);
   }
 
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get(
+        'https://ecommerce-training-staging.herokuapp.com/api/v1/products?fbclid=IwAR3znPxcssARiWNCXerlrGPI-8-UE7_lsuSvjWVpmtz20sNqLPqj8t1LRYg'
+      );
+      setData(response.data);
+      console.log(data);
+    };
+    getData();
+  }, [data]);
+
   const navigate = useNavigate();
+
   const redirectDetail = () => {
     navigate('/detail');
   };
@@ -272,84 +287,39 @@ const NewArrivals = () => {
         </div>
         <div className='grid__4--3'>
           <div className='grid__image'>
-            <div className='image-item' onClick={redirectDetail}>
-              <img src={ArrivalImg1} alt='' />
-              <div className='quick-add-size'>
-                <img src={plus} alt='' />
-                <p>QUICK ADD: </p>
-                <p>XS</p>
-                <p className='out-stock'>S</p>
-                <p className='active'>M</p>
-                <p className='out-stock'>L</p>
-              </div>
-              <div className='item-infor'>
-                <p>
-                  HOLLY SHEER BLOUSE IN SAFARI
-                  <br />
-                  <span>NEW ARRIVALS</span>
-                </p>
-                <p>999.000</p>
-              </div>
-            </div>
-            <div className='image-item'>
-              <img src={ArrivalImg2} alt='' />
-              <div className='quick-add-size'>
-                <img src={plus} alt='' />
-                <p>QUICK ADD: </p>
-                <p>XS</p>
-                <p className='out-stock'>S</p>
-                <p className='active'>M</p>
-                <p className='out-stock'>L</p>
-              </div>
-              <div className='item-infor'>
-                <p>
-                  HOLLY SHEER BLOUSE IN SAFARI
-                  <br />
-                  <span>PRE-ORDER</span>
-                </p>
-                <p>999.000</p>
-              </div>
-            </div>
-          </div>
-          <div className='grid__image'>
-            <div className='image-item' onClick={redirectDetail}>
-              <img src={ArrivalImg3} alt='' />
-              <div className='quick-add-size'>
-                <img src={plus} alt='' />
-                <p>QUICK ADD: </p>
-                <p>XS</p>
-                <p className='out-stock'>S</p>
-                <p className='active'>M</p>
-                <p className='out-stock'>L</p>
-              </div>
-              <div className='item-infor'>
-                <p>
-                  HOLLY SHEER BLOUSE IN SAFARI
-                  <br />
-                  <span>NEW ARRIVALS</span>
-                </p>
-                <p>999.000</p>
-              </div>
-            </div>
-            <div className='image-item'>
-              <img src={ArrivalImg4} alt='' />
-              <div className='quick-add-size'>
-                <img src={plus} alt='' />
-                <p>QUICK ADD: </p>
-                <p>XS</p>
-                <p className='out-stock'>S</p>
-                <p className='active'>M</p>
-                <p className='out-stock'>L</p>
-              </div>
-              <div className='item-infor'>
-                <p>
-                  HOLLY SHEER BLOUSE IN SAFARI
-                  <br />
-                  <span>PRE-ORDER</span>
-                </p>
-                <p>999.000</p>
-              </div>
-            </div>
+            {data &&
+              data.data.map(item => {
+                console.log(
+                  'item',
+                  item,
+                  data.data.map(item => item)
+                );
+                return (
+                  <div
+                    className='image-item'
+                    onClick={redirectDetail}
+                    key={item.id}
+                  >
+                    <img src={ArrivalImg1} alt='' />
+                    <div className='quick-add-size'>
+                      <img src={plus} alt='' />
+                      <p>QUICK ADD: </p>
+                      <p>XS</p>
+                      <p className='out-stock'>S</p>
+                      <p className='active'>M</p>
+                      <p className='out-stock'>L</p>
+                    </div>
+                    <div className='item-infor'>
+                      <p>
+                        {item.name}
+                        <br />
+                        <span>NEW ARRIVALS</span>
+                      </p>
+                      <p>item price</p>
+                    </div>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>

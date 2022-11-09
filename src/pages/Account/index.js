@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -15,6 +15,15 @@ const Account = () => {
   const handleShowAddress = () => {
     setShowAddress(!showAddress);
   };
+
+  const navigate = useNavigate();
+  const logout = account => {
+    localStorage.removeItem('userInfo');
+    localStorage.removeItem('accessToken');
+    console.log('out', account);
+    navigate('/');
+  };
+
   return (
     <div className='account-container'>
       <Announce />
@@ -45,7 +54,7 @@ const Account = () => {
             <span>orders & return | </span>
             <span className='active'>address book | </span>
             <span>newsletter | </span>
-            <span>log out</span>
+            <span onClick={logout('ffff')}>log out</span>
           </div>
         </div>
         <div className='account__content'>
