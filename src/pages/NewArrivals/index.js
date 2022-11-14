@@ -310,12 +310,12 @@ const NewArrivals = () => {
                       <p className='out-stock'>L</p>
                     </div>
                     <div className='item-infor'>
-                      <p>
+                      <p className='item-name'>
                         {item.name}
                         <br />
                         <span>NEW ARRIVALS</span>
                       </p>
-                      <p>item price</p>
+                      <p> {item.price}</p>
                     </div>
                   </div>
                 );

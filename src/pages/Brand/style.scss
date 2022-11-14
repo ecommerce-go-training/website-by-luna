@@ -4,6 +4,7 @@
 
 .brand__container {
   width: 100%;
+  margin-top: 60px;
   @include flex(row, flex-start, center);
   padding-top: 100px;
   @include responsive(mobile) {

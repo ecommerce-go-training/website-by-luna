@@ -3,6 +3,9 @@
 
 .payment-now-container {
   width: 100%;
+  @include responsive(mobile) {
+    @include flex(column, center, space-between);
+  }
 
   .payment-now {
     margin-top: 150px;
@@ -10,6 +13,12 @@
     border: 1px solid $gray-smoke;
     padding: 0 10px;
     width: 46%;
+
+    @include responsive(mobile) {
+      width: 90%;
+      padding: 0;
+      margin: 150px 0 0 0;
+    }
 
     .method-cash-of-delivery,
     .method-banking {

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import schema from './validate';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { Link, useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
-import axios from 'axios';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -11,7 +11,7 @@ import DefaultButton from 'components/Button';
 import Announce from 'components/Announcement';
 import DefaultInput from 'components/Input/Default';
 
-import schema from './validate';
+import { api } from 'services/api';
 import './style.scss';
 
 const SignIn = () => {
@@ -28,22 +28,13 @@ const SignIn = () => {
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
 
   const onSubmit = async data => {
-    console.log('data', data);
-    const response = await axios.post(
-      'https://ecommerce-training-staging.herokuapp.com/api/v1/login',
-      data
-    );
-
-    if (response.data.data.accessToken) {
-      localStorage.setItem(
-        'accessToken',
-        JSON.stringify(response.data.data.accessToken)
-      );
-      localStorage.setItem(
-        'userInfo',
-        JSON.stringify(response.data.data.userInfo)
-      );
-      navigate('/');
+    try {
+      const response = await api.post('login', data);
+      if (response.status === 200) {
+        navigate('/');
+      }
+    } catch (error) {
+      alert(error);
     }
   };
 

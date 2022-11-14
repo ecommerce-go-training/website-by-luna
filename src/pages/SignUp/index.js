@@ -1,14 +1,15 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
+// import { api } from 'services/api';
+import { useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import DefaultCheckbox from 'components/Checkbox';
 import DefaultButton from 'components/Button';
 import Announce from 'components/Announcement';
+import DefaultCheckbox from 'components/Checkbox';
 import DefaultInput from 'components/Input/Default';
 
 import schema from './validate';
@@ -52,6 +53,21 @@ const SignUp = () => {
       alert(error.response.data.message);
     }
   };
+
+  // const onSubmit = async data => {
+  //   try {
+  //     const response = await api.post('/v1/register', data);
+  //     if (response.status === 200) {
+  //       await api.post('/v1/login', {
+  //         email: data.email,
+  //         password: data.password
+  //       });
+  //       navigate('/');
+  //     }
+  //   } catch (error) {
+  //     alert(error);
+  //   }
+  // };
 
   return (
     <div>

@@ -9,7 +9,6 @@ import ScrollToTop from 'components/ScrollToTop';
 
 import Home from 'pages/Home';
 import Brand from 'pages/Brand';
-// import PaySuccess from 'pages/Checkout/Success';
 import Signin from 'pages/SignIn';
 import Signup from 'pages/SignUp';
 import Account from 'pages/Account';
@@ -27,6 +26,7 @@ import Payment from 'pages/Checkout/Payment';
 import ForgetPassword from 'pages/CheckMail';
 import OrderHistory from 'pages/OrderHistory';
 import Policy from 'pages/CustomerCare/Policy';
+import PaySuccess from 'pages/Checkout/Success';
 import Shipping from 'pages/CustomerCare/Shipping';
 import Term from 'pages/CustomerCare/TermCondition';
 import Garment from 'pages/CustomerCare/GarmentCare';
@@ -58,14 +58,14 @@ function App() {
               <Route path='/sign-up' element={<Signup />} />
               <Route path='/garment' element={<Garment />} />
               <Route path='/payment' element={<Payment />} />
+              <Route path='/account' element={<Account />} />
+              <Route path='/pay-now' element={<PayNow />} />
               <Route path='/arrivals' element={<Arrivals />} />
               <Route path='/history' element={<OrderHistory />} />
+              <Route path='/pay-success' element={<PaySuccess />} />
               <Route path='/ship-payment' element={<ShipPayment />} />
               <Route path='/store/ho-chi-minh' element={<StoreHCM />} />
-              <Route path='/pay-now' element={<PayNow />} />
-              <Route path='/account' element={<Account />} />
               <Route path='/reset-password' element={<ForgetPassword />} />
-              {/* <Route path='/' element={<PaySuccess />} /> */}
             </Routes>
           </Suspense>
         </BrowserRouter>

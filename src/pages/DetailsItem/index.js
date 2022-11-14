@@ -9,54 +9,39 @@ import Collapse from 'components/Collapse';
 import DefaultButton from 'components/Button';
 
 import ArrivalImg1 from 'assets/images/arrivalImg1.png';
-import ArrivalImg2 from 'assets/images/arrivalImg2.png';
-import ArrivalImg3 from 'assets/images/arrivalImg3.png';
-import ArrivalImg4 from 'assets/images/arrivalImg4.png';
+// import ArrivalImg2 from 'assets/images/arrivalImg2.png';
+// import ArrivalImg3 from 'assets/images/arrivalImg3.png';
+// import ArrivalImg4 from 'assets/images/arrivalImg4.png';
 
 import './style.scss';
 
 const DetailsItem = () => {
-  const dataSlider = [
-    {
-      image: ArrivalImg1,
-      title: 'HOLLY SHEER BLOUSE IN SAFARI',
-      price: '990.000 VND'
-    },
-    {
-      image: ArrivalImg2,
-      title: 'HOLLY SHEER BLOUSE IN SAFARI',
-      price: '990.000 VND'
-    },
-    {
-      image: ArrivalImg3,
-      title: 'HOLLY SHEER BLOUSE IN SAFARI',
-      price: '990.000 VND'
-    },
-    {
-      image: ArrivalImg4,
-      title: 'HOLLY SHEER BLOUSE IN SAFARI',
-      price: '990.000 VND'
-    }
-  ];
+  // const dataSlider = [
+  //   {
+  //     image: ArrivalImg1,
+  //     title: 'HOLLY SHEER BLOUSE IN SAFARI',
+  //     price: '990.000 VND'
+  //   },
+  //   {
+  //     image: ArrivalImg2,
+  //     title: 'HOLLY SHEER BLOUSE IN SAFARI',
+  //     price: '990.000 VND'
+  //   },
+  //   {
+  //     image: ArrivalImg3,
+  //     title: 'HOLLY SHEER BLOUSE IN SAFARI',
+  //     price: '990.000 VND'
+  //   },
+  //   {
+  //     image: ArrivalImg4,
+  //     title: 'HOLLY SHEER BLOUSE IN SAFARI',
+  //     price: '990.000 VND'
+  //   }
+  // ];
 
   const dataSlider1 = [
     {
-      image: ArrivalImg3,
-      title: 'HOLLY SHEER BLOUSE IN SAFARI',
-      price: '990.000 VND'
-    },
-    {
-      image: ArrivalImg3,
-      title: 'HOLLY SHEER BLOUSE IN SAFARI',
-      price: '990.000 VND'
-    },
-    {
-      image: ArrivalImg3,
-      title: 'HOLLY SHEER BLOUSE IN SAFARI',
-      price: '990.000 VND'
-    },
-    {
-      image: ArrivalImg3,
+      image: ArrivalImg1,
       title: 'HOLLY SHEER BLOUSE IN SAFARI',
       price: '990.000 VND'
     }
@@ -68,10 +53,10 @@ const DetailsItem = () => {
       <Header className='header white' />
       <div className='details'>
         <div className='grid__3--2'>
-          <img src={ArrivalImg3} alt='' />
-          <img src={ArrivalImg3} alt='' />
-          <img src={ArrivalImg3} alt='' />
-          <img src={ArrivalImg3} alt='' />
+          <img src={ArrivalImg1} alt='' />
+          <img src={ArrivalImg1} alt='' />
+          <img src={ArrivalImg1} alt='' />
+          <img src={ArrivalImg1} alt='' />
         </div>
         <Slider data={dataSlider1} className='detail-item__slider' />
         <div className='grid__3--1'>
@@ -140,7 +125,7 @@ const DetailsItem = () => {
       </div>
       <div className='similar-item'>
         <h3>YOU MAY ALSO LIKE</h3>
-        <Slider data={dataSlider} className='similar-item__slider' />
+        {/* <Slider data={dataSlider} className='similar-item__slider' /> */}
       </div>
       <Footer />
     </div>

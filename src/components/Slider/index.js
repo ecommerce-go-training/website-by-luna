@@ -17,9 +17,6 @@ const Slider = ({ data, className, length }) => {
   });
 
   console.log(length);
-  // if (length === 4) {
-
-  // }
 
   const nextSlide = e => {
     e.preventDefault();

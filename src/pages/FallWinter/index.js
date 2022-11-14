@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -28,6 +28,10 @@ import imgSeasonMobile from 'assets/images/imgSeasonMobile.png';
 import './style.scss';
 
 const FallWinter = () => {
+  const navigate = useNavigate();
+  const redirectSignUp = () => {
+    return navigate('/sign-up');
+  };
   return (
     <div className='season-container'>
       <Announce />
@@ -167,7 +171,9 @@ const FallWinter = () => {
               Sign-up to receive 10% of your first purchase as well as the
               latest updates on new arrivals, exclusive promotions and events.
             </p>
-            <DefaultButton className='button-signup'>SIGN UP</DefaultButton>
+            <DefaultButton className='button-signup' onClick={redirectSignUp}>
+              SIGN UP
+            </DefaultButton>
           </div>
         </div>
       </div>

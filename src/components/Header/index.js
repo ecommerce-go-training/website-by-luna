@@ -109,9 +109,10 @@ const Header = ({ className }) => {
           <img
             src={logo}
             alt=''
-            className={classNames('logo-header__active', {
-              logoWhite: isScrolling
-            })}
+            className='logo-header__active'
+            // {classNames('logo-header__active', {
+            //   logoWhite: isScrolling
+            // })}
             onClick={redirectHome}
           />
         </div>
@@ -143,10 +144,17 @@ const Header = ({ className }) => {
               <Link to='/winter' className='link-to-page-mobile'>
                 {t('shop')}
               </Link>
-              <Link to='/sign-in' className='link-to-page-mobile'>
-                <br />
-                Login
-              </Link>
+              {!checkIsLoggedIn() ? (
+                <Link to='/sign-in' className='link-to-page-mobile'>
+                  <br />
+                  Login
+                </Link>
+              ) : (
+                <Link to='/account' className='link-to-page-mobile'>
+                  <br />
+                  {user.firstName} {user.lastName}
+                </Link>
+              )}
             </div>
           </div>
         )}

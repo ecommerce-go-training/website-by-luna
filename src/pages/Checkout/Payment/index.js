@@ -55,8 +55,8 @@ const Payment = () => {
     return navigate('/');
   };
 
-  const redirectPaynow = () => {
-    return navigate('/pay-now');
+  const redirectPaySuccess = () => {
+    return navigate('/pay-success');
   };
 
   const redirectBack = () => {
@@ -333,7 +333,9 @@ const Payment = () => {
                 <p onClick={redirectBack}>Return to bag</p>
               </div>
               <div className='button-continue'>
-                <DefaultButton onClick={redirectPaynow}>Pay now</DefaultButton>
+                <DefaultButton onClick={redirectPaySuccess}>
+                  Pay now
+                </DefaultButton>
               </div>
             </div>
           </div>

@@ -167,10 +167,6 @@ const dataSlider2 = [
 ];
 
 const Home = () => {
-  // const [data, setData] = useState(null);
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(null);
-
   const navigate = useNavigate();
 
   const redirectSignUp = () => {
@@ -213,7 +209,7 @@ const Home = () => {
               Shop best seller
             </Link>
           </div>
-          <Slider data={dataSlider} />
+          <Slider data={dataSlider} className='slider-item-homepage' />
           <div className='image-home'>
             <img src={homeImg1} alt='image home page' />
             <img src={homeImg2} alt='image home page' />

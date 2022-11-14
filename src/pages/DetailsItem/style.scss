@@ -139,12 +139,15 @@
             margin: 0px;
 
             &--item {
-              width: 400px;
-              height: 610px;
+              width: 100%;
+              height: auto;
 
               img {
                 @include responsive(mobile) {
                   object-fit: contain;
+                  width: 100%;
+                  height: auto;
+                  margin: 0;
                 }
 
                 &:hover {
@@ -196,6 +199,7 @@
               img {
                 @include responsive(mobile) {
                   object-fit: contain;
+                  width: 100%;
                   height: auto;
                 }
 

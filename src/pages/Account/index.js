@@ -17,10 +17,9 @@ const Account = () => {
   };
 
   const navigate = useNavigate();
-  const logout = account => {
+  const handleLogout = () => {
     localStorage.removeItem('userInfo');
     localStorage.removeItem('accessToken');
-    console.log('out', account);
     navigate('/');
   };
 
@@ -46,15 +45,15 @@ const Account = () => {
             </Link>
           </p>
           <p className='logout'>
-            <Link to='/' className='link__page '>
+            <div onClick={handleLogout} className='link__page '>
               Log out
-            </Link>
+            </div>
           </p>
           <div className='account__page--mobile'>
             <span>orders & return | </span>
             <span className='active'>address book | </span>
             <span>newsletter | </span>
-            <span onClick={logout('ffff')}>log out</span>
+            <span onClick={handleLogout}>log out</span>
           </div>
         </div>
         <div className='account__content'>

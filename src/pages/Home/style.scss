@@ -111,17 +111,22 @@
         text-decoration: underline;
       }
     }
-  }
-  .image-home {
-    width: 100%;
-    margin-top: 20px;
-    @include flex(row, space-between, space-between);
-    @include responsive(mobile) {
-      display: none;
+
+    .slider-item-homepage {
+      width: 100%;
     }
-    img {
-      width: 50%;
-      object-fit: contain;
+
+    .image-home {
+      width: 100%;
+      margin-top: 20px;
+      @include flex(row, space-between, space-between);
+      @include responsive(mobile) {
+        display: none;
+      }
+      img {
+        width: 50%;
+        object-fit: contain;
+      }
     }
   }
 

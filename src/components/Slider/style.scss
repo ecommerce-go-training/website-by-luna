@@ -8,7 +8,7 @@
 
   .slider {
     width: 92%;
-    @include flex(row, center, center);
+    @include flex(row, flex-start, flex-start);
     overflow-x: scroll;
     scroll-behavior: smooth;
 
